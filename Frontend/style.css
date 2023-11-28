@@ -1,0 +1,23 @@
+:root{
+    --color-principal: blue;
+}
+
+#buscador-icono:hover{
+    background-color: rgba(0, 0, 0, 0.096);
+    box-sizing: border-box;
+    border: 1px;
+    padding-left: 15px;
+    border-radius: 30%;
+}
+
+
+#formulario-buscador{
+    display: none; 
+    padding-right: 5px;
+}
+
+h1 {
+    background-color: red;
+    width: auto;
+    height: 400px;
+}

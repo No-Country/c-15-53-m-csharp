@@ -1,25 +1,27 @@
-namespace Backend.Models
+﻿using System;
+using System.Collections.Generic;
+
+namespace Backend.Models;
+
+public partial class Product
 {
-    public class Product
-    {
-        public int ProductId { get; set; }
+    public int ProductId { get; set; }
 
-        public string Name { get; set; } = string.Empty;
+    public string ProductName { get; set; } = null!;
 
-        public string Description { get; set; } = string.Empty;
+    public string Description { get; set; } = null!;
 
-        public float Price { get; set; }
+    public double Price { get; set; }
 
-        public int Stock { get; set; }
+    public int Stock { get; set; }
 
-        public string Category { get; set; } = string.Empty;
+    public string Category { get; set; } = null!;
 
-        public string Image { get; set; } = string.Empty;
+    public string Image { get; set; } = null!;
 
-        public string Size { get; set; } = string.Empty;
+    public string Size { get; set; } = null!;
 
-        public string Color { get; set; } = string.Empty;
+    public string Color { get; set; } = null!;
 
-        public string Activity { get; set; } = string.Empty;
-    }
+    public string Activity { get; set; } = null!;
 }

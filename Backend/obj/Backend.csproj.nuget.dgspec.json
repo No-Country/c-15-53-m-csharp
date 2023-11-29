@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lomba\\OneDrive\\Escritorio\\ecommerce-NoCountry\\c-15-53-m-csharp\\Backend\\Backend.csproj": {}
+    "D:\\Git-P\\c-15-53-m-csharp\\Backend\\Backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lomba\\OneDrive\\Escritorio\\ecommerce-NoCountry\\c-15-53-m-csharp\\Backend\\Backend.csproj": {
+    "D:\\Git-P\\c-15-53-m-csharp\\Backend\\Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lomba\\OneDrive\\Escritorio\\ecommerce-NoCountry\\c-15-53-m-csharp\\Backend\\Backend.csproj",
+        "projectUniqueName": "D:\\Git-P\\c-15-53-m-csharp\\Backend\\Backend.csproj",
         "projectName": "Backend",
-        "projectPath": "C:\\Users\\lomba\\OneDrive\\Escritorio\\ecommerce-NoCountry\\c-15-53-m-csharp\\Backend\\Backend.csproj",
-        "packagesPath": "C:\\Users\\lomba\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lomba\\OneDrive\\Escritorio\\ecommerce-NoCountry\\c-15-53-m-csharp\\Backend\\obj\\",
+        "projectPath": "D:\\Git-P\\c-15-53-m-csharp\\Backend\\Backend.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "D:\\Git-P\\c-15-53-m-csharp\\Backend\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\lomba\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,9 +44,15 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.0, )"
             },

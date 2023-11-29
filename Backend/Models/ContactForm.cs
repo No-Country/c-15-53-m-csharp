@@ -1,10 +1,15 @@
-namespace Backend.Models
+﻿using System;
+using System.Collections.Generic;
+
+namespace Backend.Models;
+
+public partial class ContactForm
 {
-    public class ContactForm
-    {
-        public int ContactFormId { get; set; }
-        public string? Name { get; set; }
-        public string? Email { get; set; }
-        public string? Message { get; set; }
-    }
+    public int ContactFormId { get; set; }
+
+    public string? ContactName { get; set; }
+
+    public string? Email { get; set; }
+
+    public string? ContactMessage { get; set; }
 }

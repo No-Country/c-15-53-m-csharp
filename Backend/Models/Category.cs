@@ -1,9 +1,13 @@
-namespace Backend.Models
+﻿using System;
+using System.Collections.Generic;
+
+namespace Backend.Models;
+
+public partial class Category
 {
-    public class Category
-    {
-        public int CategoryId { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public List<SubCategory>? SubCategories { get; set; }
-    }
+    public int CategoryId { get; set; }
+
+    public string CategoryName { get; set; } = null!;
+
+    public virtual ICollection<SubCategory> SubCategories { get; set; } = new List<SubCategory>();
 }

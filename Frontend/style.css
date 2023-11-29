@@ -1,6 +1,10 @@
 :root{
     --color-principal: blue;
 }
+#btn-cerrar{
+    /* display: none;
+    background: green; */
+}
 
 #buscador-icono:hover{
     background-color: rgba(0, 0, 0, 0.096);

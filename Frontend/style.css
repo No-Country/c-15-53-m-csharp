@@ -1,6 +1,10 @@
 :root{
     --color-principal: blue;
 }
+#btn-cerrar{
+    /* display: none;
+    background: green; */
+}
 
 #buscador-icono:hover{
     background-color: rgba(0, 0, 0, 0.096);
@@ -21,3 +25,46 @@ h1 {
     width: auto;
     height: 400px;
 }
+/* ------------------------------ ITEM CATEGORIAS Y SUB-CATEGORIAS */
+/* modificar las medidas para que no sean abosolutas */
+.item-categoria,.item-subCategoria{
+    margin: 5px;
+    background-color: #d9d9d9;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.item-categoria{
+    padding: 40px;
+    width: max-content;
+ }
+ .item-subCategoria{
+    padding: 30px;
+    width: 40vh;
+}
+ .row{
+    justify-content:center;
+    padding: 0;
+    margin: 0;
+	height: 50vh;
+ }
+ .text-categoria{
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0;
+}
+
+/* ---------------------FIN DE ITEMS CATEGORIA */
+
+/* ---------------------ESTILOS FOOTER */
+
+
+footer p {
+    display: flex;
+    background: lavender;
+    justify-content: center;
+	height: 30vh;
+ 
+}
+
+/* --------------------- FIN ESTILOS FOOTER */

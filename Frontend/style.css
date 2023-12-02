@@ -1,6 +1,8 @@
 :root{
     --color-principal: blue;
 }
+/* ------------------------------  Barra de navegación (NAVBAR) */
+
 #btn-cerrar{
     /* display: none;
     background: green; */
@@ -12,19 +14,26 @@
     border: 1px;
     padding-left: 15px;
     border-radius: 30%;
+    
 }
 
 
-#formulario-buscador{
-    display: none; 
-    padding-right: 5px;
+.navbar-collapse.collapse{
+    flex-grow: 0;
+    order: 0;
+} 
+
+.lupa-icono-container{
+   order: 2;
+}
+.navbar-brand{
+   order: 1;
+
 }
 
-h1 {
-    background-color: red;
-    width: auto;
-    height: 400px;
-}
+ 
+/* ---------------------FIN DE Barra de navegación (NAVBAR)*/
+
 /* ------------------------------ ITEM CATEGORIAS Y SUB-CATEGORIAS */
 /* modificar las medidas para que no sean abosolutas */
 .item-categoria,.item-subCategoria{
@@ -64,7 +73,20 @@ footer p {
     background: lavender;
     justify-content: center;
 	height: 30vh;
+	width: auto
  
 }
 
 /* --------------------- FIN ESTILOS FOOTER */
+
+
+/* MEDIA QUERY RESPONSIVO */
+
+/* NAVBAR */
+@media screen and (max-width: 991px){
+    .collapse.navbar-collapse, .lupa-icono-container, .navbar-brand {
+        /*  Aquí asigno 0 a las clases del navbar para que no colapse los elementos*/
+        order: 0; 
+    }
+   
+}

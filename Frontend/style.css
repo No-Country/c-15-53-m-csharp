@@ -1,22 +1,8 @@
 :root{
     --color-principal: blue;
+    --color-gris: #D9D9D9;
 }
 /* ------------------------------  Barra de navegación (NAVBAR) */
-
-#btn-cerrar{
-    /* display: none;
-    background: green; */
-}
-
-#buscador-icono:hover{
-    background-color: rgba(0, 0, 0, 0.096);
-    box-sizing: border-box;
-    border: 1px;
-    padding-left: 15px;
-    border-radius: 30%;
-    
-}
-
 
 .navbar-collapse.collapse{
     flex-grow: 0;
@@ -31,8 +17,24 @@
 
 }
 
- 
+.logoBrand {
+    width: 121px;
+    height: 40px;
+}
+
 /* ---------------------FIN DE Barra de navegación (NAVBAR)*/
+
+/* ------------------------------ CAROUSEL */
+ .c-item{
+    height: auto;
+ }
+ 
+.carousel-inner img{
+    background-position: 50% 50%;
+    filter: brightness(0.7);
+    height: 90vh;
+} 
+/* ---------------------FIN DE CAROUSEL*/
 
 /* ------------------------------ ITEM CATEGORIAS Y SUB-CATEGORIAS */
 /* modificar las medidas para que no sean abosolutas */
@@ -65,9 +67,7 @@
 
 /* ---------------------FIN DE ITEMS CATEGORIA */
 
-/* ---------------------ESTILOS FOOTER */
-
-
+/* --------------------- FOOTER */
 footer p {
     display: flex;
     background: lavender;
@@ -78,6 +78,25 @@ footer p {
 }
 
 /* --------------------- FIN ESTILOS FOOTER */
+
+/* CONTACTO */
+.contacto .container-fluid {
+    background-color: var(--color-gris);
+}
+
+/* --------------------- FIN CONTACTO */
+
+/* --------------------- SECCION 4: TENDENCIAS */
+.tendencias img{
+    background-position: 50% 50%;
+    filter: brightness(0.7);
+    height: 30vh;
+}
+/* --------------------- FIN SECCION 4: TENDENCIAS */
+
+
+
+
 
 
 /* MEDIA QUERY RESPONSIVO */

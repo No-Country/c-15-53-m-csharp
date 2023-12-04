@@ -32,12 +32,17 @@
 .carousel-inner img{
     background-position: 50% 50%;
     filter: brightness(0.7);
-    height: 90vh;
+    height: 60vh;
 } 
 /* ---------------------FIN DE CAROUSEL*/
 
 /* ------------------------------ ITEM CATEGORIAS Y SUB-CATEGORIAS */
 /* modificar las medidas para que no sean abosolutas */
+.titulos{
+    background-color: #FF9C5A;
+    font-size: 25px;
+}
+
 .item-categoria,.item-subCategoria{
     margin: 5px;
     background-color: #d9d9d9;
@@ -47,7 +52,7 @@
 
 .item-categoria{
     padding: 40px;
-    width: max-content;
+    width: min-content;
  }
  .item-subCategoria{
     padding: 30px;
@@ -63,6 +68,16 @@
     overflow: hidden;
     white-space: nowrap;
     margin: 0;
+}
+.item-subCateg{
+    background-color: #274A38;
+    color: white;
+    font-size: 26px;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 /* ---------------------FIN DE ITEMS CATEGORIA */

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using Backend.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Backend.Models;
+namespace Backend.Data;
 
 public partial class BasicPointDbContext : DbContext
 {
@@ -23,9 +24,7 @@ public partial class BasicPointDbContext : DbContext
 
     public virtual DbSet<SubCategory> SubCategories { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("workstation id=BASIC_POINT_DB.mssql.somee.com;packet size=4096;user id=lautarolombardi_SQLLogin_1;pwd=Devllombardi22;data source=BASIC_POINT_DB.mssql.somee.com;persist security info=False;initial catalog=BASIC_POINT_DB; TrustServerCertificate=True");
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

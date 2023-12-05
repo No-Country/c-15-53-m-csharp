@@ -1,14 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Basic Point">
+        <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap, ecomerce, C#, Basic Point">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <meta name="author" content=""> -->
+        <title>Basic Point</title>
+        <!-- Icono pestaña -->
+        <link rel="icon" type="image/x-icon" href="./images/logo.png">
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <!-- CSS -->
+        <link rel="stylesheet" href="style.css">
+      </head>
+      
 <body>
-    <h1>Nosotros</h1>
-    <div class="text-presentacion">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet nobis nemo illo corporis unde tempora dolore reprehenderit aspernatur accusantium atque, vero ab rerum? Labore perspiciatis hic vitae suscipit itaque distinctio ex nostrum quas porro ratione? Natus pariatur laborum ex dolor reprehenderit. Officia deleniti facilis cumque nihil! Repudiandae repellat consectetur maiores qui aperiam maxime autem iusto voluptas dicta nemo odit aspernatur cupiditate atque, debitis a minima velit! Iste perferendis optio reiciendis atque inventore mollitia dolores libero dicta deserunt, ad fugiat error exercitationem distinctio nobis placeat animi ipsa excepturi impedit blanditiis odio reprehenderit dolorem quam odit? At deserunt, ab nisi maxime ut laudantium doloribus quasi delectus excepturi, eligendi nemo. Fugit voluptates in cupiditate, autem aliquid ullam totam, possimus praesentium quia nulla quisquam et exercitationem, minus maiores dignissimos? Minima ipsum beatae mollitia labore eaque sapiente, ab suscipit corrupti impedit atque vitae earum similique illum quod optio cumque animi illo porro! Necessitatibus, soluta sapiente? Nam deserunt culpa ad, quidem voluptatibus sunt, modi minus reprehenderit tenetur officiis earum. Id, possimus eaque, earum rerum at atque ea nam laboriosam tempore cum, asperiores aliquid! Obcaecati, soluta voluptates autem, ullam accusamus quam tenetur optio sunt nulla dicta vero accusantium odio molestias recusandae? Nihil placeat provident nulla facilis voluptas.</p>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
+          <div class="container-fluid d-flex">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler"
+              aria-controls="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <a class="navbar-brand me-0" href="./index.html">
+              <!-- CENTRO DEL NAV -->
+              <!-- LOGO DE LA PÁGINA  -->
+              <!-- width="60px" height="40px" -->
+              <img src="./images/logoBrand.png" alt="logoBrand" class="d-inline-block align-text-top logoBrand img-fluid">
+            </a>
+            
+    
+            <div class="lupa-icono-container d-flex gap-3 align-items-center">
+              <!-- PARTE DERECHA DEL NAV -->
+              <!-- ICONO DEL BUSCADOR (Para Colapsar la sección donde esta el formulario de busqueda )-->
+              <a class="navbar-item hover-overlay" type="button" data-bs-toggle="collapse"
+                data-bs-target="#formulario-buscador" href="#" aria-controls="formulario-buscador">
+                <img src="./images/buscador.png" alt="buscador" width="24" height="21">
+              </a>
+    
+              <a class="navbar-brand position-relative " href="./carrito.html">
+                <span class="position-absolute top-0 start-100  translate-middle badge rounded-pill bg-secondary">+99 <span
+                    class="visually-hidden">unread messages</span></span>
+                <img src="./images/carrito-de-compras.png" alt="carrito-de-compras" width="24" height="22">
+              </a>
+    
+            </div>
+    
+            <div class="collapse navbar-collapse" id="navbar-toggler">
+              <!-- PARTE IZQUIERDA DEL NAV -->
+              <ul class="navbar-nav d-flex justify-content-center align-text-center">
+                <!-- ENLACES DE LA PAGINA -->
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./nosotros.html">Nosotros</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="./productos.html" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Productos
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Hombre</a></li>
+                    <li><a class="dropdown-item" href="#">Mujer</a></li>
+                    <li><a class="dropdown-item" href="#">Niño/a</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./contacto.html">Contacto</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+    
+        <!-- BUSCADOOR (Al presionar la lupa es desplegado este div con el formulario)-->
+        <div class="collapse mt-0" id="formulario-buscador">
+          <div class="card card-body">
+            <form class="container-fluid">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">
+                  <img src="./images/buscador.png" alt="Buscador" width="25" height="24"
+                    class="d-inline-block align-text-top">
+                </span>
+                <!-- TODO: Dejar el icono dentro el input -->
+                <!-- background: #D9D9D9; -->
+                <!-- border-radius: 20px; -->
+                <input class="form-control me-5" type="search" placeholder="Search" aria-label="Search"
+                  aria-describedby="basic-addon1">
+              </div>
+            </form>
+            <div class="d-flex align-items-start flex-column mb-1 mt-0">
+              <p class="mb-auto p-2">Busquedas más populares</p>
+              <div class="d-flex flex-row flex-wrap container-fluid">
+                <p class="mb-auto p-2 pe-2 flex-fill">Artículo</p>
+                <p class="mb-auto p-2 pe-2 flex-fill">Artículo</p>
+                <p class="mb-auto p-2 pe-2 flex-fill">Artículo</p>
+                <p class="mb-auto p-2 pe-2 flex-fill">Artículo</p>
+              </div>
+            </div>
+          </div>
+          <div>
+          </div>
+        </div>
+      </header>
+      <div class="container-fluid fondo-nosotros">
+      <div class="text-presentacion my-5 mx-4 rounded-top-5">
+      <h1 class="text-center text-uppercase fs-5 fw-bold">Nosotros</h1>
+        <p class="fw-bold">En Basic Point, nos apasiona fomentar la conexión con la naturaleza y potenciar la experiencia de aventuras al aire libre. Creemos en la importancia de cada momento al explorar el mundo que nos rodea y en la influencia positiva que la indumentaria adecuada puede tener en estas experiencias.</p>
+        <p class="fw-bold">Nuestra Misión: Queremos ayudar a las personas a disfrutar plenamente de sus aventuras al aire libre, proporcionando prendas que no solo les hagan sentirse bien, sino que también les permitan moverse con libertad. En [Nombre de tu Marca], creemos que la ropa cómoda y funcional es esencial para cualquier viaje, ya sea una escapada de fin de semana o una expedición de varios días.</p>
+        <p class="fw-bold">La Comodidad como Prioridad: Entendemos que cada aventura trae consigo desafíos únicos, y es por eso que nos esforzamos por ofrecer indumentaria que se adapte a cualquier entorno. Desde caminatas serenas hasta emocionantes travesías, nuestras prendas están diseñadas pensando en la comodidad sin sacrificar el estilo ni la funcionalidad.</p>
+        <p class="fw-bold">Calidad y Durabilidad: 
+          En Basic Point, creemos en la durabilidad y la calidad. Cada prenda que ofrecemos está diseñada con materiales de primera calidad para resistir las demandas de la vida al aire libre, asegurando que nuestros clientes puedan confiar en su ropa en cada paso de su viaje.</p>
+        <p class="fw-bold">Acompañándote en Cada Paso: 
+          Ya sea que estés planificando tu próxima escapada o te embarques en una aventura espontánea, estamos aquí para acompañarte en cada paso del camino. Nuestra selección de indumentaria para excursiones está diseñada para adaptarse a tus necesidades, brindándote la confianza y la libertad para sumergirte en cada momento.</p>
+        <p class="fst-italic">En Basic Point, no solo vendemos ropa; compartimos la pasión por la exploración y la creencia de que cada experiencia al aire libre es una oportunidad para descubrir algo nuevo. Únete a nosotros en este viaje, y juntos, creemos en hacer que cada aventura sea inolvidable.</p>
     </div>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <script src="script.js"></script>
 </body>
 </html>

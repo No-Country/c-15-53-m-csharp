@@ -7,10 +7,6 @@ namespace Backend.Data;
 
 public partial class BasicPointDbContext : DbContext
 {
-    public BasicPointDbContext()
-    {
-    }
-
     public BasicPointDbContext(DbContextOptions<BasicPointDbContext> options)
         : base(options)
     {

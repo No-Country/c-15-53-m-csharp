@@ -16,7 +16,6 @@
    order: 1;
 
 }
-
 .logoBrand {
     width: 121px;
     height: 40px;
@@ -25,56 +24,108 @@
 /* ---------------------FIN DE Barra de navegación (NAVBAR)*/
 
 /* ------------------------------ CAROUSEL */
- .c-item{
-    height: auto;
- }
- 
-.carousel-inner img{
-    background-position: 50% 50%;
-    filter: brightness(0.7);
-    height: 50vh;
-} 
+.carousel-caption{
+    /* position: absolute; */
+    top: 1vh;
+   
+    /* width: 16vh; */
+    /* border: 1px solid red; */
+    /* height: auto; */
+}
+#texto-imagen-1{
+    text-align: start;
+    /* padding-bottom: 0px; */
+    padding: 0;
+    width: 22vh;
+    height: 16vh;
+    max-width: 218px;
+}
 /* ---------------------FIN DE CAROUSEL*/
 
 /* ------------------------------ ITEM CATEGORIAS Y SUB-CATEGORIAS */
 /* modificar las medidas para que no sean abosolutas */
-.item-categoria,.item-subCategoria{
-    margin: 5px;
-    background-color: #d9d9d9;
-    border-radius: 2px;
-    text-align: center;
+.titulos{
+    background-color: #FF9C5A;
+    font-size: 20px;
+    color: #274A38;
 }
 
+.container-categorias{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 10px;
+    
+}
 .item-categoria{
-    padding: 40px;
-    width: max-content;
- }
- .item-subCategoria{
-    padding: 30px;
-    width: 40vh;
+    background-size: cover;
+    background-position: center;
+    flex: 1 1 150px;  /*Mínimo de 150px, pero puede ocupar más espacio si está disponible */
+    margin: 8px;
+    min-height: 180px;
+    padding: 16px;
+    display:inherit;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
 }
- .row{
-    justify-content:center;
-    padding: 0;
-    margin: 0;
-	height: 50vh;
- }
- .text-categoria{
-    overflow: hidden;
-    white-space: nowrap;
-    margin: 0;
+.categ-1{
+    background-image: url('https://images.unsplash.com/photo-1698244327424-c6710b88e664?q=80&w=1664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+
+}
+.categ-2{
+    background-image: url('https://images.unsplash.com/photo-1513276193780-64b881470da8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+
+}
+.categ-3{
+    background-image: url('https://images.unsplash.com/photo-1568688574210-419316c9db5d?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+
+}
+.categ-4{
+    background-image: url('https://images.unsplash.com/photo-1602845860431-35374f24f48d?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+
+}
+.item-categoria{
+    width: max-content;
+    padding: 10px;
 }
 
+.item-subCateg{
+    background-color: #274A38;
+    color: white;
+    font-size: 26px;
+    font-weight:500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #274A38;
+    width: 100%;
+} 
+.item-subCateg:hover{
+    background-color: white;
+    color: black;
+}
 /* ---------------------FIN DE ITEMS CATEGORIA */
 
 /* --------------------- FOOTER */
-footer p {
-    display: flex;
-    background: lavender;
-    justify-content: center;
-	height: 30vh;
-	width: auto
- 
+footer {
+    background-color: #274A38;
+    height: 200px;
+}
+.deco-line-footer{
+    border-top: white solid 1.5px;
+    width: 100%;
+    margin-top: 50px;
+}
+.info-footer{
+    height: max-content;
+    width: max-content;
+    margin-top: 25px;
+    padding: 10px;
+}
+.info-footer p{
+    white-space: nowrap;
+    margin-bottom: 1px;
+    color: white;
 }
 
 /* --------------------- FIN ESTILOS FOOTER */
@@ -82,7 +133,23 @@ footer p {
 /* CONTACTO */
 .contacto .container-fluid {
     background-color: var(--color-gris);
+    overflow: hidden;
 }
+.fondo-contacto{
+    background-image: url(./images/fondo-contacto.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+}
+.fondo-contacto form button{
+    background-color: #274A38;
+    color: white;
+}
+ .fondo-contacto form button:hover{
+    background-color: #1e382b;
+    color: white;
+} 
 
 /* --------------------- FIN CONTACTO */
 
@@ -94,10 +161,20 @@ footer p {
 }
 /* --------------------- FIN SECCION 4: TENDENCIAS */
 
+/* --------------------- INICIO: PAG NOSOTROS */
+.text-presentacion{
+    border: solid 2px black;
+    padding: 20px;
+    justify-content: center;
+    background-color: #ffffffbd;
+    overflow:scroll;
 
-
-
-
+}
+.fondo-nosotros{
+    background-color: #FF9C5A;
+    padding: 10px;
+}
+/* --------------------- FIN: PAG NOSOTROS */
 
 /* MEDIA QUERY RESPONSIVO */
 

@@ -24,15 +24,22 @@
 /* ---------------------FIN DE Barra de navegación (NAVBAR)*/
 
 /* ------------------------------ CAROUSEL */
- .c-item{
-    height: auto;
- }
- 
-.carousel-inner img{
-    background-position: 50% 50%;
-    filter: brightness(0.7);
-    height: 60vh;
-} 
+.carousel-caption{
+    /* position: absolute; */
+    top: 1vh;
+   
+    /* width: 16vh; */
+    /* border: 1px solid red; */
+    /* height: auto; */
+}
+#texto-imagen-1{
+    text-align: start;
+    /* padding-bottom: 0px; */
+    padding: 0;
+    width: 22vh;
+    height: 16vh;
+    max-width: 218px;
+}
 /* ---------------------FIN DE CAROUSEL*/
 
 /* ------------------------------ ITEM CATEGORIAS Y SUB-CATEGORIAS */
@@ -46,6 +53,7 @@
 .container-categorias{
     display: flex;
     flex-wrap: wrap;
+    margin: 0 10px;
     
 }
 .item-categoria{
@@ -77,7 +85,6 @@
 
 }
 .item-categoria{
-    background-color: brown;
     width: max-content;
     padding: 10px;
 }
@@ -91,7 +98,7 @@
     align-items: center;
     justify-content: center;
     border: 2px solid #274A38;
-    
+    width: 100%;
 } 
 .item-subCateg:hover{
     background-color: white;
@@ -126,7 +133,23 @@ footer {
 /* CONTACTO */
 .contacto .container-fluid {
     background-color: var(--color-gris);
+    overflow: hidden;
 }
+.fondo-contacto{
+    background-image: url(./images/fondo-contacto.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+}
+.fondo-contacto form button{
+    background-color: #274A38;
+    color: white;
+}
+ .fondo-contacto form button:hover{
+    background-color: #1e382b;
+    color: white;
+} 
 
 /* --------------------- FIN CONTACTO */
 

@@ -115,16 +115,19 @@
   <!-- CONTENIDO -->
   <main>
     <section class="contacto fondo-contacto">
-        <div class="col mx-auto p-1">
-          <form class=" px-4 needs-validation">
-            <label for="Contacto" class="form-label">
-              <h5>Contacto</h5>
-            </label>
+        <div class="col mx-auto p-3">
+          <form id="myform" class=" px-4 needs-validation ">
+            <label for="Contacto" class="form-label d-flex justify-content-center">
+              <h4 id="label-contacto">Contacto</h4>
+             </label>
 
             <div class="mb-3">
-              <label for="user_email" class="form-label ps-4 fw-semibold text-white">Nombre y Apellido</label>
-              <input type="text" class="form-control" id="user" placeholder="nombre y Apellido" required>
-            </div>
+              <label for="Nombre y Apellido" class="form-label ps-4 fw-semibold text-white">Nombre y Apellido</label>
+              <input type="text" class="form-control" id="NombreApellido" placeholder="Nombre y Apellido" required>
+              <div class="invalid-feedback">
+                Ups! Debe ingresar su nombre y apellido
+              </div>
+           </div>
 
             <div class="mb-3">
               <label for="user_email" class="form-label ps-4 fw-semibold text-white">Email</label>
@@ -136,7 +139,7 @@
 
             <div class="mb-3">
               <label for="validationTextarea" class="form-label ps-4 fw-semibold text-white">Mensaje</label>
-              <textarea class="form-control lh-sm" rows="8" id="validationTextarea" placeholder="Quise comprar una mochila y no hay mas en stock, será posible que me avisen cuando la reciben nuevamente?"
+              <textarea class="form-control lh-sm" rows="8" id="validationTextarea" placeholder="Escribe tu mensaje"
                 required></textarea>
               <div class="invalid-feedback">
                 Por favor escriba un comentario
@@ -144,7 +147,7 @@
             </div>
 
             <div class="mb-3 d-flex justify-content-center">
-              <button type="submit" class="btn rounded-5 px-5 mt-4">Enviar</button>
+              <button id="btn-form-contacto" type="submit" class="btn rounded-5 px-5 mt-4"><br>Enviar</br></button>
             </div>
           </form>
         </div>
@@ -186,6 +189,7 @@
     crossorigin="anonymous"></script>
   <!-- JavaScript -->
   <script src="script.js"></script>
+  <script src="contacto.js"></script>
 </body>
 
 </html>

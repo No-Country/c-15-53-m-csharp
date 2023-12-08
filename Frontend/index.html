@@ -15,12 +15,14 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+  <!-- tarjeta-precio CSS -->
+  <link rel="stylesheet" href="tarjeta-precio.css">
 </head>
 
 <body>
 
   <!-- NAVBAR -->
-  <header>
+  <header class="position-sticky top-0 start-0 bg-light z-index-3">
     <nav class="navbar navbar-expand-lg navbar-light" role="navigation">
       <div class="container-fluid d-flex">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler"
@@ -32,7 +34,7 @@
           <!-- CENTRO DEL NAV -->
           <!-- LOGO DE LA PÁGINA  -->
           <!-- width="60px" height="40px" -->
-          <img src="images/LogoBrand.png" alt="logoBrand" class="d-inline-block align-text-top logoBrand img-fluid">
+          <img src="./images/logoBrand.png" alt="logoBrand" class="d-inline-block align-text-top logoBrand img-fluid">
         </a>
 
 
@@ -63,8 +65,8 @@
               <a class="nav-link active" aria-current="page" href="./nosotros.html">Nosotros</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="./productos.html" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
+              <a class="nav-link dropdown-toggle text-black" href="./productos.html" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
                 Productos
               </a>
               <ul class="dropdown-menu border-0">
@@ -90,15 +92,11 @@
       <div class="card card-body border-0">
         <form class="container-fluid">
           <div class="input-group">
-            <span class="input-group-text" id="basic-addon1">
-              <img src="./images/buscador.png" alt="Buscador" width="25" height="24"
-                class="d-inline-block align-text-top">
-            </span>
-            <!-- TODO: Dejar el icono dentro el input -->
-            <!-- background: #D9D9D9; -->
-            <!-- border-radius: 20px; -->
-            <input class="form-control me-5" type="search" placeholder="Search" aria-label="Search"
-              aria-describedby="basic-addon1">
+            <div class="input-group m-2" id="bucador-input">
+              <input class="z-1 form-control position-relative input-nav-buscador ps-5 me-2" type="search"
+                placeholder="Search" aria-label="Search" aria-describedby="buscador">
+              <i class="z-2 bi bi-search position-absolute top-50 start-0 translate-middle-y ps-3"></i>
+            </div>
           </div>
         </form>
         <div class="d-flex align-items-start flex-column mb-1 mt-0">
@@ -119,40 +117,51 @@
   <!-- CONTENIDO -->
   <main>
     <!-- Sección 1: CAROUSEL -->
-    <div id="mycarousel" class="carousel slide mb-2" data-bs-ride="carousel">
+    <div id="mycarousel" class="carousel slide mb-2 carousel-fade carousel-muestra" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active c-item">
-          <img src="https://images.unsplash.com/photo-1658532347726-5cd166bbd9ae?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Carousel img">
-          <div id="texto-imagen-1" class="carousel-caption d-block">
+        <div class="carousel-item active presentacion-1" data-bs-interval="5000">
+          <div id="texto-imagen" class="carousel-caption d-block texto-imagen">
             <h1>Descubre tu próxima avantura</h1>
           </div>
         </div>
-        <div class="carousel-item c-item">
-          <img src="https://images.unsplash.com/photo-1629248457649-b082812aea6c?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Carousel img">
-          <div id="texto-imagen-2" class="carousel-caption d-block">
+        <div class="gorra">
+          <button id="img-1-gorro" type="button" class="btn-precios"></button>
+          <span id="img-1-gorro-replacement" type="button" class="tarjeta-precio visually-hidden">Gorro de lana $ 30.582,30</span>
+        </div>
+        <div class="pantalon-1">
+          <button id="img-1-pantalon" type="button" class="btn-precios"></button>
+          <span id="img-1-pantalon-replacement" type="button" class="tarjeta-precio visually-hidden">Pantalón de escalar $ 236.031,00</span>
+        </div>
+        <div class="buzo-img-1">
+          <button id="img-1-buzo" type="button" class="btn-precios"></button>
+          <span id="img-1-buzo-replacement" type="button" class="tarjeta-precio visually-hidden">Buzo polar $ 73.433,50</span>      
+        </div>
+        <div class="zapatillas-img-1">
+          <button id="img-1-zapatillas" type="button" class="btn-precios"></button>
+          <span id="img-1-zapatillas-replacement" type="button" class="tarjeta-precio visually-hidden">Zapatillas de escalar $ 145.941,00</span>
+        </div>
+
+
+
+        <!-- <div class="carousel-item presentacion-2" data-bs-interval="5000">
+          <div id="texto-imagen" class="carousel-caption d-block texto-imagen">
             <h1>Empapate de experiencias</h1>
           </div>
-        </div>
+        </div> -->
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#mycarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#mycarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
+    
+    
 
     <!-- TODO: Sección 2: SUBCATEGORIAS (abrigos, indumentaria, calzado y accesorios)-->
-    <h2 class="titulos p-3 text-center">"Explora la naturaleza con equipamiento de calidad”</h2>
+    <h2 class="titulos p-3 mt-3 text-center">"Explora la naturaleza con equipamiento de calidad”</h2>
     <!--          -->
     <section class="container-categorias">
       <div class="item-categoria categ-1 bg-image">
         <button type="button" class="btn btn-light fw-semibold">Abrigos</button>
       </div>
       <div class="item-categoria categ-2 bg-image">
-        <button type="button" class="btn btn-light fw-semibold">indumentaria</button>
+        <button type="button" class="btn btn-light fw-semibold">Indumentaria</button>
       </div>
       <div class="item-categoria categ-3 bg-image">
         <button type="button" class="btn btn-light fw-semibold">Calzados</button>
@@ -164,24 +173,24 @@
     </section>
 
     <h2 class="titulos mt-4 p-3 text-center">Descubre nuestra colección para toda la familia</h2>
-    <!-- TODO: Sección 3: CATEGORIAS (H,M,N) --> 
+    <!-- TODO: Sección 3: CATEGORIAS (H,M,N) -->
     <section class="categorias container mt-3 mb-3">
 
       <div class="row row-cols-2 mx-2">
-        <div class="col p-2  rounded-top-5 item-subCateg mb-2">
+        <div class="col p-4  rounded-top-5 item-subCateg mb-2">
           <p>Mujer</p>
         </div>
-        <div class="col p-2 item-subCateg">
+        <div class="col p-4 item-subCateg">
           <p>Hombre</p>
         </div>
-        <div class="col p-2 rounded-bottom-5 item-subCateg mt-2">
+        <div class="col p-4 rounded-bottom-5 item-subCateg mt-2">
           <p>Niño/a</p>
         </div>
       </div>
     </section>
 
     <!-- TODO: Sección 4: TENDENCIAS POR TEMPORADA -->
-    <h2 class="titulos p-3 text-center">Lo último de esta temporada</h2>
+    <h2 class="titulos p-3 text-center my-4 ">Lo último de esta temporada</h2>
     <section class="tendencias mb-4">
       <div id="mycarousel_tendencias" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -220,23 +229,24 @@
   <footer class="container-fluid d-flex gx-0">
     <div class="deco-line-footer"></div>
     <div class="info-footer text-center">
-      <div class="redes-sociales d-flex justify-content-around px-4 mb-2">
+      <div class="redes-sociales d-flex justify-content-around align-items-center px-4 mb-2">
         <a class="" type="button" href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-facebook"
-            viewBox="0 0 16 16">
+          <svg width="22" height="22" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
-              d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+              d="M9.33333 8.99992H11L11.6667 6.33325H9.33333V4.99992C9.33333 4.31325 9.33333 3.66659 10.6667 3.66659H11.6667V1.42659C11.4493 1.39792 10.6287 1.33325 9.762 1.33325C7.952 1.33325 6.66667 2.43792 6.66667 4.46658V6.33325H4.66667V8.99992H6.66667V14.6666H9.33333V8.99992Z"
+              fill="white" />
           </svg>
+
         </a>
         <a class="" type="button" href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-instagram"
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-instagram"
             viewBox="0 0 16 16">
             <path
               d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
           </svg>
         </a>
       </div>
-      <img src="./images/LogoBrand.png" alt="logoBrand" class="d-inline-block align-text-top logoBrand img-fluid">
+      <img src="./images/logoBrand.png" alt="logoBrand" class="d-inline-block align-text-top logoBrand img-fluid">
       <p class="mt-1">info <samp class="text-decoration-underline">@basicpoint.com</samp></p>
       <p>+5433516445563</p>
     </div>
@@ -250,6 +260,7 @@
     crossorigin="anonymous"></script>
 
   <script src="script.js"></script>
+  <script src="tarjeta-precio.js"></script>
 </body>
 
 </html>

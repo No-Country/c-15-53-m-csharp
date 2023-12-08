@@ -94,7 +94,7 @@
 }
 
 #mycarousel .presentacion-1 h1 {
-    overflow: hidden;
+    overflow: visible;
     width: 150px;
 }
 

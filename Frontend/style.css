@@ -78,12 +78,6 @@
     
 }   
 
-/* .custom-tooltip {
-    --bs-tooltip-bg: var(--color-blanco);
-    --bs-tooltip-color: var(--color-gris);
-    --#{$prefix}tooltip-zindex: #{$zindex-tooltip};
-
-} */
 
 .btn-card-info {
     padding: 5px;

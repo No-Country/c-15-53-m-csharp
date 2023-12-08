@@ -19,98 +19,158 @@
 
 <body>
 
-  <!-- NAVBAR -->
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light" role="navigation">
-      <div class="container-fluid d-flex">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler"
-          aria-controls="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <!-- NAVBAR -->
+    <header class="position-sticky top-0 start-0 bg-light z-index-3">
+      <nav class="navbar navbar-expand-lg navbar-light" role="navigation">
+        <div class="container-fluid d-flex">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar-toggler"
+            aria-controls="navbar-toggler"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <a class="navbar-brand me-0" href="./index.html">
-          <!-- CENTRO DEL NAV -->
-          <!-- LOGO DE LA PÁGINA  -->
-          <!-- width="60px" height="40px" -->
-          <img src="./images/logoBrand.png" alt="logoBrand" class="d-inline-block align-text-top logoBrand img-fluid">
-        </a>
-
-
-        <div class="lupa-icono-container d-flex gap-3 align-items-center">
-          <!-- PARTE DERECHA DEL NAV -->
-          <!-- ICONO DEL BUSCADOR (Para Colapsar la sección donde esta el formulario de busqueda )-->
-          <a class="navbar-item hover-overlay" type="button" data-bs-toggle="collapse"
-            data-bs-target="#formulario-buscador" href="#" aria-controls="formulario-buscador">
-            <img src="./images/buscador.png" alt="buscador" width="24" height="21">
+          <a class="navbar-brand me-0" href="./index.html">
+            <!-- CENTRO DEL NAV -->
+            <!-- LOGO DE LA PÁGINA  -->
+            <!-- width="60px" height="40px" -->
+            <img
+              src="./images/logoBrand.png"
+              alt="logoBrand"
+              class="d-inline-block align-text-top logoBrand img-fluid"
+            />
           </a>
 
-          <a class="navbar-brand position-relative " href="./carrito.html">
-            <span class="position-absolute top-0 start-100  translate-middle badge rounded-pill bg-secondary">+99 <span
-                class="visually-hidden">unread messages</span></span>
-            <img src="./images/carrito-de-compras.png" alt="carrito-de-compras" width="24" height="22">
-          </a>
+          <div class="lupa-icono-container d-flex gap-3 align-items-center">
+            <!-- PARTE DERECHA DEL NAV -->
+            <!-- ICONO DEL BUSCADOR (Para Colapsar la sección donde esta el formulario de busqueda )-->
+            <a
+              class="navbar-item hover-overlay"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#formulario-buscador"
+              href="#"
+              aria-controls="formulario-buscador"
+            >
+              <img
+                src="./images/buscador.png"
+                alt="buscador"
+                width="24"
+                height="21"
+              />
+            </a>
 
+            <a class="navbar-brand position-relative" href="./carrito.html">
+              <span
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary"
+                >+99 <span class="visually-hidden">unread messages</span></span
+              >
+              <img
+                src="./images/carrito-de-compras.png"
+                alt="carrito-de-compras"
+                width="24"
+                height="22"
+              />
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navbar-toggler">
+            <!-- PARTE IZQUIERDA DEL NAV -->
+            <ul
+              class="navbar-nav d-flex justify-content-center align-text-center"
+            >
+              <!-- ENLACES DE LA PAGINA -->
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./nosotros.html"
+                  >Nosotros</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle text-black"
+                  href="./productos.html"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Productos
+                </a>
+                <ul class="dropdown-menu border-0">
+                  <li><a class="dropdown-item" href="#">Hombre</a></li>
+                  <li><a class="dropdown-item" href="#">Mujer</a></li>
+                  <li><a class="dropdown-item" href="#">Niño/a</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./carrito.html"
+                  >Carrito</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./contacto.html"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
+      </nav>
 
-        <div class="collapse navbar-collapse" id="navbar-toggler">
-          <!-- PARTE IZQUIERDA DEL NAV -->
-          <ul class="navbar-nav d-flex justify-content-center align-text-center">
-            <!-- ENLACES DE LA PAGINA -->
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./nosotros.html">Nosotros</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-black" href="./productos.html" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Productos
-              </a>
-              <ul class="dropdown-menu border-0">
-                <li><a class="dropdown-item" href="#">Hombre</a></li>
-                <li><a class="dropdown-item" href="#">Mujer</a></li>
-                <li><a class="dropdown-item" href="#">Niño/a</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./carrito.html">Carrito</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./contacto.html">Contacto</a>
-            </li>
-
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- BUSCADOOR (Al presionar la lupa es desplegado este div con el formulario)-->
-    <div class="collapse mt-0" id="formulario-buscador">
-      <div class="card card-body border-0">
-        <form class="container-fluid">
-          <div class="input-group">
-            <div class="input-group m-2" id="bucador-input">
-              <input class="z-1 form-control position-relative input-nav-buscador ps-5 me-2" type="search"
-                placeholder="Search" aria-label="Search" aria-describedby="buscador">
-              <i class="z-2 bi bi-search position-absolute top-50 start-0 translate-middle-y ps-3"></i>
+      <!-- BUSCADOOR (Al presionar la lupa es desplegado este div con el formulario)-->
+      <div class="collapse mt-0" id="formulario-buscador">
+        <div class="card card-body border-0">
+          <form class="container-fluid">
+            <div class="input-group">
+              <div class="input-group m-2" id="bucador-input">
+                <input
+                  class="z-1 form-control position-relative input-nav-buscador ps-5 me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                  aria-describedby="buscador"
+                />
+                <i
+                  class="z-2 bi bi-search position-absolute top-50 start-0 translate-middle-y ps-3"
+                ></i>
+              </div>
+            </div>
+          </form>
+          <div class="d-flex align-items-start flex-column mb-1 mt-0">
+            <p class="mb-auto p-2">Busquedas más populares</p>
+            <div class="d-flex flex-row flex-wrap container-fluid">
+              <p class="mb-auto p-2 pe-2 flex-fill">Artículo</p>
+              <p class="mb-auto p-2 pe-2 flex-fill">Artículo</p>
+              <p class="mb-auto p-2 pe-2 flex-fill">Artículo</p>
+              <p class="mb-auto p-2 pe-2 flex-fill">Artículo</p>
             </div>
           </div>
-        </form>
-        <div class="d-flex align-items-start flex-column mb-1 mt-0">
-          <p class="mb-auto p-2">Busquedas más populares</p>
-          <div class="d-flex flex-row flex-wrap container-fluid">
-            <p class="mb-auto p-2 pe-2 flex-fill">Artículo</p>
-            <p class="mb-auto p-2 pe-2 flex-fill">Artículo</p>
-            <p class="mb-auto p-2 pe-2 flex-fill">Artículo</p>
-            <p class="mb-auto p-2 pe-2 flex-fill">Artículo</p>
-          </div>
         </div>
+        <div></div>
       </div>
-      <div>
-      </div>
-    </div>
-  </header>
+    </header>
+
 
   <!-- CONTENIDO -->
   <main>

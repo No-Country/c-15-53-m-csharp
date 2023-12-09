@@ -295,10 +295,59 @@ footer {
     background-position: center;
     padding: 10px;
     height: 100vh;
+    color: #274A38;
 }
 
 /* --------------------- FIN: PAG NOSOTROS */
+/* ----------------------Inicio pagina productos */
+/* iNICIO DE NAV DE PRODUCTOS */
+.nav-productos{
+    width: 100%;
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+} 
+.menu-productos .nav-productos button{
+    border: 1px solid #274A38;
+    color: #274A38;
+    background-color: white;
+}
+.menu-productos .nav-productos button:focus{
+    background-color: #274A38;
+    color: white;
+}
+.dropdown-menu .dropdown-item:hover{
+    text-decoration:underline;
+    background-color: white;
+}
+/* FIN DE NAV DE PRODUCTOS */
+/* iNICIO DE MUESTRA DE PRODUCTOS */
+.contenedor-productos{
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
 
+}
+.contenedor-productos button, .menu-productos h2{
+    color: #274A38;
+}
+.contenedor-productos .card{
+    width: 200px;
+    border-radius: 50px;
+    line-height: 10px;
+    box-shadow: 5px 1px 8px rgba(0, 0, 0, 0.2), 0 0 0 0 transparent;
+
+}
+.contenedor-productos .card img{
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+
+}
+.contenedor-productos .card-img-overlay {
+    margin-bottom: 50px;
+}
+/* FIN DE MUESTRA DE PRODUCTOS */
+/* ----------------------Fin pagina productos */
 /* MEDIA QUERY RESPONSIVO */
 
 /* NAVBAR */

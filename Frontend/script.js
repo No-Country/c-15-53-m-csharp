@@ -2,9 +2,6 @@ let buscadorIcono = document.getElementById("buscador-icono");
 let formularioBuscador = document.getElementById("formulario-buscador");
 let btnCerrar = document.getElementById("btn-cerrar");
 
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-
 // buscadorIcono.addEventListener("click", ()=> {
 //     buscadorIcono.style.display = "none";
 //     formularioBuscador.style.display = "block";

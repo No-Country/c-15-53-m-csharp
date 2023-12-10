@@ -65,12 +65,7 @@
     top: 1vh;
 }
 
-.btn-precios {
-    border-radius: 50%;
-    width: 7px;
-    height: 7px;
-    padding: 10px;
-}
+ 
 
 .custom-tooltip .tooltip-inner {
     background-color: #ffffff;
@@ -83,12 +78,6 @@
     
 }   
 
-/* .custom-tooltip {
-    --bs-tooltip-bg: var(--color-blanco);
-    --bs-tooltip-color: var(--color-gris);
-    --#{$prefix}tooltip-zindex: #{$zindex-tooltip};
-
-} */
 
 .btn-card-info {
     padding: 5px;
@@ -100,12 +89,16 @@
 .presentacion-1 {
     background-image: url('https://images.unsplash.com/photo-1658532347726-5cd166bbd9ae?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     display: block;
+    position: relative;
+    z-index: -1;
 }
 
 #mycarousel .presentacion-1 h1 {
-    overflow: hidden;
+    overflow: visible;
     width: 150px;
 }
+
+
 
 /* botones y texto imagen 2 del carusel */
 .presentacion-2 {
@@ -227,8 +220,7 @@ footer {
 
 /* CONTACTO */
 .contacto .container-fluid {
-    background-color: var(--color-gris);
-    overflow: hidden;
+    overflow: visible;
 }
 
 .fondo-contacto {
@@ -240,13 +232,37 @@ footer {
 }
 
 .fondo-contacto form button {
-    background-color: #274A38;
-    color: white;
+    background-color: var(--color-blanco);
+    color: var(--color-verde);
+    display: flex;
+    width: 114px;
+    padding: 9px 37px 9px 38px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    border: var(--color-blanco)
 }
 
-.fondo-contacto form button:hover {
-    background-color: #1e382b;
-    color: white;
+/* .fondo-contacto form button:hover {
+    background-color: var(--color-verde);
+    color: var(--color-blanco);
+
+} */
+.fondo-contacto form button:active {
+    /* background-color: #ffffff63; */
+    background-color: var(--color-verde);
+    color: var(--color-blanco);
+ }
+
+
+#label-contacto{
+    border-radius: 8px;
+    background: #CFAA90;
+    display: inline-flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 /* --------------------- FIN CONTACTO */
@@ -271,6 +287,85 @@ footer {
     /* espaciado vertical de los parrafos */
     line-height: 23px;
 }
+
+.fondo-nosotros {
+    background-image: url(./images/fondo-nosotros.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+    height: 100vh;
+    color: #274A38;
+}
+
+/* --------------------- FIN: PAG NOSOTROS */
+/* ----------------------Inicio pagina productos */
+/* iNICIO DE NAV DE PRODUCTOS */
+.nav-productos{
+    width: 100%;
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+} 
+.menu-productos .nav-productos button{
+    border: 1px solid #274A38;
+    color: #274A38;
+    background-color: white;
+}
+.menu-productos .nav-productos button:focus{
+    background-color: #274A38;
+    color: white;
+}
+.dropdown-menu .dropdown-item:hover{
+    text-decoration:underline;
+    background-color: white;
+}
+/* FIN DE NAV DE PRODUCTOS */
+/* iNICIO DE MUESTRA DE PRODUCTOS */
+.contenedor-productos{
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+
+}
+.contenedor-productos button, .menu-productos h2{
+    color: #274A38;
+}
+.contenedor-productos .card{
+    width: 200px;
+    border-radius: 50px;
+    line-height: 10px;
+    box-shadow: 5px 1px 8px rgba(0, 0, 0, 0.2), 0 0 0 0 transparent;
+
+}
+.contenedor-productos .card img{
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+
+}
+.contenedor-productos .card-img-overlay {
+    margin-bottom: 50px;
+}
+/* FIN DE MUESTRA DE PRODUCTOS */
+/* ----------------------Fin pagina productos */
+/* MEDIA QUERY RESPONSIVO */
+
+/* NAVBAR */
+@media screen and (max-width: 991px) {
+
+    .collapse.navbar-collapse,
+    .lupa-icono-container,
+    .navbar-brand {
+        /*  Aquí asigno 0 a las clases del navbar para que no colapse los elementos*/
+        order: 0;
+    }
+
+}
+
+
+
+
+
 
 .fondo-nosotros {
     background-image: url(./images/fondo-nosotros.jpg);

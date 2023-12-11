@@ -194,26 +194,43 @@
 /* --------------------- FOOTER */
 footer {
     background-color: #274A38;
-    height: 200px;
+    height: max-content;
 }
+.redesSociales{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
 
+}
 .deco-line-footer {
     border-top: white solid 1.5px;
     width: 100%;
     margin-top: 50px;
 }
-
-.info-footer {
-    height: max-content;
-    width: max-content;
-    margin-top: 25px;
-    padding: 10px;
+.logoFooter img{
+    width: 150px;
+    padding-bottom: 10px;
 }
-
-.info-footer p {
-    white-space: nowrap;
-    margin-bottom: 1px;
+.itemsRedes {
+    display: inherit;
+    justify-content:space-evenly;
+    align-items: end;
+    height: max-content;
+    column-gap: 20px;
+    width: 350px;
+    padding: 10px;
+    margin-top: 30px;
+}
+.itemsRedes img{
+    width: 22px;
+}
+.info-footer{
+    display: flex;
     color: white;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 10px;
+    
 }
 
 /* --------------------- FIN ESTILOS FOOTER */
@@ -324,7 +341,7 @@ footer {
 /* iNICIO DE MUESTRA DE PRODUCTOS */
 .contenedor-productos{
     background-color: rgb(255, 255, 255);
-    padding: 20px;
+    padding: 5px 15px;
 
 }
 .contenedor-productos button, .menu-productos h2{
@@ -334,13 +351,13 @@ footer {
     width: 200px;
     border-radius: 50px;
     line-height: 10px;
-    box-shadow: 5px 1px 8px rgba(0, 0, 0, 0.2), 0 0 0 0 transparent;
+    box-shadow: 3px 1px 8px rgba(0, 0, 0, 0.2), 0 0 0 0 transparent;
 
 }
 .contenedor-productos .card img{
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 
 }
 .contenedor-productos .card-img-overlay {
@@ -348,6 +365,60 @@ footer {
 }
 /* FIN DE MUESTRA DE PRODUCTOS */
 /* ----------------------Fin pagina productos */
+
+/* INICIO DE PAGINA DE CARRITO */
+.nav-compras{
+    text-transform: uppercase;
+}
+.pasosCompras{
+    display: flex;
+    justify-content:space-evenly;
+}
+.pasoCompra p:first-child{
+    background-color:#274a38;
+    width: 50px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+/*  nom e gusta esta solucion */
+.pasoCompra{
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Seccion de item de pasos del envio */
+.pasosEnvio{
+    background-color: #CFAA90;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 0 10px;
+}
+.pasosEnvio :first-child{
+    width: 30%;
+}
+.itemEnvio{
+    font-size: 8px;
+    display:inherit;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 10px 5px;
+    width: 25%;
+}
+
+
+/* FINAL DE PAGINA DE CARRITO */
+
 /* MEDIA QUERY RESPONSIVO */
 
 /* NAVBAR */

@@ -18,6 +18,10 @@ public partial class BasicPointDbContext : DbContext
 
     public virtual DbSet<Product> Products { get; set; }
 
+    public virtual DbSet<Purchase> Purchases { get; set; }
+
+    public virtual DbSet<PurchaseDetail> PurchaseDetails { get; set; }
+
     public virtual DbSet<SubCategory> SubCategories { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
@@ -26,7 +30,7 @@ public partial class BasicPointDbContext : DbContext
     {
         modelBuilder.Entity<Category>(entity =>
         {
-            entity.HasKey(e => e.CategoryId).HasName("PK__Category__D54EE9B46B42F272");
+            entity.HasKey(e => e.CategoryId).HasName("PK__Category__D54EE9B46AEE894E");
 
             entity.ToTable("Category");
 
@@ -39,7 +43,7 @@ public partial class BasicPointDbContext : DbContext
 
         modelBuilder.Entity<ContactForm>(entity =>
         {
-            entity.HasKey(e => e.ContactFormId).HasName("PK__ContactF__C8065F59EA7AD7F2");
+            entity.HasKey(e => e.ContactFormId).HasName("PK__ContactF__C8065F594256B46C");
 
             entity.ToTable("ContactForm");
 
@@ -59,7 +63,7 @@ public partial class BasicPointDbContext : DbContext
 
         modelBuilder.Entity<Product>(entity =>
         {
-            entity.HasKey(e => e.ProductId).HasName("PK__Product__47027DF565CF782D");
+            entity.HasKey(e => e.ProductId).HasName("PK__Product__47027DF5CC466785");
 
             entity.ToTable("Product");
 
@@ -100,9 +104,72 @@ public partial class BasicPointDbContext : DbContext
                 .HasConstraintName("FK__Product__sub_cat__3C69FB99");
         });
 
+        modelBuilder.Entity<Purchase>(entity =>
+        {
+            entity.HasKey(e => e.PurchaseId).HasName("PK__Purchase__0261226C831BEE6B");
+
+            entity.ToTable("Purchase");
+
+            entity.Property(e => e.PurchaseId).HasColumnName("purchaseId");
+            entity.Property(e => e.Dni)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("dni");
+            entity.Property(e => e.FechaCompra)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.NameLastname)
+                .HasMaxLength(150)
+                .IsUnicode(false)
+                .HasColumnName("nameLastname");
+            entity.Property(e => e.Phone)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("phone");
+            entity.Property(e => e.PostalCode)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("postalCode");
+            entity.Property(e => e.ProductTotal).HasColumnName("productTotal");
+            entity.Property(e => e.PurchaseAddress)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("purchaseAddress");
+            entity.Property(e => e.PurchaseEmail)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("purchaseEmail");
+            entity.Property(e => e.Total)
+                .HasColumnType("decimal(10, 2)")
+                .HasColumnName("total");
+        });
+
+        modelBuilder.Entity<PurchaseDetail>(entity =>
+        {
+            entity.HasKey(e => e.PurchaseDetailId).HasName("PK__purchase__CED702D88B021787");
+
+            entity.ToTable("purchase_detail");
+
+            entity.Property(e => e.PurchaseDetailId).HasColumnName("purchase_detail_id");
+            entity.Property(e => e.Amount).HasColumnName("amount");
+            entity.Property(e => e.ProductId).HasColumnName("product_id");
+            entity.Property(e => e.PurchaseId).HasColumnName("purchaseId");
+            entity.Property(e => e.Total)
+                .HasColumnType("decimal(10, 2)")
+                .HasColumnName("total");
+
+            entity.HasOne(d => d.Product).WithMany(p => p.PurchaseDetails)
+                .HasForeignKey(d => d.ProductId)
+                .HasConstraintName("FK__purchase___produ__44FF419A");
+
+            entity.HasOne(d => d.Purchase).WithMany(p => p.PurchaseDetails)
+                .HasForeignKey(d => d.PurchaseId)
+                .HasConstraintName("FK__purchase___purch__440B1D61");
+        });
+
         modelBuilder.Entity<SubCategory>(entity =>
         {
-            entity.HasKey(e => e.SubCategoryId).HasName("PK__SubCateg__0A556D5FFDB2DB75");
+            entity.HasKey(e => e.SubCategoryId).HasName("PK__SubCateg__0A556D5F1086D21A");
 
             entity.ToTable("SubCategory");
 

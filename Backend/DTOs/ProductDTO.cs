@@ -23,5 +23,6 @@
         public string Color { get; set; } = null!;
 
         public string Activity { get; set; } = null!;
+
     }
 }

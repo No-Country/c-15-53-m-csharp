@@ -21,6 +21,10 @@ namespace Backend.Controllers
             _productService = productService;
             _mapper = mapper;
         }
+        /// <summary>
+        /// Gets a list of all products.
+        /// </summary>
+        /// <returns>Returns a response with a list of ProductDTO or an error message.</returns>
         [HttpGet("all")]
         public async Task<IActionResult> Get()
         {
@@ -46,8 +50,11 @@ namespace Backend.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, _response);
             }
         }
-
-
+        /// <summary>
+        /// Gets a list of products based on the specified category ID.
+        /// </summary>
+        /// <param name="categoryId">The ID of the category.</param>
+        /// <returns>Returns a response with a list of ProductDTO or an error message.</returns>
         [HttpGet("Category/{categoryId}")]
         public async Task<IActionResult> GetProductsByCategory(int categoryId)
         {
@@ -78,7 +85,12 @@ namespace Backend.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, _response);
             }
         }
-
+        /// <summary>
+        /// Gets a list of products based on the specified category and subcategory IDs.
+        /// </summary>
+        /// <param name="categoryId">The ID of the category.</param>
+        /// <param name="subCategoryId">The ID of the subcategory.</param>
+        /// <returns>Returns a response with a list of ProductDTO or an error message.</returns>
         [HttpGet("Category/{categoryId}/SubCategory/{subCategoryId}")]
         public async Task<IActionResult> GetProductsByCategoryAndSubCategory(int categoryId, int subCategoryId)
         {
@@ -109,7 +121,11 @@ namespace Backend.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, _response);
             }
         }
-
+        /// <summary>
+        /// Gets a specific product based on the provided product ID.
+        /// </summary>
+        /// <param name="ProductId">The ID of the product.</param>
+        /// <returns>Returns a response with a ProductDTO or an error message.</returns>
         [HttpGet("{ProductId}")]
         public async Task<IActionResult> Get(int ProductId)
         {
@@ -139,7 +155,11 @@ namespace Backend.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, _response);
             }
         }
-
+        /// <summary>
+        /// Creates a new product.
+        /// </summary>
+        /// <param name="request">The ProductDTO containing information for the new product.</param>
+        /// <returns>Returns a response with the created ProductDTO or an error message.</returns>
         [HttpPost]
         public async Task<IActionResult> Post(ProductDTO request)
         {
@@ -169,6 +189,11 @@ namespace Backend.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, _response);
             }
         }
+        /// <summary>
+        /// Updates an existing product.
+        /// </summary>
+        /// <param name="request">The ProductDTO containing updated information for the product.</param>
+        /// <returns>Returns a response with the updated ProductDTO or an error message.</returns>
         [HttpPut]
         public async Task<IActionResult> Put(ProductDTO request)
         {
@@ -191,7 +216,11 @@ namespace Backend.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, _response);
             }
         }
-
+        /// <summary>
+        /// Deletes a product based on the provided product ID.
+        /// </summary>
+        /// <param name="ProductId">The ID of the product to be deleted.</param>
+        /// <returns>Returns a response indicating success or failure of the deletion operation.</returns>
         [HttpDelete("{ProductId}")]
         public async Task<IActionResult> Delete(int ProductId)
         {

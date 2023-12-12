@@ -29,5 +29,8 @@ public partial class Product
 
     public virtual Category? Category { get; set; }
 
+    public virtual ICollection<PurchaseDetail> PurchaseDetails { get; set; } = new List<PurchaseDetail>();
+
     public virtual SubCategory? SubCategory { get; set; }
 }
+

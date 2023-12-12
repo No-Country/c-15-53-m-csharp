@@ -25,19 +25,19 @@
     /* background-color: rgb(255, 255, 255);
     padding: 5px 15px;
     overflow: auto; */
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: stretch;
-    background-color: tomato;
-    overflow: auto;
+ 
 
 }
 
 .contenedor-productos button, .menu-productos h2{
     color: #274A38;
+
 }
 .contenedor-productos .card{
     /* width: 200px;
@@ -57,8 +57,34 @@
     box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
 }
-/*
+
 .contenedor-productos .card-img-overlay {
     margin-bottom: 50px;
-} */
+} 
 
+.card-img-overlay{
+    background-color: yellow;
+    height: min(186px, 327px);
+ }
+
+#main-producto{
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+ 
+}
+#uno{
+    overflow : auto;
+    margin-bottom: 12px;
+
+}
+
+#tres{
+    background-color: greenyellow;
+ 
+}
+/* FOOTER */
+#dos{
+    background-color: #274A38;
+    height: max-content;
+    margin-top: 72px;
+}

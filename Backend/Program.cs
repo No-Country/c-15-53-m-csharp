@@ -1,5 +1,9 @@
-
 using System.Reflection;
+using Backend.Models;
+using Backend.Services.Contract;
+using Backend.Services.Implementation;
+using Backend.Utilities;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,11 +18,14 @@ builder.Services.AddSwaggerGen(options =>
 
 });
 
+builder.Services.AddDbContext<BasicPointDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
 
-/* builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IPurchaseService, PurchaseService>();
 
-builder.Services.AddAutoMapper(typeof(AutoMapperProfile)); */
 
 var app = builder.Build();
 

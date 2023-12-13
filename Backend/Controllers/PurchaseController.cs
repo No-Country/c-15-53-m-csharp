@@ -2,11 +2,8 @@
 using Backend.DTOs;
 using Backend.Models;
 using Backend.Services.Contract;
-using Backend.Services.Implementation;
 using Backend.Utilities;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Threading.Tasks;
 
 namespace Backend.Controllers
 {
@@ -35,7 +32,7 @@ namespace Backend.Controllers
             {
                 Purchase _model = _mapper.Map<Purchase>(request);
                 Purchase _purchaseCreate = await _purchaseService.Add(_model);
-                if (_purchaseCreate.PurchaseId != 0)
+                if (_purchaseCreate.Id != 0)
                 {
                     _response = new ResponseApi<PurchaseDTO>()
                     {
@@ -52,7 +49,7 @@ namespace Backend.Controllers
             }
             catch (Exception ex)
             {
-   
+
                 return BadRequest($"Error: {ex.Message}");
             }
         }

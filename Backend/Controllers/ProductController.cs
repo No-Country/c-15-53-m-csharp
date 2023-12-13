@@ -134,7 +134,7 @@ namespace Backend.Controllers
             {
                 Product _producFound = await _productService.Get(ProductId);
 
-                if (_producFound != null && _producFound.ProductId != 0)
+                if (_producFound != null && _producFound.Id != 0)
                 {
                     _response = new ResponseApi<ProductDTO>
                     {
@@ -170,7 +170,7 @@ namespace Backend.Controllers
                 Product _model = _mapper.Map<Product>(request);
                 Product _productCreate = await _productService.Add(_model);
 
-                if (_productCreate.ProductId != 0)
+                if (_productCreate.Id != 0)
                 {
                     _response = new ResponseApi<ProductDTO>
                     {

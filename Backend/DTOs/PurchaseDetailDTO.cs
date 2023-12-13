@@ -4,10 +4,8 @@ namespace Backend.DTOs
 {
     public class PurchaseDetailDTO
     {
-        public int? ProductId { get; set; }
+        public int? ProductQuantity { get; set; }
 
-        public int? Amount { get; set; }
-
-        public decimal? Total { get; set; }
+        public decimal? ProductTotal { get; set; }
     }
 }

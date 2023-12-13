@@ -4,15 +4,20 @@ namespace Backend.DTOs
 {
     public class PurchaseDTO
     {
-        public int? ProductTotal { get; set; }
-        public decimal? Total { get; set; }
-        public string? NameLastname { get; set; }
+        public string? FullName { get; set; }
+
         public string? Dni { get; set; }
+
         public string? Phone { get; set; }
-        public string? PurchaseEmail { get; set; }
-        public string? PurchaseAddress { get; set; }
+
+        public string? Email { get; set; }
+
+        public string? Address { get; set; }
+
         public string? PostalCode { get; set; }
 
-        public List<PurchaseDetailDTO> PurchaseDetails { get; set; } = new List<PurchaseDetailDTO>();
+        public decimal? Total { get; set; }
+
+        public List<PurchaseDetailDTO> PurchasesDetails { get; set; } = new List<PurchaseDetailDTO>();
     }
 }

@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using Backend.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Backend.Data;
+namespace Backend.Models;
 
 public partial class BasicPointDbContext : DbContext
 {
+    public BasicPointDbContext()
+    {
+    }
+
     public BasicPointDbContext(DbContextOptions<BasicPointDbContext> options)
         : base(options)
     {
@@ -18,110 +21,124 @@ public partial class BasicPointDbContext : DbContext
 
     public virtual DbSet<Product> Products { get; set; }
 
+    public virtual DbSet<ProductsVariant> ProductsVariants { get; set; }
+
     public virtual DbSet<Purchase> Purchases { get; set; }
 
-    public virtual DbSet<PurchaseDetail> PurchaseDetails { get; set; }
+    public virtual DbSet<PurchasesDetail> PurchasesDetails { get; set; }
 
     public virtual DbSet<SubCategory> SubCategories { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("workstation id=BASIC_POINT_DB.mssql.somee.com;packet size=4096;user id=lautarolombardi_SQLLogin_1;pwd=Devllombardi22;data source=BASIC_POINT_DB.mssql.somee.com;persist security info=False;initial catalog=BASIC_POINT_DB; TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Category>(entity =>
         {
-            entity.HasKey(e => e.CategoryId).HasName("PK__Category__D54EE9B46AEE894E");
+            entity.HasKey(e => e.Id).HasName("PK__Categori__3213E83FE483DD83");
 
-            entity.ToTable("Category");
-
-            entity.Property(e => e.CategoryId).HasColumnName("category_id");
-            entity.Property(e => e.CategoryName)
-                .HasMaxLength(50)
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Name)
+                .HasMaxLength(10)
                 .IsUnicode(false)
-                .HasColumnName("category_name");
+                .HasColumnName("name");
         });
 
         modelBuilder.Entity<ContactForm>(entity =>
         {
-            entity.HasKey(e => e.ContactFormId).HasName("PK__ContactF__C8065F594256B46C");
+            entity.HasKey(e => e.Id).HasName("PK__ContactF__3213E83F24FD327C");
 
             entity.ToTable("ContactForm");
 
-            entity.Property(e => e.ContactFormId).HasColumnName("contact_form_id");
-            entity.Property(e => e.ContactMessage)
-                .HasColumnType("text")
-                .HasColumnName("contact_message");
-            entity.Property(e => e.ContactName)
-                .HasMaxLength(150)
-                .IsUnicode(false)
-                .HasColumnName("contact_name");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Email)
-                .HasMaxLength(255)
+                .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("email");
+            entity.Property(e => e.Msg)
+                .HasMaxLength(150)
+                .IsUnicode(false)
+                .HasColumnName("msg");
+            entity.Property(e => e.Name)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("name");
         });
 
         modelBuilder.Entity<Product>(entity =>
         {
-            entity.HasKey(e => e.ProductId).HasName("PK__Product__47027DF5CC466785");
+            entity.HasKey(e => e.Id).HasName("PK__Products__3213E83F61411B4D");
 
-            entity.ToTable("Product");
-
-            entity.Property(e => e.ProductId).HasColumnName("product_id");
-            entity.Property(e => e.Activity)
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("activity");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.CategoryId).HasColumnName("category_id");
-            entity.Property(e => e.Color)
+            entity.Property(e => e.Description)
+                .IsUnicode(false)
+                .HasColumnName("description");
+            entity.Property(e => e.Img)
+                .IsUnicode(false)
+                .HasColumnName("img");
+            entity.Property(e => e.Name)
                 .HasMaxLength(50)
                 .IsUnicode(false)
-                .HasColumnName("color");
-            entity.Property(e => e.Description)
-                .HasColumnType("text")
-                .HasColumnName("description");
-            entity.Property(e => e.Image)
-                .HasColumnType("text")
-                .HasColumnName("image");
-            entity.Property(e => e.Price).HasColumnName("price");
-            entity.Property(e => e.ProductName)
-                .HasMaxLength(150)
-                .IsUnicode(false)
-                .HasColumnName("product_name");
-            entity.Property(e => e.Size)
-                .HasMaxLength(100)
-                .IsUnicode(false)
-                .HasColumnName("size");
-            entity.Property(e => e.Stock).HasColumnName("stock");
+                .HasColumnName("name");
+            entity.Property(e => e.Price)
+                .HasColumnType("decimal(6, 3)")
+                .HasColumnName("price");
             entity.Property(e => e.SubCategoryId).HasColumnName("sub_category_id");
 
             entity.HasOne(d => d.Category).WithMany(p => p.Products)
                 .HasForeignKey(d => d.CategoryId)
-                .HasConstraintName("FK__Product__categor__3B75D760");
+                .HasConstraintName("FK__Products__catego__3B75D760");
 
             entity.HasOne(d => d.SubCategory).WithMany(p => p.Products)
                 .HasForeignKey(d => d.SubCategoryId)
-                .HasConstraintName("FK__Product__sub_cat__3C69FB99");
+                .HasConstraintName("FK__Products__sub_ca__3C69FB99");
+        });
+
+        modelBuilder.Entity<ProductsVariant>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Products__3213E83FEFC01A05");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Color)
+                .HasMaxLength(20)
+                .IsUnicode(false)
+                .HasColumnName("color");
+            entity.Property(e => e.ProductId).HasColumnName("product_id");
+            entity.Property(e => e.Size)
+                .HasMaxLength(10)
+                .IsUnicode(false)
+                .HasColumnName("size");
+            entity.Property(e => e.Stock).HasColumnName("stock");
+
+            entity.HasOne(d => d.Product).WithMany(p => p.ProductsVariants)
+                .HasForeignKey(d => d.ProductId)
+                .HasConstraintName("FK__ProductsV__produ__3F466844");
         });
 
         modelBuilder.Entity<Purchase>(entity =>
         {
-            entity.HasKey(e => e.PurchaseId).HasName("PK__Purchase__0261226C831BEE6B");
+            entity.HasKey(e => e.Id).HasName("PK__Purchase__3213E83F02A3E381");
 
-            entity.ToTable("Purchase");
-
-            entity.Property(e => e.PurchaseId).HasColumnName("purchaseId");
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Address)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("address");
             entity.Property(e => e.Dni)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("dni");
-            entity.Property(e => e.FechaCompra)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime");
-            entity.Property(e => e.NameLastname)
+            entity.Property(e => e.Email)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("email");
+            entity.Property(e => e.FullName)
                 .HasMaxLength(150)
                 .IsUnicode(false)
-                .HasColumnName("nameLastname");
+                .HasColumnName("full_name");
             entity.Property(e => e.Phone)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -129,55 +146,46 @@ public partial class BasicPointDbContext : DbContext
             entity.Property(e => e.PostalCode)
                 .HasMaxLength(50)
                 .IsUnicode(false)
-                .HasColumnName("postalCode");
-            entity.Property(e => e.ProductTotal).HasColumnName("productTotal");
-            entity.Property(e => e.PurchaseAddress)
-                .HasMaxLength(255)
-                .IsUnicode(false)
-                .HasColumnName("purchaseAddress");
-            entity.Property(e => e.PurchaseEmail)
-                .HasMaxLength(255)
-                .IsUnicode(false)
-                .HasColumnName("purchaseEmail");
+                .HasColumnName("postal_code");
+            entity.Property(e => e.PurchaseDate)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime")
+                .HasColumnName("purchase_date");
             entity.Property(e => e.Total)
                 .HasColumnType("decimal(10, 2)")
                 .HasColumnName("total");
         });
 
-        modelBuilder.Entity<PurchaseDetail>(entity =>
+        modelBuilder.Entity<PurchasesDetail>(entity =>
         {
-            entity.HasKey(e => e.PurchaseDetailId).HasName("PK__purchase__CED702D88B021787");
+            entity.HasKey(e => e.Id).HasName("PK__Purchase__3213E83FAF791B90");
 
-            entity.ToTable("purchase_detail");
-
-            entity.Property(e => e.PurchaseDetailId).HasColumnName("purchase_detail_id");
-            entity.Property(e => e.Amount).HasColumnName("amount");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.ProductId).HasColumnName("product_id");
-            entity.Property(e => e.PurchaseId).HasColumnName("purchaseId");
-            entity.Property(e => e.Total)
+            entity.Property(e => e.ProductQuantity).HasColumnName("product_quantity");
+            entity.Property(e => e.ProductTotal)
                 .HasColumnType("decimal(10, 2)")
-                .HasColumnName("total");
+                .HasColumnName("product_total");
+            entity.Property(e => e.PurchaseId).HasColumnName("purchase_id");
 
-            entity.HasOne(d => d.Product).WithMany(p => p.PurchaseDetails)
+            entity.HasOne(d => d.Product).WithMany(p => p.PurchasesDetails)
                 .HasForeignKey(d => d.ProductId)
-                .HasConstraintName("FK__purchase___produ__44FF419A");
+                .HasConstraintName("FK__Purchases__produ__47DBAE45");
 
-            entity.HasOne(d => d.Purchase).WithMany(p => p.PurchaseDetails)
+            entity.HasOne(d => d.Purchase).WithMany(p => p.PurchasesDetails)
                 .HasForeignKey(d => d.PurchaseId)
-                .HasConstraintName("FK__purchase___purch__440B1D61");
+                .HasConstraintName("FK__Purchases__purch__46E78A0C");
         });
 
         modelBuilder.Entity<SubCategory>(entity =>
         {
-            entity.HasKey(e => e.SubCategoryId).HasName("PK__SubCateg__0A556D5F1086D21A");
+            entity.HasKey(e => e.Id).HasName("PK__SubCateg__3213E83FF7F1A5ED");
 
-            entity.ToTable("SubCategory");
-
-            entity.Property(e => e.SubCategoryId).HasColumnName("sub_category_id");
-            entity.Property(e => e.SubCategoryName)
-                .HasMaxLength(60)
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Name)
+                .HasMaxLength(15)
                 .IsUnicode(false)
-                .HasColumnName("sub_category_name");
+                .HasColumnName("name");
         });
 
         OnModelCreatingPartial(modelBuilder);

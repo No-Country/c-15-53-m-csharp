@@ -5,9 +5,9 @@ namespace Backend.Models;
 
 public partial class SubCategory
 {
-    public int SubCategoryId { get; set; }
+    public int Id { get; set; }
 
-    public string SubCategoryName { get; set; } = null!;
+    public string? Name { get; set; }
 
     public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 }

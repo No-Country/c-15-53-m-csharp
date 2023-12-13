@@ -5,11 +5,11 @@ namespace Backend.Models;
 
 public partial class ContactForm
 {
-    public int ContactFormId { get; set; }
+    public int Id { get; set; }
 
-    public string? ContactName { get; set; }
+    public string? Name { get; set; }
 
     public string? Email { get; set; }
 
-    public string? ContactMessage { get; set; }
+    public string? Msg { get; set; }
 }

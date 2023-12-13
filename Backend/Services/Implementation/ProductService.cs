@@ -1,5 +1,4 @@
-﻿using Backend.Data;
-using Backend.Models;
+﻿using Backend.Models;
 using Backend.Services.Contract;
 using Microsoft.EntityFrameworkCore;
 
@@ -33,7 +32,7 @@ namespace Backend.Services.Implementation
             try
             {
                 List<Product> productList = await _context.Products
-                    .Where(p => p.CategoryId == categoryId)
+                    .Where(p => p.Id == categoryId)
                     .ToListAsync();
 
                 return productList;
@@ -66,7 +65,7 @@ namespace Backend.Services.Implementation
             {
                 Product? productFound = new Product();
                 productFound = await _context.Products
-                    .Where(x => x.ProductId == ProductId)
+                    .Where(x => x.Id == ProductId)
                     .FirstOrDefaultAsync();
                 return productFound;
             }
@@ -106,7 +105,7 @@ namespace Backend.Services.Implementation
         {
             try
             {
-                model.Activity = "Inactivo";
+                model.State = false;
                 _context.Products.Update(model);
                 await _context.SaveChangesAsync();
                 return true;

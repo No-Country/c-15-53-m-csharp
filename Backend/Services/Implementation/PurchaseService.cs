@@ -1,9 +1,5 @@
-﻿using Backend.Data;
-using Backend.Models;
+﻿using Backend.Models;
 using Backend.Services.Contract;
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
-using System.Data;
 
 namespace Backend.Services.Implementation
 {

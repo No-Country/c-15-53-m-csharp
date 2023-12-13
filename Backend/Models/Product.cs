@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Backend.Models;
+﻿namespace Backend.Models;
 
 public partial class Product
 {
@@ -19,9 +16,13 @@ public partial class Product
 
     public int? SubCategoryId { get; set; }
 
+    public bool? State { get; set; }
+
+    public int? ProductVariantId { get; set; }
+
     public virtual Category? Category { get; set; }
 
-    public virtual ICollection<ProductsVariant> ProductsVariants { get; set; } = new List<ProductsVariant>();
+    public virtual ProductsVariant? ProductVariant { get; set; }
 
     public virtual ICollection<PurchasesDetail> PurchasesDetails { get; set; } = new List<PurchasesDetail>();
 

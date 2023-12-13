@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Models;
 
@@ -28,10 +26,6 @@ public partial class BasicPointDbContext : DbContext
     public virtual DbSet<PurchasesDetail> PurchasesDetails { get; set; }
 
     public virtual DbSet<SubCategory> SubCategories { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("workstation id=BASIC_POINT_DB.mssql.somee.com;packet size=4096;user id=lautarolombardi_SQLLogin_1;pwd=Devllombardi22;data source=BASIC_POINT_DB.mssql.somee.com;persist security info=False;initial catalog=BASIC_POINT_DB; TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -84,13 +78,19 @@ public partial class BasicPointDbContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("name");
             entity.Property(e => e.Price)
-                .HasColumnType("decimal(6, 3)")
+                .HasColumnType("decimal(8, 2)")
                 .HasColumnName("price");
+            entity.Property(e => e.ProductVariantId).HasColumnName("product_variant_id");
+            entity.Property(e => e.State).HasColumnName("state");
             entity.Property(e => e.SubCategoryId).HasColumnName("sub_category_id");
 
             entity.HasOne(d => d.Category).WithMany(p => p.Products)
                 .HasForeignKey(d => d.CategoryId)
                 .HasConstraintName("FK__Products__catego__3B75D760");
+
+            entity.HasOne(d => d.ProductVariant).WithMany(p => p.Products)
+                .HasForeignKey(d => d.ProductVariantId)
+                .HasConstraintName("FK_Products_ProductsVariants");
 
             entity.HasOne(d => d.SubCategory).WithMany(p => p.Products)
                 .HasForeignKey(d => d.SubCategoryId)
@@ -99,23 +99,17 @@ public partial class BasicPointDbContext : DbContext
 
         modelBuilder.Entity<ProductsVariant>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Products__3213E83FEFC01A05");
+            entity.HasKey(e => e.Id).HasName("PK__Products__3213E83F333902A7");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Color)
                 .HasMaxLength(20)
                 .IsUnicode(false)
                 .HasColumnName("color");
-            entity.Property(e => e.ProductId).HasColumnName("product_id");
             entity.Property(e => e.Size)
                 .HasMaxLength(10)
                 .IsUnicode(false)
                 .HasColumnName("size");
-            entity.Property(e => e.Stock).HasColumnName("stock");
-
-            entity.HasOne(d => d.Product).WithMany(p => p.ProductsVariants)
-                .HasForeignKey(d => d.ProductId)
-                .HasConstraintName("FK__ProductsV__produ__3F466844");
         });
 
         modelBuilder.Entity<Purchase>(entity =>

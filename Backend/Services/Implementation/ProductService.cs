@@ -27,12 +27,12 @@ namespace Backend.Services.Implementation
             }
         }
 
-        public async Task<List<Product>> GetProductsByCategory(int categoryId)
+        public async Task<List<Product>> GetProductsByCategory(int CategoryId)
         {
             try
             {
                 List<Product> productList = await _context.Products
-                    .Where(p => p.Id == categoryId)
+                    .Where(p => p.CategoryId == CategoryId)
                     .ToListAsync();
 
                 return productList;
@@ -43,12 +43,12 @@ namespace Backend.Services.Implementation
             }
         }
 
-        public async Task<List<Product>> GetProductsByCategoryAndSubCategory(int categoryId, int subCategoryId)
+        public async Task<List<Product>> GetProductsByCategoryAndSubCategory(int CategoryId, int SubCategoryId)
         {
             try
             {
                 List<Product> productList = await _context.Products
-                    .Where(p => p.CategoryId == categoryId && p.SubCategoryId == subCategoryId)
+                    .Where(p => p.CategoryId == CategoryId && p.SubCategoryId == SubCategoryId)
                     .ToListAsync();
 
                 return productList;
@@ -74,47 +74,6 @@ namespace Backend.Services.Implementation
                 throw ex;
             }
         }
-        public async Task<Product> Add(Product model)
-        {
-            try
-            {
-                _context.Products.Add(model);
-                await _context.SaveChangesAsync();
-                return model;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        public async Task<Product> Update(Product model)
-        {
-            try
-            {
-                _context.Products.Update(model);
-                await _context.SaveChangesAsync();
-                return model;
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        public async Task<bool> Delete(Product model)
-        {
-            try
-            {
-                model.State = false;
-                _context.Products.Update(model);
-                await _context.SaveChangesAsync();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
+       
     }
 }

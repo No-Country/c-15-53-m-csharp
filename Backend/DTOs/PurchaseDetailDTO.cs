@@ -7,5 +7,7 @@ namespace Backend.DTOs
         public int? ProductQuantity { get; set; }
 
         public decimal? ProductTotal { get; set; }
+
+        public virtual ICollection<ProductsVariantDTO> ProductsVariants { get; set; } = new List<ProductsVariantDTO>();
     }
 }

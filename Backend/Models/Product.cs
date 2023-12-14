@@ -18,13 +18,10 @@ public partial class Product
 
     public bool? State { get; set; }
 
-    public int? ProductVariantId { get; set; }
-
     public virtual Category? Category { get; set; }
 
-    public virtual ProductsVariant? ProductVariant { get; set; }
-
-    public virtual ICollection<PurchasesDetail> PurchasesDetails { get; set; } = new List<PurchasesDetail>();
+    public virtual ICollection<ProductsVariant> ProductsVariants { get; set; } = new List<ProductsVariant>();
 
     public virtual SubCategory? SubCategory { get; set; }
+
 }

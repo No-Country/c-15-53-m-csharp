@@ -13,9 +13,7 @@ public partial class PurchasesDetail
 
     public int? PurchaseId { get; set; }
 
-    public int? ProductId { get; set; }
-
-    public virtual Product? Product { get; set; }
+    public virtual ICollection<ProductsVariant> ProductsVariants { get; set; } = new List<ProductsVariant>();
 
     public virtual Purchase? Purchase { get; set; }
 }

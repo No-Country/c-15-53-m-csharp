@@ -11,5 +11,11 @@ public partial class ProductsVariant
 
     public string? Color { get; set; }
 
-    public virtual ICollection<Product> Products { get; set; } = new List<Product>();
+    public int? PurchasesDetailsId { get; set; }
+
+    public int? ProductsId { get; set; }
+
+    public virtual Product? Products { get; set; }
+
+    public virtual PurchasesDetail? PurchasesDetails { get; set; }
 }

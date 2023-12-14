@@ -6,10 +6,7 @@ namespace Backend.Services.Contract
     {
         Task<List<Product>> GetList();
         Task<Product> Get(int ProductId);
-        Task<Product> Add(Product model);
-        Task<Product> Update(Product model);
-        Task<bool> Delete(Product model);
-        Task<List<Product>> GetProductsByCategory(int categoryId);
-        Task<List<Product>> GetProductsByCategoryAndSubCategory(int categoryId, int subCategoryId);
+        Task<List<Product>> GetProductsByCategory(int CategoryId);
+        Task<List<Product>> GetProductsByCategoryAndSubCategory(int CategoryId, int SubCategoryId);
     }
 }

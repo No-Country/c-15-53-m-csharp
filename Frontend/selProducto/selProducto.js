@@ -161,13 +161,6 @@ btn_Comprar.addEventListener("click", (button) => {
 });
     
 
-
-
-
-	
-
-
- 
 let svgRojo = `<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 30 30" fill="none">
   <circle cx="15" cy="15" r="15" fill="red"/>
 </svg>`;

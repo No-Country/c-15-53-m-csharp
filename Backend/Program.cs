@@ -28,6 +28,15 @@ builder.Services.AddScoped<IPurchaseService, PurchaseService>();
 
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PolicyToApp", app =>
+    {
+        app.AllowAnyOrigin()
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
 
@@ -37,6 +46,8 @@ app.UseSwaggerUI(options =>
     options.SwaggerEndpoint("/swagger/v1/swagger.json", "v2");
 }
     );
+
+app.UseCors("PolicyToApp");
 
 app.UseHttpsRedirection();
 

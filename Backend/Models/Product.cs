@@ -18,6 +18,8 @@ public partial class Product
 
     public bool? State { get; set; }
 
+    public string? CardDescription { get; set; }
+
     public virtual Category? Category { get; set; }
 
     public virtual ICollection<ProductsVariant> ProductsVariants { get; set; } = new List<ProductsVariant>();

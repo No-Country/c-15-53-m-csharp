@@ -13,9 +13,9 @@ public partial class ProductsVariant
 
     public int? PurchasesDetailsId { get; set; }
 
-    public int? ProductsId { get; set; }
+    public int? ProductId { get; set; }
 
-    public virtual Product? Products { get; set; }
+    public virtual Product? Product { get; set; }
 
     public virtual PurchasesDetail? PurchasesDetails { get; set; }
 }

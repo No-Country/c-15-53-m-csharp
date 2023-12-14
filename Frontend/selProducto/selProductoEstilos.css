@@ -1,16 +1,14 @@
 /* iNICIO DE MUESTRA DE PRODUCTOS */
 .contenedor-productos {
-    background: tomato;
-    width: 100vw;
-    height: 75vh;
+    width: 100%;
+    height: 85vh;
     display: flex;
     align-items: center;
     overflow: auto;
     flex-direction: column;
     align-content: center;
     justify-content: center;
-
-
+     color: #274A38;
 }
 
 
@@ -42,6 +40,7 @@
 
 /* ================================ */
 #container {
+    
     display: grid;
     grid-template-columns: 1fr 1fr 4fr 1fr 1fr;
     grid-template-rows: 0.5fr 2fr 0.5fr;
@@ -71,6 +70,7 @@
     grid-area: 3 / 3 / 4 / 4;
     justify-content: center;
     display: flex;
+    z-index: 1;
 }
 
 #nombre-precio {
@@ -86,12 +86,13 @@
     grid-row: 1/2;
     align-items: center;
     background: rgba(255, 255, 255, 0.80);
+    z-index: 1;
 }
 
 
 #circulo {
     grid-area: 1 / 2 / 4 / 5;
-    z-index: -1;
+    z-index: 0;
     width: 289px;
     height: 289px;
     border-radius: 289px;
@@ -124,7 +125,7 @@
     grid-row: 9;
     position: absolute;
     bottom: 53px;
-    left: -18px;
+    left: -31px;
 }
 
 #btnColor {
@@ -335,95 +336,16 @@ button#btnComprar {
     color: var(--color-verde);
     background: rgb(255 255 255 / 0%);
     border: 0px solid var(--color-blanco);
-    align-self: auto;
-    height: 41px;
+    align-self: center;
+    
 }
 
 #btnQuitarTa:hover,
 #btnQuitarCo:hover,
 #btnQuitarCa:hover {
-    background: #9f9f9f;
+    background: #9f9f9f66;
     border-radius: 14px;
-    width: 16px;
+    width: 21px;
+    height: inherit;
+
 }
-
-/* boton Comprar
-  
-  
-    border-radius: 16px;  
-    background: var(--BLANCO, #FFF);  
-    box-shadow: 1px 4px 4px 0px rgba(0, 0, 0, 0.25); 
-   */
-
-/* boton Cantidad
-  
-   display: inline-flex;
-  height: 23px;
-  padding: 4px 10px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  
-   border-radius: 16px;
-  border: 1px solid var(--Verde, #274A38);
-  background: #274A38;
-   */
-
-/* boton COLOR
-  
-   display: inline-flex;
-  height: 23px;
-  padding: 4px 10px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  border-radius: 16px;
-  border: 1px solid var(--BLANCO, #FFF);
-  background: rgba(255, 255, 255, 0.80);
-  */
-
-
-/*BOTON TALLE
-  
-  display: inline-flex;
-  height: 23px;
-  padding: 4px 10px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  
-  
-  border-radius: 16px;
-  border: 1px solid var(--BLANCO, #FFF);
-  background: rgba(255, 255, 255, 0.80);
-  
-  
-   /* TITULO 6 */
-/* font-family: Roboto; */
-/* font-size: 14px; */
-/* font-style: normal; */
-/* font-weight: 400; */
-/* line-height: normal; */
-/* text-transform: uppercase; */
-
-/* TRANSPARENTE */
-/* background: rgba(255, 255, 255, 0.80); */
-/*
-  
-  */
-
-/*
-  TALLE X
-  display: inline-flex;
-  height: 23px;
-  padding: 4px 10px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  
-  border-radius: 16px;
-  border: 1px solid var(--Verde, #274A38);

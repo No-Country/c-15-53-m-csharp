@@ -25,6 +25,7 @@ builder.Services.AddDbContext<BasicPointDbContext>(options =>
 
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IPurchaseService, PurchaseService>();
+builder.Services.AddScoped<IContactFormService, ContactFormService>();
 
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 

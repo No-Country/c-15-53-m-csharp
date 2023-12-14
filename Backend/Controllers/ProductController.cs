@@ -132,15 +132,15 @@ namespace Backend.Controllers
             ResponseApi<ProductDTO> _response = new ResponseApi<ProductDTO>();
             try
             {
-                Product _producFound = await _productService.Get(ProductId);
+                Product _productFound = await _productService.Get(ProductId);
 
-                if (_producFound != null && _producFound.Id != 0)
+                if (_productFound != null && _productFound.Id != 0)
                 {
                     _response = new ResponseApi<ProductDTO>
                     {
                         Status = true,
                         Msg = "Ok",
-                        Value = _mapper.Map<ProductDTO>(_producFound)
+                        Value = _mapper.Map<ProductDTO>(_productFound)
                     };
                 }
                 else

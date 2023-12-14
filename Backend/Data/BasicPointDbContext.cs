@@ -13,6 +13,7 @@ public partial class BasicPointDbContext : DbContext
     {
     }
 
+
     public virtual DbSet<Category> Categories { get; set; }
 
     public virtual DbSet<ContactForm> ContactForms { get; set; }
@@ -26,6 +27,8 @@ public partial class BasicPointDbContext : DbContext
     public virtual DbSet<PurchasesDetail> PurchasesDetails { get; set; }
 
     public virtual DbSet<SubCategory> SubCategories { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -80,7 +83,6 @@ public partial class BasicPointDbContext : DbContext
             entity.Property(e => e.Price)
                 .HasColumnType("decimal(8, 2)")
                 .HasColumnName("price");
-            entity.Property(e => e.ProductVariantId).HasColumnName("product_variant_id");
             entity.Property(e => e.State).HasColumnName("state");
             entity.Property(e => e.SubCategoryId).HasColumnName("sub_category_id");
 
@@ -88,13 +90,9 @@ public partial class BasicPointDbContext : DbContext
                 .HasForeignKey(d => d.CategoryId)
                 .HasConstraintName("FK__Products__catego__3B75D760");
 
-            entity.HasOne(d => d.ProductVariant).WithMany(p => p.Products)
-                .HasForeignKey(d => d.ProductVariantId)
-                .HasConstraintName("FK_Products_ProductsVariants");
-
             entity.HasOne(d => d.SubCategory).WithMany(p => p.Products)
                 .HasForeignKey(d => d.SubCategoryId)
-                .HasConstraintName("FK__Products__sub_ca__3C69FB99");
+                .HasConstraintName("FK__Products__sub_ca__52593CB8");
         });
 
         modelBuilder.Entity<ProductsVariant>(entity =>
@@ -106,10 +104,20 @@ public partial class BasicPointDbContext : DbContext
                 .HasMaxLength(20)
                 .IsUnicode(false)
                 .HasColumnName("color");
+            entity.Property(e => e.ProductsId).HasColumnName("products_id");
+            entity.Property(e => e.PurchasesDetailsId).HasColumnName("purchases_details_id");
             entity.Property(e => e.Size)
                 .HasMaxLength(10)
                 .IsUnicode(false)
                 .HasColumnName("size");
+
+            entity.HasOne(d => d.Products).WithMany(p => p.ProductsVariants)
+                .HasForeignKey(d => d.ProductsId)
+                .HasConstraintName("FK__ProductsV__produ__5441852A");
+
+            entity.HasOne(d => d.PurchasesDetails).WithMany(p => p.ProductsVariants)
+                .HasForeignKey(d => d.PurchasesDetailsId)
+                .HasConstraintName("FK__ProductsV__purch__4F7CD00D");
         });
 
         modelBuilder.Entity<Purchase>(entity =>
@@ -155,16 +163,11 @@ public partial class BasicPointDbContext : DbContext
             entity.HasKey(e => e.Id).HasName("PK__Purchase__3213E83FAF791B90");
 
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.ProductId).HasColumnName("product_id");
             entity.Property(e => e.ProductQuantity).HasColumnName("product_quantity");
             entity.Property(e => e.ProductTotal)
                 .HasColumnType("decimal(10, 2)")
                 .HasColumnName("product_total");
             entity.Property(e => e.PurchaseId).HasColumnName("purchase_id");
-
-            entity.HasOne(d => d.Product).WithMany(p => p.PurchasesDetails)
-                .HasForeignKey(d => d.ProductId)
-                .HasConstraintName("FK__Purchases__produ__47DBAE45");
 
             entity.HasOne(d => d.Purchase).WithMany(p => p.PurchasesDetails)
                 .HasForeignKey(d => d.PurchaseId)

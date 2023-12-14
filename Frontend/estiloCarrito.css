@@ -1,0 +1,33 @@
+.quitar{
+    display: none;
+}
+
+.posicionarMensaje{
+    position: absolute;
+    top: 25%;
+    width: 85%;
+    left: 5%;
+    z-index: 9999;
+    background-color: white;
+    color: #274A38;
+}
+
+#btn-continuarCarrito{
+    margin-bottom: 30px;
+    margin-left: 33%;
+}
+#contenedorDesabilitado{
+    position: relative;
+}
+.desabilitar{
+    background-color: rgba(240, 248, 255, 0.562);
+}
+#btn-volverATienda{
+    color: #274A38;
+    text-decoration: underline;
+    background-color: white;
+}
+
+li{
+    list-style: none;
+}

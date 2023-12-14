@@ -260,16 +260,11 @@ footer {
     border: var(--color-blanco)
 }
 
-/* .fondo-contacto form button:hover {
-    background-color: var(--color-verde);
-    color: var(--color-blanco);
-
-} */
 .fondo-contacto form button:active {
     /* background-color: #ffffff63; */
     background-color: var(--color-verde);
     color: var(--color-blanco);
- }
+}
 
 
 #label-contacto{
@@ -375,7 +370,7 @@ footer {
     justify-content:space-evenly;
 }
 .pasoCompra p:first-child{
-    background-color:#274a38;
+    background-color:#93A49B;
     width: 50px;
     padding: 10px 20px;
     border-radius: 50px;
@@ -415,8 +410,44 @@ footer {
     padding: 10px 5px;
     width: 25%;
 }
+/* inicio de formulario de carrito */
+.form-carrito h2,.msgxCompra{
+    color: #274a38;
+}
+.form-carrito label{
+    color: #979797;
+
+}
+.form-carrito input[type="radio"]{
+    accent-color: rgb(0, 0, 0) ;
+}
+.form-carrito input{
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.form-carrito input::placeholder{
+    font-style: italic;
+}
+.btn-verde{
+    border-radius: 30px;
+    padding: 10px 30px;
+    background-color: #274A38;
+    color: white;
+    font-weight: 200;
+    border: none;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5), 0 0 0 0 transparent;
+}
+.msg-compraExitosa{
+    margin: 10px;
+    margin-bottom: 30px;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: #000000 solid 1px;
+    border-radius: 20px;
+    color: #274a38;
+}
 
 
+/*  fin de formulario de carrito */
 /* FINAL DE PAGINA DE CARRITO */
 
 /* MEDIA QUERY RESPONSIVO */

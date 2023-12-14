@@ -14,6 +14,7 @@ public partial class BasicPointDbContext : DbContext
     }
 
 
+
     public virtual DbSet<Category> Categories { get; set; }
 
     public virtual DbSet<ContactForm> ContactForms { get; set; }
@@ -69,6 +70,10 @@ public partial class BasicPointDbContext : DbContext
             entity.HasKey(e => e.Id).HasName("PK__Products__3213E83F61411B4D");
 
             entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.CardDescription)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("card_description");
             entity.Property(e => e.CategoryId).HasColumnName("category_id");
             entity.Property(e => e.Description)
                 .IsUnicode(false)
@@ -104,15 +109,15 @@ public partial class BasicPointDbContext : DbContext
                 .HasMaxLength(20)
                 .IsUnicode(false)
                 .HasColumnName("color");
-            entity.Property(e => e.ProductsId).HasColumnName("products_id");
+            entity.Property(e => e.ProductId).HasColumnName("product_id");
             entity.Property(e => e.PurchasesDetailsId).HasColumnName("purchases_details_id");
             entity.Property(e => e.Size)
                 .HasMaxLength(10)
                 .IsUnicode(false)
                 .HasColumnName("size");
 
-            entity.HasOne(d => d.Products).WithMany(p => p.ProductsVariants)
-                .HasForeignKey(d => d.ProductsId)
+            entity.HasOne(d => d.Product).WithMany(p => p.ProductsVariants)
+                .HasForeignKey(d => d.ProductId)
                 .HasConstraintName("FK__ProductsV__produ__5441852A");
 
             entity.HasOne(d => d.PurchasesDetails).WithMany(p => p.ProductsVariants)

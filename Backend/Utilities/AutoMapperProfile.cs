@@ -12,6 +12,7 @@ namespace Backend.Utilities
             CreateMap<Product, ProductDTO>().ReverseMap()
                 .ForMember(destiny => destiny.Id, opt => opt.MapFrom(source => source.Id))
                 .ForMember(destiny => destiny.Name, opt => opt.MapFrom(source => source.Name))
+                .ForMember(destiny => destiny.CardDescription, opt => opt.MapFrom(source => source.CardDescription))
                 .ForMember(destiny => destiny.Description, opt => opt.MapFrom(source => source.Description))
                 .ForMember(destiny => destiny.Price, opt => opt.MapFrom(source => source.Price))
                 .ForMember(destiny => destiny.Img, opt => opt.MapFrom(source => source.Img))
@@ -24,7 +25,7 @@ namespace Backend.Utilities
             CreateMap<ProductsVariant, ProductsVariantDTO>().ReverseMap()
             .ForMember(destiny => destiny.Size, opt => opt.MapFrom(source => source.Size))
             .ForMember(destiny => destiny.Color, opt => opt.MapFrom(source => source.Color))
-            .ForMember(destiny => destiny.ProductsId, opt => opt.MapFrom(source => source.ProductsId))
+            .ForMember(destiny => destiny.ProductId, opt => opt.MapFrom(source => source.ProductId))
 
             ;
             #endregion

@@ -6,7 +6,8 @@
     justify-content: space-between;
 } 
 
-.menu-productos .nav-productos button{
+.menu-productos .nav-productos button
+{
     border: 1px solid #274A38;
     color: #274A38;
     background-color: white;
@@ -44,15 +45,16 @@
 
 }
 .contenedor-productos .card{
-    /* width: 200px;
-    border-radius: 50px;
-    line-height: 10px;
-    box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25); */
     border-radius: 40px;
 	box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
 	background: #fff;
     border: #fff;
 
+}
+
+.card a{
+    color: #274A38;
+    text-decoration: none;
 }
 
 .contenedor-productos .card img{

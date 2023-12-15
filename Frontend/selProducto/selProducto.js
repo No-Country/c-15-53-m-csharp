@@ -115,32 +115,10 @@ btnDerecha.forEach((b) => {
 
 
 
-let btnQuitarTodos = document.querySelectorAll("#btnQuitarTa, #btnQuitarCa, #btnQuitarCo");
-let talleInfo = document.getElementById("talleInfo");
-let colorInfo = document.getElementById("colorInfo");
-let cantidadInfo = document.getElementById("cantidadInfo");
-
-btnQuitarTodos.forEach((button) => {
-    button.addEventListener("click", () => {
-        if(button.id === "btnQuitarTa"){    
-            talleInfo.style.display = "none";
-
-        }
-
-        if(button.id === "btnQuitarCo"){   
-            colorInfo.style.display = "none";
-            
-
-        }
-        if(button.id === "btnQuitarCa"){    
-            cantidadInfo.style.display = "none";
-
-        }
-
-    });
-
-
-});
+    let talleInfo = document.getElementById("talleInfo");
+    let colorInfo = document.getElementById("colorInfo");
+    let cantidadInfo = document.getElementById("cantidadInfo");
+    
 
 let valoresParaCarrito  = { };
 
@@ -180,9 +158,30 @@ let svgAmarillo =`<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11"
 let svgAzul =`<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 30 30" fill="none">
   <circle cx="15" cy="15" r="15" fill="#2D0CFB"/>
 </svg>`;
- 
 
- 
+
+// let btnQuitarTodos = document.querySelectorAll("#btnQuitarTa, #btnQuitarCa, #btnQuitarCo");
+// btnQuitarTodos.forEach((button) => {
+//     button.addEventListener("click", () => {
+//         if(button.id === "btnQuitarTa"){    
+//             talleInfo.style.display = "none";
+
+//         }
+
+//         if(button.id === "btnQuitarCo"){   
+//             colorInfo.style.display = "none";
+            
+
+//         }
+//         if(button.id === "btnQuitarCa"){    
+//             cantidadInfo.style.display = "none";
+
+//         }
+
+//     });
+
+
+// });
 
 
 

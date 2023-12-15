@@ -1,0 +1,146 @@
+{
+    "status": true,
+    "msg": "Ok",
+    "value": [
+      {
+        "id": 15,
+        "name": "Pantalón Hombre Maiden",
+        "cardDescription": "Materiales duraderos y resistentes, Refuerzos en zonas críticas",
+        "description": "Listo para cualquier desafío, nuestro Pantalón Aventura Resistente ofrece durabilidad y comodidad incomparables. Fabricado con tela resistente a desgarros, secado rápido y un diseño funcional con múltiples bolsillos, es la elección perfecta para tus aventuras al aire libre. Con estilo versátil y protección UV, este pantalón te llevará a donde quieras con confianza y estilo.",
+        "price": 29246,
+        "img": "https://d368r8jqz0fwvm.cloudfront.net/29303-product_lg/pantalon-de-hombre-maiden.jpg",
+        "categoryId": 1,
+        "subCategoryId": 1
+      },
+      {
+        "id": 16,
+        "name": "Pantalón Hombre Pre-ski",
+        "cardDescription": "Materiales duraderos y resistentes, Refuerzos en zonas críticas",
+        "description": "Listo para cualquier desafío, nuestro Pantalón Aventura Resistente ofrece durabilidad y comodidad incomparables. Fabricado con tela resistente a desgarros, secado rápido y un diseño funcional con múltiples bolsillos, es la elección perfecta para tus aventuras al aire libre. Con estilo versátil y protección UV, este pantalón te llevará a donde quieras con confianza y estilo.",
+        "price": 99012,
+        "img": "https://d368r8jqz0fwvm.cloudfront.net/46749-product_lg/pantalon-de-hombre-pre-ski-pro.jpg",
+        "categoryId": 1,
+        "subCategoryId": 1
+      },
+      {
+        "id": 17,
+        "name": "Pantalón Hombre Dorian",
+        "cardDescription": "Materiales duraderos y resistentes, Refuerzos en zonas críticas",
+        "description": "Listo para cualquier desafío, nuestro Pantalón Aventura Resistente ofrece durabilidad y comodidad incomparables. Fabricado con tela resistente a desgarros, secado rápido y un diseño funcional con múltiples bolsillos, es la elección perfecta para tus aventuras al aire libre. Con estilo versátil y protección UV, este pantalón te llevará a donde quieras con confianza y estilo.",
+        "price": 78549,
+        "img": "https://d368r8jqz0fwvm.cloudfront.net/46840-product_lg/pantalon-de-hombre-dorian.jpg",
+        "categoryId": 1,
+        "subCategoryId": 1
+      },
+      {
+        "id": 22,
+        "name": "Campera Darius",
+        "cardDescription": "Aislante térmico, cierre frontal, forro interno suave",
+        "description": "Explora con confianza en nuestra Campera de Aventura All-Terrain. Diseñada para resistir las condiciones más exigentes, esta campera combina estilo y funcionalidad para mantenerte abrigado y protegido en todas tus expediciones. Con tecnología resistente al viento, aislamiento térmico y un diseño ligero, esta prenda es la compañera perfecta para tus aventuras al aire libre. Domina cada clima y destaca en cualquier entorno con la Campera de Aventura All-Terrain.",
+        "price": 189765,
+        "img": "https://d368r8jqz0fwvm.cloudfront.net/39666-product_lg/campera-de-hombre-darius.jpg",
+        "categoryId": 1,
+        "subCategoryId": 2
+      },
+      {
+        "id": 23,
+        "name": "Campera Davos",
+        "cardDescription": "Aislante térmico, cierre frontal, forro interno suave",
+        "description": "Explora con confianza en nuestra Campera de Aventura All-Terrain. Diseñada para resistir las condiciones más exigentes, esta campera combina estilo y funcionalidad para mantenerte abrigado y protegido en todas tus expediciones. Con tecnología resistente al viento, aislamiento térmico y un diseño ligero, esta prenda es la compañera perfecta para tus aventuras al aire libre. Domina cada clima y destaca en cualquier entorno con la Campera de Aventura All-Terrain.",
+        "price": 104872,
+        "img": "https://d368r8jqz0fwvm.cloudfront.net/46282-product_lg/rompeviento-de-hombre-davos.jpg",
+        "categoryId": 1,
+        "subCategoryId": 2
+      },
+      {
+        "id": 24,
+        "name": "Campera Crom",
+        "cardDescription": "Aislante térmico, cierre frontal, forro interno suave",
+        "description": "Explora con confianza en nuestra Campera de Aventura All-Terrain. Diseñada para resistir las condiciones más exigentes, esta campera combina estilo y funcionalidad para mantenerte abrigado y protegido en todas tus expediciones. Con tecnología resistente al viento, aislamiento térmico y un diseño ligero, esta prenda es la compañera perfecta para tus aventuras al aire libre. Domina cada clima y destaca en cualquier entorno con la Campera de Aventura All-Terrain.",
+        "price": 161857,
+        "img": "https://d368r8jqz0fwvm.cloudfront.net/33154-product_lg/campera-de-hombre-crom.jpg",
+        "categoryId": 1,
+        "subCategoryId": 2
+      },
+      {
+        "id": 33,
+        "name": "Remera Manga Larga Hanoi",
+        "cardDescription": "Tela suave, secado rápido",
+        "description": "Descubre la comodidad y versatilidad de nuestra Remera de Aventura Essential. Diseñada para los exploradores modernos, esta remera combina un ajuste ligero y transpirable con un estilo urbano y funcional. Su tejido de secado rápido te mantiene fresco, mientras que el diseño sin costuras y los detalles de ventilación garantizan una experiencia sin igual. Listo para cualquier actividad, desde caminatas hasta viajes, la Remera de Aventura Essential es la opción esencial para tu guardarropa aventurero.",
+        "price": 20945,
+        "img": "https://d368r8jqz0fwvm.cloudfront.net/45601-product_lg/remera-de-hombre-hanoi-uv.jpg",
+        "categoryId": 1,
+        "subCategoryId": 1
+      },
+      {
+        "id": 34,
+        "name": "Remera Manga Corta Essential",
+        "cardDescription": "Tela suave, secado rápido",
+        "description": "Descubre la comodidad y versatilidad de nuestra Remera de Aventura Essential. Diseñada para los exploradores modernos, esta remera combina un ajuste ligero y transpirable con un estilo urbano y funcional. Su tejido de secado rápido te mantiene fresco, mientras que el diseño sin costuras y los detalles de ventilación garantizan una experiencia sin igual. Listo para cualquier actividad, desde caminatas hasta viajes, la Remera de Aventura Essential es la opción esencial para tu guardarropa aventurero.",
+        "price": 25362,
+        "img": "https://d368r8jqz0fwvm.cloudfront.net/48039-product_lg/remera-de-hombre-essential.jpg",
+        "categoryId": 1,
+        "subCategoryId": 1
+      },
+      {
+        "id": 40,
+        "name": "Zapatillas Explorer",
+        "cardDescription": "Suela robusta y adherente, resistente al agua,diseño ligero y sistema de amortiguación",
+        "description": "Domina cualquier terreno con nuestras Zapatillas Aventura Todo Terreno. Diseñadas para durabilidad y comodidad, cuentan con una suela resistente, construcción ligera y protección impermeable. Listas para llevar tus aventuras al siguiente nivel.",
+        "price": 89909,
+        "img": "https://d368r8jqz0fwvm.cloudfront.net/36332-product_lg/zapatillas-de-hombre-explorer.jpg",
+        "categoryId": 1,
+        "subCategoryId": 3
+      },
+      {
+        "id": 41,
+        "name": "Zapatillas Innox",
+        "cardDescription": "Suela robusta y adherente, resistente al agua,diseño ligero y sistema de amortiguación",
+        "description": "Domina cualquier terreno con nuestras Zapatillas Aventura Todo Terreno. Diseñadas para durabilidad y comodidad, cuentan con una suela resistente, construcción ligera y protección impermeable. Listas para llevar tus aventuras al siguiente nivel.",
+        "price": 46659,
+        "img": "https://d368r8jqz0fwvm.cloudfront.net/46948-product_lg/zapatillas-de-ninos-innox.jpg",
+        "categoryId": 1,
+        "subCategoryId": 3
+      },
+      {
+        "id": 47,
+        "name": "Cuello Polar",
+        "cardDescription": "Diferentes materiales, lavable",
+        "description": "Descubre la esencia de la aventura con nuestros Accesorios Essential. Diseñados para acompañarte en cada expedición, estos accesorios combinan practicidad y estilo. Desde gorros técnicos que te protegen del sol hasta mochilas compactas con compartimentos inteligentes, nuestros accesorios son la clave para un viaje perfecto. Prepárate para explorar con lo esencial a tu lado.",
+        "price": 11870,
+        "img": "https://d368r8jqz0fwvm.cloudfront.net/48246-product_lg/cuello-fleece-polar.jpg",
+        "categoryId": 1,
+        "subCategoryId": 4
+      },
+      {
+        "id": 48,
+        "name": "Gorro Colt",
+        "cardDescription": "Materiales suaves,ofrecen calidez y confort",
+        "description": "Descubre la esencia de la aventura con nuestros Accesorios Essential. Diseñados para acompañarte en cada expedición, estos accesorios combinan practicidad y estilo. Desde gorros técnicos que te protegen del sol hasta mochilas compactas con compartimentos inteligentes, nuestros accesorios son la clave para un viaje perfecto. Prepárate para explorar con lo esencial a tu lado.",
+        "price": 21059,
+        "img": "https://d368r8jqz0fwvm.cloudfront.net/32383-product_lg/gorro-unisex-colt.jpg",
+        "categoryId": 1,
+        "subCategoryId": 4
+      },
+      {
+        "id": 50,
+        "name": "Gorro Chuck",
+        "cardDescription": "Materiales suaves,ofrecen calidez y confort",
+        "description": "Descubre la esencia de la aventura con nuestros Accesorios Essential. Diseñados para acompañarte en cada expedición, estos accesorios combinan practicidad y estilo. Desde gorros técnicos que te protegen del sol hasta mochilas compactas con compartimentos inteligentes, nuestros accesorios son la clave para un viaje perfecto. Prepárate para explorar con lo esencial a tu lado.",
+        "price": 28935,
+        "img": "https://d368r8jqz0fwvm.cloudfront.net/47911-product_lg/gorro-chuck.jpg",
+        "categoryId": 1,
+        "subCategoryId": 4
+      },
+      {
+        "id": 51,
+        "name": "Mochila",
+        "cardDescription": "Capacidad versátil, resistente a la intemperie",
+        "description": "Descubre la esencia de la aventura con nuestros Accesorios Essential. Diseñados para acompañarte en cada expedición, estos accesorios combinan practicidad y estilo. Desde gorros técnicos que te protegen del sol hasta mochilas compactas con compartimentos inteligentes, nuestros accesorios son la clave para un viaje perfecto. Prepárate para explorar con lo esencial a tu lado.",
+        "price": 74496,
+        "img": "https://d368r8jqz0fwvm.cloudfront.net/47757-product_lg/mochila-matera.jpg",
+        "categoryId": 1,
+        "subCategoryId": 4
+      }
+    ]
+  }

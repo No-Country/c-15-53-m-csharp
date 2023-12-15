@@ -125,17 +125,16 @@
       </div>
       <!-- Seccion: Productos -->
       <section class="contenedor-productos">
-        <!-- <div id="container">
+        <div id="container">
           <div id="foto">
-            <img src="https://d368r8jqz0fwvm.cloudfront.net/39666-product_lg/campera-de-hombre-darius.jpg"
-              class="card-img-top img-fluid" alt="pantalones" width="1200" height="1350" />
+            <img id="miImagen" src="" class="card-img-top img-fluid" alt="Producto" width="1200" height="1350" />
           </div>
           <div id="comprar">
             <button id="btnComprar">Comprar</button>
           </div>
           <div id="nombre-precio">
-            <p>CAMPERAS ESQUI X</p>
-            <p>$ XXXXXXXXXX</p>
+            <p id="nombreArt"></p>
+            <p id="precioArt"></p>
           </div>
           <div id="circulo"></div>
           <div id="izquierda">
@@ -178,24 +177,22 @@
         <div class="info">
           <div id="talleInfo">
             <p id="parrafoTalle"></p>
-            <button class="quitar" id="btnQuitarTa">x</button>
+            <!-- <button class="quitar" id="btnQuitarTa">x</button> -->
           </div>
           <div id="colorInfo">
             <div id="parrafoColor"></div>
-            <button class="quitar" id="btnQuitarCo">x</button>
+            <!-- <button class="quitar" id="btnQuitarCo">x</button> -->
           </div>
           <div id="cantidadInfo">
             <p id="parrafoCantidad"></p>
-            <button class="quitar" id="btnQuitarCa">x</button>
+            <!-- <button class="quitar" id="btnQuitarCa">x</button> -->
           </div>
         </div>
 
         <div class="container mt-1">
           <p>DESCRIPTION</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ipsum quas eius minus commodi ipsam rem!
-            Similique esse praesentium ut tempore repellendus quos, veritatis recusandae quasi, illo natus dolor
-            asperiores.</p>
-        </div> -->
+          <p id="description"></p>
+        </div>
         <!-- Force next columns to break to new line -->
         <div class="w-100"></div>
       </section>
@@ -242,7 +239,7 @@
     crossorigin="anonymous"></script>
 
   <script src="./selProducto.js"></script>
-  <script src="./script.js"></script>
+  <script src="./ObtenerInfo.js"></script>
 
 </body>
 

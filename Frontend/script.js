@@ -4,93 +4,73 @@ let btnCerrar = document.getElementById("btn-cerrar");
 
 let cuadroProductos = document.getElementById("cuadroProductos");
 // `div`
-let count = 1;
+let infoOfproduct;
+
+let arrayIdBotonesProductos = [];
 
 const api = async () => {
   let url = `https://backend-dev-qfap.4.us-1.fl0.io/api/Product/Category/1`;
 
-  const api = await fetch(url);
+  const api = await fetch(url)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      data.value.map((item) => {
+        let seguirIdBoton = "Product-Category-" + item.id; // asignarle id a los botones para enviar informacion
+        arrayIdBotonesProductos.push("#" + seguirIdBoton);
 
-  const data = await api.json();
-  console.log(data);
-  data.value.map((item) => {
-    divItem = document.createElement(`div`);
-    divItem.className = "col";
-
-    divItem.innerHTML = `
-    <div class="card">
-    <img src=${item.img}
-      class="card-img-top img-fluid" alt="pantalones" />
-    <div class="card-img-overlay d-flex align-items-center justify-content-center">
-      <button  value="${
-        url + "/" + item.id
-      }" class="comprarItem" type="button" class="btn btn-light rounded-4 fw-semibold shadow">
-        <a type="button" href="#">
-          Comprar
-        </a>
-      </button>
-    </div>
-    <div class="card-body text-center">
-      <p class="card-text fw-bold">${item.name}</p>
-      <p class="card-text fw-semibold">$ ${item.price}</p>
-    </div>
-  </div>
+        divItem = document.createElement(`div`);
+        divItem.className = "col";
+        divItem.innerHTML = `
+        <div class="card">
+        <img src=${
+          item.img
+        } class="card-img-top img-fluid" alt="pantalones" loading="lazy"/>
+          <div class="card-img-overlay d-flex align-items-center justify-content-center">
+            <button value="${
+              url + "/" + item.id
+            }"  id="${seguirIdBoton}" type="button" class="btn btn-light rounded-4 fw-semibold shadow comprarItem">
+              <a type="button" href="../selProducto/ComprarProductos.html">
+                 Comprar
+              </a>
+            </button>
+          </div>
+          <div class="card-body text-center">
+            <p class="card-text fw-bold">${item.name}</p>
+            <p class="card-text fw-semibold">$ ${item.price}</p>
+          </div>
+        </div>
     `;
-    cuadroProductos.appendChild(divItem);
-  });
+        cuadroProductos.appendChild(divItem);
+      });
+    })
+    .then(() => {
+      // Ej :arrayIdBotonesProductos = ["#Product-Category-15", "#Product-Category-16", "#Product-Category-16"]
+      // arrayIdBotonesProductos.join(", "); ===>>> "#Product-Category/15", "#Product-Category-16", "#Product-Category-16"
+      //
+      let idConvertido = arrayIdBotonesProductos.join(", ");
+
+      // Separar la cadena en un array usando la coma como delimitador y eliminar los espacios
+      // ej: idConvertido = "#Product-Category-15", "#Product-Category-16
+      //             ===>>> ["Product-Category-15", "Product-Category-16]
+
+      let idLista = String(arrayIdBotonesProductos)
+        .split(",")
+        .map((item) => item.replace("#", ""));
+
+      let capturarItem = document.querySelectorAll(idConvertido);
+
+      capturarItem.forEach((button) => {
+        button.addEventListener("click", () => {
+          if (button.id === idLista.filter((x) => button.id === x)[0]) {
+            let result = getInfoProducto(button.value);
+            infoOfproduct = result;
+            console.log(infoOfproduct);
+          }
+        });
+      });
+    });
 };
-// ../selProducto/ComprarProductos.html
+
 api();
-
-//  en esta parte se obtiene los datos del elemento selecionado al hacer click en el boton Comprar
-
-let comprarItem = document.querySelectorAll(".comprarItem");
-
-function getInfoProducto(valor) {
-  console.log(valor);
-  alert(valor);
-  return valor;
-}
-
-comprarItem.forEach((button) => {
-  addEventListener("click", () => {
-    getInfoProducto(button.value);
-    console.log(getInfoProducto(button.value));
-  });
-});
-
-/*
-const api = async () => {
-  let url = `https://backend-dev-qfap.4.us-1.fl0.io/api/Product/Category/1`;
-  
-  const api = await fetch(url);
- 
-  const data = await api.json();
-  console.log(data);
-  data.value.map((item) => {
-    divItem = document.createElement(`div`);
-    divItem.className = "col";
-
-    divItem.innerHTML = `
-    <div class="card">
-    <img src=${item.img}
-      class="card-img-top img-fluid" alt="pantalones" />
-    <div class="card-img-overlay d-flex align-items-center justify-content-center">
-      <button  value="${
-        url + "/" + item.id
-      }" class="comprarItem" type="button" class="btn btn-light rounded-4 fw-semibold shadow">
-        <a type="button" href="#">
-          Comprar
-        </a>
-      </button>
-    </div>
-    <div class="card-body text-center">
-      <p class="card-text fw-bold">${item.name}</p>
-      <p class="card-text fw-semibold">$ ${item.price}</p>
-    </div>
-  </div>
-    `;
-    cuadroProductos.appendChild(divItem);
-  });
-};
-*/

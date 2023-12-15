@@ -1,8 +1,25 @@
+
+:root {
+    --color-naranja: #FF9C5A;
+    --color-negro: #000000;
+    --color-gris: #979797;
+
+    /*primary*/
+    --color-verde: #274A38;
+    /*main*/
+    --color-blanco: #ffffff;
+    /* error */
+    --color-rojo: #E74C3C;
+    /* secundary */
+    --color-amarall: #ECAE03;
+    font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',  Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+}
 /* iNICIO DE NAV DE PRODUCTOS */
 .nav-productos{
     width: 100%;
     display: flex;
-    font-size: 14px;
+    font-size: 1rem;
     justify-content: space-between;
 } 
 
@@ -65,7 +82,10 @@
 }
 
 .contenedor-productos .card-img-overlay {
-    margin-bottom: 50px;
+
+    /* margin-bottom: 50px; */
+    top: -174px;
+
 } 
 .card-body{
     z-index: 1;
@@ -74,6 +94,21 @@
     z-index: 0;
     
   }
+
+.text-center-name{
+    font-size: 17px;
+    
+    
+}
+.text-center-price{
+    font-size: 20px;
+    
+}
+.text-center-description{
+    font-size: 1rem;
+     
+
+}
 #cuadroProductos{
     overflow: auto;
     

@@ -77,7 +77,7 @@ let parrafoColor = document.getElementById("parrafoColor");
   
 btnDerecha.forEach((b) => {
     b.addEventListener("click", () => {
-        if (listaBotonesDerecha.filter((x) => x === b.id).toString() ) {
+        if (listaBotonesDerecha.filter((x) => x === b.id).toString()) {
             if (talleList.includes(b.id)) {
  
                 parrafoTalle.textContent = "TALLE " + b.value; // Mostrar en pantalla

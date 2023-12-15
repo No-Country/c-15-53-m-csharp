@@ -1,3 +1,7 @@
+// ID
+// Category ==>> Hombre = 1; Mujer = 2; Niño = 3;
+// Subcategory ==>> Indumentaria = 1; campera = 2; Zapatilla = 3; Accesorios = 4;
+
 let cuadroProductos = document.getElementById("cuadroProductos");
 // `div`
 let infoOfproduct;
@@ -30,8 +34,9 @@ const api = async () => {
             </button>
           </div>
           <div class="card-body text-center">
-            <p class="card-text fw-bold">${item.name}</p>
-            <p class="card-text fw-semibold">$ ${item.price}</p>
+          <p class="text-center-name card-text fw-bold">${item.name}</p>
+          <p class="text-center-description card-text fw-bold">${item.cardDescription}</p>
+          <p class="text-center-price card-text fw-semibold">$ ${item.price}</p>
           </div>
         </div>
     `;
@@ -67,18 +72,14 @@ const api = async () => {
 
 api();
 
-
-// Pantalon=1; campera=2; Zapatilla=3; gorra polar=4.
-
 // TODO: FILTRAR SUB-CATEGORIS
-let campera_2 = document.getElementById("campera_2");
-let indumentaria_1 = document.getElementById("indumentaria_1");
-let zapatilla_3 = document.getElementById("zapatilla_3");
-let accesorios_4 = document.getElementById("accesorios_4");
 
-const filtrarIndumentaria = async () => {
+let categoria;
+let subcategoria;
+
+const filtrar = async (categoria, subcategoria) => {
   // Esta funcion obtiene datos sobre productos hombres
-  let url = `https://backend-dev-qfap.4.us-1.fl0.io/api/Product/Category/1/SubCategory/1`;
+  let url = `https://backend-dev-qfap.4.us-1.fl0.io/api/Product/Category/${categoria}/SubCategory/${subcategoria}`;
 
   const api = await fetch(url)
     .then((response) => {
@@ -86,7 +87,6 @@ const filtrarIndumentaria = async () => {
     })
     .then((data) => {
       // ELIMINAR TODAS LAS CARD
-
       cuadroProductos.innerHTML = "";
 
       data.value.map((item) => {
@@ -106,8 +106,9 @@ const filtrarIndumentaria = async () => {
               </button>
             </div>
             <div class="card-body text-center">
-              <p class="card-text fw-bold">${item.name}</p>
-              <p class="card-text fw-semibold">$ ${item.price}</p>
+              <p class="text-center-name card-text fw-bold">${item.name}</p>
+              <p class="text-card-description card-text fw-bold">${item.cardDescription}</p>
+              <p class="text-center-price card-text fw-semibold">$ ${item.price}</p>
             </div>
           </div>
       `;
@@ -141,4 +142,39 @@ const filtrarIndumentaria = async () => {
     });
 };
 
-// filtrarIndumentaria();
+// En esta parte se filtran los elementos de los productos
+let btnFiltros = document.querySelectorAll(".filtroRopa");
+
+let listaIdFiltros = [
+  "indumentaria_1",
+  "campera_2",
+  "zapatilla_3",
+  "accesorios_4",
+];
+
+btnFiltros.forEach((b) => {
+  b.addEventListener("click", () => {
+    if (listaIdFiltros.filter((x) => x === b.id).toString()) {
+      if (b.id === "indumentaria_1") {
+        categoria = 1; // hombre
+        subcategoria = 1; // Indumentaria
+        filtrar(categoria, subcategoria);
+      }
+      if (b.id === "campera_2") {
+        categoria = 1; // hombre
+        subcategoria = 2; // campera
+        filtrar(categoria, subcategoria);
+      }
+      if (b.id === "zapatilla_3") {
+        categoria = 1; // hombre
+        subcategoria = 3; // Zapatilla
+        filtrar(categoria, subcategoria);
+      }
+      if (b.id === "accesorios_4") {
+        categoria = 1; // hombre
+        subcategoria = 4; // Accesorios
+        filtrar(categoria, subcategoria);
+      }
+    }
+  });
+});

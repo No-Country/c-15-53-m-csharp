@@ -21,8 +21,15 @@ namespace Backend.Controllers
             _contactFormService = contactFormService;
             _mapper = mapper;
         }
-
-        [HttpPost("/send-contact-form")]
+        /// <summary>
+        /// Endpoint to send a contact form.
+        /// </summary>
+        /// <remarks>
+        /// Sends a contact form and returns a response indicating success or failure.
+        /// </remarks>
+        /// <param name="request">The contact form data to be sent.</param>
+        /// <returns>Returns a response indicating the status of the operation.</returns>
+        [HttpPost("send-contact-form")]
         public async Task<IActionResult> SendContactForm([FromBody] ContactFormDTO request)
         {
             ResponseApi<ContactFormDTO> _response = new ResponseApi<ContactFormDTO>();

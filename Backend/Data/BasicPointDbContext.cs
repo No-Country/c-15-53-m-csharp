@@ -14,7 +14,6 @@ public partial class BasicPointDbContext : DbContext
     }
 
 
-
     public virtual DbSet<Category> Categories { get; set; }
 
     public virtual DbSet<ContactForm> ContactForms { get; set; }
@@ -30,7 +29,6 @@ public partial class BasicPointDbContext : DbContext
     public virtual DbSet<SubCategory> SubCategories { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Category>(entity =>
@@ -111,6 +109,7 @@ public partial class BasicPointDbContext : DbContext
                 .HasColumnName("color");
             entity.Property(e => e.ProductId).HasColumnName("product_id");
             entity.Property(e => e.PurchasesDetailsId).HasColumnName("purchases_details_id");
+            entity.Property(e => e.Quantity).HasColumnName("quantity");
             entity.Property(e => e.Size)
                 .HasMaxLength(10)
                 .IsUnicode(false)

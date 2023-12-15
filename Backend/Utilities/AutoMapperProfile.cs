@@ -25,6 +25,7 @@ namespace Backend.Utilities
             CreateMap<ProductsVariant, ProductsVariantDTO>().ReverseMap()
             .ForMember(destiny => destiny.Size, opt => opt.MapFrom(source => source.Size))
             .ForMember(destiny => destiny.Color, opt => opt.MapFrom(source => source.Color))
+            .ForMember(destiny => destiny.Quantity, opt => opt.MapFrom(source => source.Quantity))
             .ForMember(destiny => destiny.ProductId, opt => opt.MapFrom(source => source.ProductId))
 
             ;
@@ -47,13 +48,11 @@ namespace Backend.Utilities
                 .ForMember(destiny => destiny.PostalCode, opt => opt.MapFrom(source => source.PostalCode))
                 .ForMember(destiny => destiny.PurchasesDetails, opt => opt.MapFrom(source => source.PurchasesDetails));
             #endregion
-
-            #region 
+            #region ContactForm
             CreateMap<ContactForm, ContactFormDTO>().ReverseMap()
                 .ForMember(destiny => destiny.Name, opt => opt.MapFrom(source => source.Name))
                 .ForMember(destiny => destiny.Email, opt => opt.MapFrom(source => source.Email))
                 .ForMember(destiny => destiny.Msg, opt => opt.MapFrom(source => source.Msg));
-
             #endregion
         }
     }

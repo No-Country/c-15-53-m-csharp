@@ -67,6 +67,7 @@
 	background: #fff;
     border: #fff;
 
+
 }
 
 .card a{
@@ -104,11 +105,15 @@
     font-size: 20px;
     
 }
-.text-center-description{
-    font-size: 1rem;
-     
-
+.text-center-card-description{
+    color: #454545;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
+ 
 #cuadroProductos{
     overflow: auto;
     

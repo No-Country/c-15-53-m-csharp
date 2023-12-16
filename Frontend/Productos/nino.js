@@ -9,8 +9,8 @@ let infoOfproduct;
 let arrayIdBotonesProductos = [];
 
 const api = async () => {
-  // Esta funcion obtiene datos sobre productos hombres
-  let url = `https://backend-dev-qfap.4.us-1.fl0.io/api/Product/Category/1`;
+  // Esta funcion obtiene datos sobre productos niño
+  let url = `https://backend-dev-qfap.4.us-1.fl0.io/api/Product/Category/3`;
 
   const response = await fetch(url)
     .then((response) => {
@@ -156,22 +156,22 @@ btnFiltros.forEach((b) => {
   b.addEventListener("click", () => {
     if (listaIdFiltros.filter((x) => x === b.id).toString()) {
       if (b.id === "indumentaria_1") {
-        categoria = 1; // hombre
+        categoria = 1; // niño
         subcategoria = 1; // Indumentaria
         filtrar(categoria, subcategoria);
       }
       if (b.id === "campera_2") {
-        categoria = 1; // hombre
+        categoria = 3; // niño
         subcategoria = 2; // campera
         filtrar(categoria, subcategoria);
       }
       if (b.id === "zapatilla_3") {
-        categoria = 1; // hombre
+        categoria = 3; // niño
         subcategoria = 3; // Zapatilla
         filtrar(categoria, subcategoria);
       }
       if (b.id === "accesorios_4") {
-        categoria = 1; // hombre
+        categoria = 3; // niño
         subcategoria = 4; // Accesorios
         filtrar(categoria, subcategoria);
       }

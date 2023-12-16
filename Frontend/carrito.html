@@ -111,136 +111,225 @@
         </div>
     </header>
     <!-- COMIENZA SECCION DE PASOS DE LA COMPRA -->
-<div id="contenedorDesabilitado">
-    <section class="container text-center nav-compras">
-        <h4 class="mt-3 mb-4">tu carrio de compras</h4>
-        <div class="pasosCompras">
-            <div class="pasoCompra">
-                <p id="item1">1</p>
-                <p>carrito</p>
-            </div>
-            <div class="pasoCompra">
-                <p id="item2">2</p>
-                <p>Envio</p>
-            </div>
-            <div class="pasoCompra">
-                <p id="item3">3</p>
-                <p>pago</p>
-            </div>
-        </div>
-    </section>
-    <div class="paso1Compra" id="paso1Compra">
-        <section class="contenedor-listadoCompras text-center">
-            <ul class="listadoCompras" id="listadoCompras">
-                <li>f3fef</li>
-                <li>f3fef</li>
-                <li>f3fef</li>
-                <li>f3fef</li>
-            </ul>
-            <div class="btn-seguiroFinalizar my-5">
-                <button id="btn-volverATienda" class="border-0 fw-semibold">Seguir comprando</button>
-                <button id="btn-finalizarCompra" class="btn-verde fw-semibold">Finalizar compra</button>
-            </div>
+    <div id="contenedorDesabilitado">
+        <section class="container text-center nav-compras">
+            <h4 class="mt-3 mb-4">tu carrio de compras</h4>
+            <header class="navCompras">
+                <div class="menuNumerico">
+                    <p>1</p>
+                    <div class="deco"></div>
+                        <p>2</p>
+                    <div class="deco"></div>
+                        <p>3</p>
+                </div>
+                <div class="navComprasText text-uppercase">
+                    <p>Carrito</p>
+                    <p>Envío</p>
+                    <p>Pago</p>
+                </div>
+            </header>
         </section>
-        <!-- seccion de pasos del envio -->
-        </section>
-        <section class="pasosEnvio mb-0">
-            <div class="itemEnvio">
-                <img src="images/camion.png" alt="icono de transporte">
-                <p>Envío gratis en compras superiores a $45.000</p>
-            </div>
-            <div class="itemEnvio">
-                <img src="images/tarjeta.png" alt="icono de tarjeta">
-                <p>Cuotas sin interés</p>
-            </div>
-            <div class="itemEnvio">
-                <img src="images/paquete.png" alt="icono de paquete">
-                <p>1° cambio gratis</p>
-            </div>
-            <div class="itemEnvio">
-                <img src="images/callCenter.png" alt="icono de call center">
-                <p>Lunes a Viernes de 8:00 a 18:00</p>
-            </div>
-        </section>
-    </div>
-    <div id="paso2">
-        <form action="" class="form-carrito p-4 quitar" id="form">
-            <div id="opcionesEnvio" class="quitar">
-                <div class="form-check">
-                    <input class="" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label text-uppercase" for="flexRadioDefault1">
-                        retiro en tienda
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label text-uppercase" for="flexRadioDefault2">
-                        envio
-                    </label>
-                </div>
-            </div>
-
-            <div class="datos-formCarrito quitar" id="datosFormCarrito">
-                <h2 class="text-uppercase fs-6 my-4">porfavor completa los siguientes datos para continuar con tu compra
-                </h2>
-                <div class="mb-3">
-                    <label class="form-label fw-bold">Nombre y apellido</label>
-                    <input type="text" class="form-control" name="nombreYapellido" id="exampleInputEmail1"
-                        placeholder="Escribe tu nombre">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label fw-bold">DNI</label>
-                    <input type="number" class="form-control" name="dni" id="exampleInputEmail1"
-                        placeholder="Escribe tu dni">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label fw-bold">Teléfono</label>
-                    <input type="number" class="form-control" name="telefono" id="exampleInputEmail1"
-                        placeholder="Escribe tu teléfono">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label fw-bold">E-mail</label>
-                    <input type="email" class="form-control" name="email" id="exampleInputEmail1"
-                        placeholder="Escribe tu e-mail">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label fw-bold">Dirección</label>
-                    <input type="text" class="form-control" name="doreccion" id="exampleInputEmail1"
-                        placeholder="Escribe tu dirección">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label fw-bold">Código postal</label>
-                    <input type="text" class="form-control" name="codigoPostal" id="exampleInputEmail1"
-                        placeholder="Escribe tu dirección">
-                </div>
-            </div>
-        </form>
-        <section class="mx-2">
-            <div id="listaCompraFinal" class="quitar">
-                <ul>
-                    <li>abrigo</li>
-                    <li>ropa</li>
-                    <li>campera</li>
-                    <li>remera</li>
+        <div class="paso1Compra" id="paso1Compra">
+            <section class="contenedor-listadoCompras mx-3">
+                <ul class="listadoCompras" id="listadoCompras">
+                    <li class="contenedorTarjeta">
+                        <div class="imgTarjeta">
+                            <img src="images/imgPrueba.png" alt="foto de producto">
+                        </div>
+                        <div class="infoTop">
+                            <div class="infoCompra">
+                                <h3>Campera esqui Hombre</h3>
+                                <div class="especificaciones">
+                                    <p>Color: negro</p>
+                                    <p>Talle: L</p>
+                                </div>
+                            </div>
+                            <button class="btnEliminar" id="btnEliminar">X</button>
+                        </div>
+                        <div class="precioxUnidad">
+                            <p>Precio x Unidad</p>
+                            <p>$115.000,00</p>
+                        </div>
+                        <div class="precioTotal">
+                            <p>Total (x1)</p>
+                            <p>$115.000,00</p>
+                        </div>
+                    </li>
+                    <li class="contenedorTarjeta">
+                        <div class="imgTarjeta">
+                            <img src="images/imgPrueba.png" alt="foto de producto">
+                        </div>
+                        <div class="infoTop">
+                            <div class="infoCompra">
+                                <h3>Campera esqui Hombre</h3>
+                                <div class="especificaciones">
+                                    <p>Color: negro</p>
+                                    <p>Talle: L</p>
+                                </div>
+                            </div>
+                            <button class="btnEliminar">X</button>
+                        </div>
+                        <div class="precioxUnidad">
+                            <p>Precio x Unidad</p>
+                            <p>$115.000,00</p>
+                        </div>
+                        <div class="precioTotal">
+                            <p>Total (x1)</p>
+                            <p>$115.000,00</p>
+                        </div>
+                    </li>
+                    <li class="contenedorTarjeta">
+                        <div class="imgTarjeta">
+                            <img src="images/imgPrueba.png" alt="foto de producto">
+                        </div>
+                        <div class="infoTop">
+                            <div class="infoCompra">
+                                <h3>Campera esqui Hombre</h3>
+                                <div class="especificaciones">
+                                    <p>Color: negro</p>
+                                    <p>Talle: L</p>
+                                </div>
+                            </div>
+                            <button class="btnEliminar">X</button>
+                        </div>
+                        <div class="precioxUnidad">
+                            <p>Precio x Unidad</p>
+                            <p>$115.000,00</p>
+                        </div>
+                        <div class="precioTotal">
+                            <p>Total (x1)</p>
+                            <p>$115.000,00</p>
+                        </div>
+                    </li>
                 </ul>
-            </div>
-            <div class="msgxCompra text-center fw-semibold quitar" id="msgAgradecimiento">
-                <p class="mb-0">¡Gracias por visitarnos!</p>
-                <p class="">Por ahora, solo estamos aceptando pagos en efectivo</p>
-                <p class="mb-0">Estamos trabajando para agregar más opciones pronto. </p>
-                <p class="mt-4">¡Gracias por tu compra!</p>
-            </div>
-        </section>
-        <div class="msg-compraExitosa text-center fw-semibold quitar " id="ultimoMensaje">
-            <p>¡Gracias por tu compra en Basic Point!</p>
-            <p> Estamos emocionados de confirmar que tu pedido ha sido procesado con éxito. ¡Pronto recibirás tus productos en la puerta de tu hogar!</p>
-            <p>El tiempo estimado de entrega es de 10 días. Si tienes alguna pregunta o necesitas asistencia, no dudes en ponerte en contacto con nuestro equipo de atención al cliente.</p>
-            <p>Agradecemos tu confianza en nosotros y esperamos que disfrutes de tus nuevos productos.</p>
-            <p>¡Gracias por ser parte de nuestra comunidad de compradores!</p>
+                <div class="facturaCompra">
+                    <div class="totalProductos">
+                        <p>Total productos</p>
+                        <p>$115.000,00</p>
+                    </div>
+                    <div class="infoEnvio">
+                        <p>Envio</p>
+                        <p>envio gratis</p>
+                    </div>
+                    <div class="totalPago">
+                        <p>Total</p>
+                        <p>$115.000,00</p>
+                    </div>
+                </div>
+                        <div class="btn-seguiroFinalizar my-5 deLado text-nowrap">
+                            <button id="btn-volverATienda" class="border-0 fw-semibold">Seguir comprando</button>
+                            <button id="btn-finalizarCompra" class="btn-verde fw-semibold">Finalizar compra</button>
+                        </div>
+            </section>
+            <!-- seccion de pasos del envio -->
+            </section>
+            <section class="pasosEnvio mb-0">
+                <div class="itemEnvio">
+                    <div class="imgEnvio">
+                        <img src="images/transporte.svg" alt="">
+                    </div>
+                    <p>Envío gratis en compras superiores a $45.000</p>
+                </div>
+                <div class="itemEnvio">
+                    <div class="imgEnvio">
+                        <img src="images/tarjeta.svg" alt="">
+                    </div>
+                        <p>Cuotas sin interés</p>
+                </div>
+                <div class="itemEnvio">
+                    <div class="imgEnvio">
+                        <img src="images/paquete.svg" alt="">
+                    </div>
+                    <p>1° cambio gratis</p>
+                </div>
+                <div class="itemEnvio">
+                    <div class="imgEnvio">
+                        <img src="images/callCenter.svg" alt="">
+                    </div>
+                    <p>Lunes a Viernes de 8:00 a 18:00</p>
+                </div>
+            </section>
         </div>
-        <button id="btn-continuarCarrito" type="button" class="mt-3 btn-verde quitar"><b>Continuar</b></button>
+        <div id="paso2">
+            <form action="" class="form-carrito p-4 quitar" id="form">
+                <div id="opcionesEnvio" class="quitar">
+                    <div class="form-check">
+                        <input class="" type="radio" name="formRadio" id="formRadio">
+                        <label class="form-check-label text-uppercase" for="flexRadioDefault1">
+                            retiro en tienda
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="" type="radio" name="formRadio" id="formRadio">
+                        <label class="form-check-label text-uppercase" for="flexRadioDefault2">
+                            envio
+                        </label>
+                    </div>
+                </div>
+
+                <div class="datos-formCarrito quitar" id="datosFormCarrito">
+                    <h2 class="text-uppercase fs-6 my-4">porfavor completa los siguientes datos para continuar con tu
+                        compra
+                    </h2>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Nombre y apellido</label>
+                        <input type="text" class="form-control" name="nombreYapellido" id="exampleInputEmail1"
+                            placeholder="Escribe tu nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">DNI</label>
+                        <input type="number" class="form-control" name="dni" id="exampleInputEmail1"
+                            placeholder="Escribe tu dni">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Teléfono</label>
+                        <input type="number" class="form-control" name="telefono" id="exampleInputEmail1"
+                            placeholder="Escribe tu teléfono">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">E-mail</label>
+                        <input type="email" class="form-control" name="email" id="exampleInputEmail1"
+                            placeholder="Escribe tu e-mail">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Dirección</label>
+                        <input type="text" class="form-control" name="doreccion" id="exampleInputEmail1"
+                            placeholder="Escribe tu dirección">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Código postal</label>
+                        <input type="text" class="form-control" name="codigoPostal" id="exampleInputEmail1"
+                            placeholder="Escribe tu dirección">
+                    </div>
+                </div>
+            </form>
+            <section class="mx-2">
+                <div id="listaCompraFinal" class="quitar">
+                    <ul>
+                        <li>abrigo</li>
+                        <li>ropa</li>
+                        <li>campera</li>
+                        <li>remera</li>
+                    </ul>
+                </div>
+                <div class="msgxCompra text-center fw-semibold quitar" id="msgAgradecimiento">
+                    <p class="mb-0">¡Gracias por visitarnos!</p>
+                    <p class="">Por ahora, solo estamos aceptando pagos en efectivo</p>
+                    <p class="mb-0">Estamos trabajando para agregar más opciones pronto. </p>
+                </div>
+            </section>
+            <div class="msg-compraExitosa text-center fw-semibold quitar " id="ultimoMensaje">
+                <p>¡Gracias por tu compra en Basic Point!</p>
+                <p> Estamos emocionados de confirmar que tu pedido ha sido procesado con éxito. ¡Pronto recibirás tus
+                    productos en la puerta de tu hogar!</p>
+                <p>El tiempo estimado de entrega es de 10 días. Si tienes alguna pregunta o necesitas asistencia, no
+                    dudes en ponerte en contacto con nuestro equipo de atención al cliente.</p>
+                <p>Agradecemos tu confianza en nosotros y esperamos que disfrutes de tus nuevos productos.</p>
+                <p>¡Gracias por ser parte de nuestra comunidad de compradores!</p>
+            </div>
+            <button id="btn-continuarCarrito" type="button" class="mt-3 btn-verde quitar"><b>Continuar</b></button>
+        </div>
     </div>
-</div>
 
     <!-- FOOTER -->
     <footer class="container-fluid px-0">

@@ -1,3 +1,88 @@
+
+/* INICIO DE PAGINA DE CARRITO */
+.nav-compras{
+    text-transform: uppercase;
+}
+
+/* Seccion de item de pasos del envio */
+.pasosEnvio{
+    background-color: #CFAA90;
+    display: flex;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 0 10px;
+}
+
+.itemEnvio{
+    font-size: 8px;
+    color: white;
+    padding: 10px 5px;
+    background-color: whitesmoke;
+    width: 25%;
+    align-self: center;
+    text-align: center;
+}
+.itemEnvio:first-child,.itemEnvio:last-child{
+    background-color: yellow;
+    width: 35%;
+}
+
+.imgEnvio{
+    width: 60px;
+    background-color: rgb(0, 0, 0);
+    padding: 5px;
+
+}
+.imgEnvio img{
+    width: 100%;
+}
+.itemEnvio p{
+    margin-bottom: 2px;
+    background-color: yellowgreen;
+    padding: 5px;
+}
+
+/* fin Seccion de item de pasos del envio */
+
+/* inicio de formulario de carrito */
+.form-carrito h2,.msgxCompra{
+    color: #274a38;
+}
+.form-carrito label{
+    color: #979797;
+
+}
+.form-carrito input[type="radio"]{
+    accent-color: rgb(0, 0, 0) ;
+}
+.form-carrito input{
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.form-carrito input::placeholder{
+    font-style: italic;
+}
+.btn-verde{
+    border-radius: 30px;
+    padding: 10px 20px;
+    background-color: #274A38;
+    color: white;
+    font-weight: 200;
+    border: none;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5), 0 0 0 0 transparent;
+}
+.msg-compraExitosa{
+    margin: 10px;
+    margin-bottom: 30px;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: #000000 solid 1px;
+    border-radius: 20px;
+    color: #274a38;
+}
+
+
+/*  fin de formulario de carrito */
+
 .quitar{
     display: none;
 }
@@ -28,6 +113,125 @@
     background-color: white;
 }
 
-li{
+
+/* estilo tarjeta */
+.listadoCompras li{
     list-style: none;
 }
+.listadoCompras{
+    margin: 0;
+    padding: 0;
+}
+.contenedorTarjeta{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-auto-rows: auto;
+    padding: 10px;
+    border-top: solid 1px grey;
+    border-bottom: solid 1px grey;
+    overflow:scroll;
+    color:#274A38;
+    margin-bottom: 10px;
+}
+.contenedorTarjeta{
+    border-top: none;
+}
+.imgTarjeta{
+    grid-row: 1/4;
+    border-radius: 10px;
+    height: 100%;
+    align-self: center;
+}
+.imgTarjeta img{
+    object-fit: cover;
+    object-position: center;
+    width: 80%;
+    height: 100%;
+
+}
+.btnEliminar{
+    background-color: hsl(0, 100%, 82%, 50%);
+    color: #AD2020;
+    border: none;
+    height: max-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 10px;
+}
+.infoCompra h3{
+    overflow:hidden;
+    text-wrap: nowrap;
+    /* esto cambia en la version computadora, le damos mas espacio para que se expanda */
+    max-width: 150px;
+    margin-bottom: 5px;
+    font-size:12px;
+}
+.infoTop,.precioxUnidad,.precioTotal{
+    margin-left: 5px;
+    font-size: 12px;
+}
+.infoCompra p, .especificaciones{
+    margin-bottom: 0;
+}
+.infoTop,.precioxUnidad,.precioTotal,
+.resumenCompra,.totalProductos,.infoEnvio,.totalPago,.navComprasText,.menuNumerico,.deLado{
+    display: flex;
+    justify-content: space-between;
+}
+.infoCompra{
+    align-self: center;
+}
+.facturaCompra{
+    margin-left: auto;
+    margin-right: 10px;
+    width: 60%;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.precioxUnidad p,.precioTotal p,.navComprasText p{
+    margin: 0;
+}
+.precioTotal,.totalPago,.deco{
+    border-top: solid 1px #979797;
+}
+.precioxUnidad,.precioTotal{
+    padding-top: 0;
+    align-items: center;
+}
+/* fin estilo tarjeta */
+
+/* menu numerico */
+.deco{
+    width: 100%;
+    align-self: center;
+}
+.menuNumerico{
+    align-items: center;
+    margin: 0 auto;
+    width: 95%;
+
+}
+.menuNumerico p{
+    padding: 10px 18px;
+    border-radius: 50%;
+    font-weight: bold;
+    color: white;
+    background-color:#274A38;
+    margin-bottom: 2px;
+}
+.navComprasText{
+    margin-right: 3%;
+    color: #274A38;
+}
+.navComprasText p:nth-child(2){
+    margin-right: 10px;
+}
+.navcompras{
+    width: 85%;
+    margin: 0 auto;
+    margin-bottom: 5%;
+}
+
+/* finaliza menu numerico */

@@ -109,9 +109,10 @@
 }
 
 #mycarousel .presentacion-2 h1 {
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 158px;
 }
+
 
 /* ---------------------FIN DE PRIMER CAROUSEL*/
 
@@ -285,7 +286,7 @@ footer p{
 /* --------------------- SECCION 4: TENDENCIAS */
 .tendencias img {
     background-position: 50% 50%;
-    filter: brightness(0.7);
+    filter: brightness(1);
     height: 30vh;
 }
 
@@ -331,6 +332,21 @@ Frontend/Productos/productosEstilos.css
 /* MEDIA QUERY RESPONSIVO */
 
 /* NAVBAR */
+@media screen and (min-width: 500px) {
+    .tendencias img {
+        background-position: 50% 50%;
+        filter: brightness(1);
+        height: 75vh;
+    }
+    .buzo-img-1, .zapatillas-img-1, .buzo-img-1,
+    .gorra, .ramera-m-img2, .pantalon-1, .gorra-img2, .ramera-c-img2
+    {
+        z-index: -1;
+        display: none;
+     }
+    
+    }
+    
 @media screen and (max-width: 991px) {
 
     .collapse.navbar-collapse,
@@ -339,6 +355,17 @@ Frontend/Productos/productosEstilos.css
         /*  Aquí asigno 0 a las clases del navbar para que no colapse los elementos*/
         order: 0;
     }
+
+}
+
+
+
+@media screen and (min-width: 991px) {
+    #logoParaCentrar  {
+ 
+        margin-right: 267px;
+    }
+    
 
 }
 

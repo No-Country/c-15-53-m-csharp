@@ -3,50 +3,79 @@
 .nav-compras{
     text-transform: uppercase;
 }
+/* menu numerico */
+.deco{
+    width: 100%;
+    align-self: center;
+}
+.menuNumerico{
+    align-items: center;
+    margin: 0 auto;
+    width: 95%;
 
-/* Seccion de item de pasos del envio */
+}
+.menuNumerico p{
+    padding: 10px 18px;
+    border-radius: 50%;
+    font-weight: bold;
+    color: white;
+    background-color:#274A38;
+    margin-bottom: 2px;
+}
+.navComprasText{
+    margin-right: 3%;
+    color: #274A38;
+}
+.navComprasText p:nth-child(2){
+    margin-right: 10px;
+}
+.navcompras{
+    width: 85%;
+    margin: 0 auto;
+    margin-bottom: 5%;
+}
+/* inicio de pasos envio */
 .pasosEnvio{
-    background-color: #CFAA90;
     display: flex;
+    justify-content: space-between;
+    background-color: #CFAA90;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    padding: 0 10px;
-}
-
-.itemEnvio{
-    font-size: 8px;
     color: white;
     padding: 10px 5px;
-    background-color: whitesmoke;
-    width: 25%;
-    align-self: center;
-    text-align: center;
+
 }
 .itemEnvio:first-child,.itemEnvio:last-child{
-    background-color: yellow;
     width: 35%;
 }
 
 .imgEnvio{
-    width: 60px;
-    background-color: rgb(0, 0, 0);
+    width: 70px;
     padding: 5px;
-
+    text-align: center;
 }
 .imgEnvio img{
     width: 100%;
 }
 .itemEnvio p{
     margin-bottom: 2px;
-    background-color: yellowgreen;
     padding: 5px;
+    text-align: center;
+    font-size: 14px;
 }
+.itemEnvio:nth-last-child(2) img:first-child{
+    width: 50px;
+}
+
 
 /* fin Seccion de item de pasos del envio */
 
 /* inicio de formulario de carrito */
 .form-carrito h2,.msgxCompra{
     color: #274a38;
+}
+.msgxCompra{
+    border: none;
 }
 .form-carrito label{
     color: #979797;
@@ -97,141 +126,135 @@
     color: #274A38;
 }
 
-#btn-continuarCarrito{
-    margin-bottom: 30px;
-    margin-left: 33%;
-}
 #contenedorDesabilitado{
     position: relative;
+    
 }
 .desabilitar{
-    background-color: rgba(240, 248, 255, 0.562);
+    background-color: rgba(53, 53, 53, 0.4);
 }
 #btn-volverATienda{
     color: #274A38;
     text-decoration: underline;
     background-color: white;
 }
-
+.alturaTotal{
+    height: 100%;
+}
 
 /* estilo tarjeta */
-.listadoCompras li{
-    list-style: none;
+
+/* contenedor de toda la seccion de tarjeta */
+.contenedor-listadoCompras{
+    width: 90%;
+    margin: auto;
+    color: #274A38;
 }
+/* ul del listado de tarjetas */
 .listadoCompras{
-    margin: 0;
     padding: 0;
 }
+/* li de cada tarjeta */
 .contenedorTarjeta{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-auto-rows: auto;
+    display: flex;
+    border-bottom: 1px solid #979797;
     padding: 10px;
-    border-top: solid 1px grey;
-    border-bottom: solid 1px grey;
-    overflow:scroll;
-    color:#274A38;
-    margin-bottom: 10px;
-}
-.contenedorTarjeta{
-    border-top: none;
 }
 .imgTarjeta{
-    grid-row: 1/4;
     border-radius: 10px;
-    height: 100%;
     align-self: center;
+    width: 40%;
 }
+
 .imgTarjeta img{
     object-fit: cover;
     object-position: center;
-    width: 80%;
-    height: 100%;
+    width: 100%;
 
+} 
+.informacion{
+    width: 100%;
+    padding-left: 10px;
+    align-self: center;
+}
+
+.infoCompra h3{
+    overflow: hidden;
+    max-width: 40vw;
+    text-overflow: ellipsis;
+    font-size: calc(.7em + 0.5em);
+    text-wrap: nowrap;
+    margin-bottom: 0;
+}
+.precioxUnidad p,.precioTotal p, .especificaciones p{
+    margin: 0;
+    padding: 2px 0;
+}
+.especificaciones{
+    padding-bottom: 12px;
 }
 .btnEliminar{
     background-color: hsl(0, 100%, 82%, 50%);
     color: #AD2020;
     border: none;
-    height: max-content;
-    padding: 5px 10px;
+    padding: 2px 12px;
     border-radius: 5px;
     font-weight: bold;
-    font-size: 10px;
-}
-.infoCompra h3{
-    overflow:hidden;
-    text-wrap: nowrap;
-    /* esto cambia en la version computadora, le damos mas espacio para que se expanda */
-    max-width: 150px;
-    margin-bottom: 5px;
-    font-size:12px;
-}
-.infoTop,.precioxUnidad,.precioTotal{
-    margin-left: 5px;
-    font-size: 12px;
-}
-.infoCompra p, .especificaciones{
-    margin-bottom: 0;
+    align-self: flex-start;
 }
 .infoTop,.precioxUnidad,.precioTotal,
 .resumenCompra,.totalProductos,.infoEnvio,.totalPago,.navComprasText,.menuNumerico,.deLado{
     display: flex;
     justify-content: space-between;
 }
-.infoCompra{
-    align-self: center;
+
+.precioTotal,.totalPago,.deco{
+    border-top: solid 1px #979797;
 }
+
 .facturaCompra{
     margin-left: auto;
-    margin-right: 10px;
-    width: 60%;
+    width: 70%;
     text-transform: uppercase;
-    font-size: 10px;
+    font-size: calc(.3em + 0.5em);
+    padding: 10px;
 }
 
 .precioxUnidad p,.precioTotal p,.navComprasText p{
     margin: 0;
 }
-.precioTotal,.totalPago,.deco{
-    border-top: solid 1px #979797;
-}
-.precioxUnidad,.precioTotal{
-    padding-top: 0;
-    align-items: center;
-}
-/* fin estilo tarjeta */
-
-/* menu numerico */
-.deco{
-    width: 100%;
-    align-self: center;
-}
-.menuNumerico{
-    align-items: center;
-    margin: 0 auto;
-    width: 95%;
+@media screen and (min-width: 500px){
+    .imgTarjeta{
+        width: 30%;
+    }
 
 }
-.menuNumerico p{
-    padding: 10px 18px;
-    border-radius: 50%;
-    font-weight: bold;
-    color: white;
-    background-color:#274A38;
-    margin-bottom: 2px;
+@media screen and (min-width: 600px){
+    .contenedorTarjeta{
+        width: 80%;
+        margin: auto;
+    }
+    .contenedor-listadoCompras{
+        width: 70%;
+    }
+    .imgTarjeta{
+        width: 20%;
+    }
+    
+.facturaCompra{
+    width: 60%;
+    font-size: calc(.5em + 0.5em);
+    margin-right: 10%;
 }
-.navComprasText{
-    margin-right: 3%;
-    color: #274A38;
+.btn-seguiroFinalizar{
+    justify-content: space-around;
 }
-.navComprasText p:nth-child(2){
-    margin-right: 10px;
+/* inicio de pasos envio */
+
+.itemEnvio{
+    width: 30%;
 }
-.navcompras{
-    width: 85%;
-    margin: 0 auto;
-    margin-bottom: 5%;
+/* fin de pasos envio */
+
 }
 
-/* finaliza menu numerico */

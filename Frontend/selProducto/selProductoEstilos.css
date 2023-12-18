@@ -155,7 +155,7 @@
 }
 
 #izquierda button,
-#comprar button {
+#comprar a {
     /* ESTILOS GENERICOS PARA LA PARTE DE LA IZQUIERDA */
     display: inline-flex;
     height: 23px;
@@ -171,7 +171,7 @@
 
 }
 
-button#btnComprar {
+a#btnComprar {
     display: flex;
     width: 82px;
     height: 39px;
@@ -179,6 +179,7 @@ button#btnComprar {
     border-radius: 16px;
     background: #FFF;
     box-shadow: 1px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
 }
 
 

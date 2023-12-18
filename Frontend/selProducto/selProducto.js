@@ -75,6 +75,7 @@ let listaBotonesDerecha = [
   "btnL",
   "btnXL",
 ];
+
 let talleList = ["btnXs", "btnS", "btnM", "btnL", "btnXL"];
 let colorList = ["btnRojo", "btnNegro", "btnMorado", "btnAmarillo", "btnAzul"];
 let cantidadList = ["btnUno", "btnDos", "btnTres"];
@@ -94,7 +95,7 @@ btnDerecha.forEach((b) => {
 
       if (cantidadList.includes(b.id)) {
         parrafoCantidad.textContent = "  CANTIDAD " + b.value;
-        valoresParaCarrito["cantidad"] = b.value; //Para agrgar al carrito
+        valoresParaCarrito["cantidad"] = parseInt(b.value); //Para agrgar al carrito
         cantidadInfo.style.display = "inline-flex"; // Mostrar en pantalla
         console.log(valoresParaCarrito["cantidad"]);
       }
@@ -107,9 +108,9 @@ btnDerecha.forEach((b) => {
         if (b.id === "btnMorado")
           parrafoColor.innerHTML = "COLOR " + svgMorado + " / ";
         if (b.id === "btnAmarillo")
-          parrafoColor.innerHTML = "COLOR " + svgAmarillo;
+          parrafoColor.innerHTML = "COLOR " + svgAmarillo + " / ";
         if (b.id === "btnAzul")
-          parrafoColor.innerHTML = "COLOR " + svgAzul + " / " +" ";
+          parrafoColor.innerHTML = "COLOR " + svgAzul + " / " + " ";
 
         valoresParaCarrito["color"] = b.value;
         console.log(valoresParaCarrito["color"]);
@@ -129,8 +130,30 @@ let btn_Comprar = document.getElementById("btnComprar");
 
 btn_Comprar.addEventListener("click", (button) => {
   if (button.target.id === "btnComprar") {
-    alert("¡Has hecho clic en el botón Comprar!");
     // Enviar los valores a los carritos
+
+    // 1. Al presionar el botón convierto el valor objInfoCard que esta en localStorage en un objeto
+    let articulo = JSON.parse(localStorage.getItem("objInfoCard"));
+
+    // 2. agregar color, talle, cantidad al articulo.
+    articulo.color = valoresParaCarrito["color"];
+    articulo.cantidad = valoresParaCarrito["cantidad"];
+    articulo.talle = valoresParaCarrito["talle"];
+
+    // Luego tengo que gurdar ese objeto en un array de objetos que tengo en localStorage (carritoElementos)
+
+    // 3. Convierto arrayArticulos que esta en localStorage con JSON.parse() porque el localStorage almacena la información como string
+    let arrayArticulos = localStorage.getItem("carritoElementos");
+
+    if (arrayArticulos === null) {
+      arrayArticulos = localStorage.setItem("carritoElementos", "");
+    }
+
+    // 4. Agrego el objeto en el array y lo envio al localStorage
+
+    arrayArticulos = articulo;
+    localStorage.setItem("carritoElementos", JSON.stringify(arrayArticulos));
+
     // Reiciniar los valores que van para el carrito luego de enviar los datos: valoresParaCarrito  = { };
     // talleInfo.style.display = "none";
     // cantidadInfo.style.display = "none";
@@ -157,4 +180,3 @@ let svgAmarillo = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="17
 let svgAzul = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 30 30" fill="none">
   <circle cx="15" cy="15" r="15" fill="#2D0CFB"/>
 </svg>`;
-

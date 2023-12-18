@@ -6,26 +6,38 @@ const originalElement2 = document.getElementById("img-1-buzo");
 const replacementElement2 = document.getElementById("img-1-buzo-replacement");
 
 const originalElement3 = document.getElementById("img-1-pantalon");
-const replacementElement3 = document.getElementById("img-1-pantalon-replacement");
+const replacementElement3 = document.getElementById(
+  "img-1-pantalon-replacement"
+);
 
 const originalElement4 = document.getElementById("img-1-zapatillas");
-const replacementElement4 = document.getElementById("img-1-zapatillas-replacement");
+const replacementElement4 = document.getElementById(
+  "img-1-zapatillas-replacement"
+);
 
 // img 2
 const originalElement5 = document.getElementById("img-2-ramera-c");
-const replacementElement5 = document.getElementById("img-2-ramera-c-replacement");
+const replacementElement5 = document.getElementById(
+  "img-2-ramera-c-replacement"
+);
 
 const originalElement6 = document.getElementById("img-2-ramera-c");
-const replacementElement6 = document.getElementById("img-2-ramera-c-replacement");
+const replacementElement6 = document.getElementById(
+  "img-2-ramera-c-replacement"
+);
 
 const originalElement7 = document.getElementById("img-2-ramera-c");
-const replacementElement7 = document.getElementById("img-2-ramera-c-replacement");
+const replacementElement7 = document.getElementById(
+  "img-2-ramera-c-replacement"
+);
 
 const originalElement8 = document.getElementById("img-2-gorra");
 const replacementElement8 = document.getElementById("img-2-gorra-replacement");
 
 const originalElement9 = document.getElementById("img-2-ramera-m");
-const replacementElement9 = document.getElementById("img-2-ramera-m-replacement");
+const replacementElement9 = document.getElementById(
+  "img-2-ramera-m-replacement"
+);
 
 ObtenerTarjetaPrecio(originalElement1, replacementElement1);
 ObtenerTarjetaPrecio(originalElement2, replacementElement2);
@@ -68,6 +80,6 @@ function ObtenerTarjetaPrecio(originalElement, replacementElement) {
         replacementElement.classList.add("visually-hidden");
         popoverInstance = null;
       }
-    }, 2000);
+    }, 1500);
   });
 }

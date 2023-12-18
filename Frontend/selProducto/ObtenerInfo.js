@@ -13,7 +13,7 @@ console.log(obtenerIdProducto);
 const api = async () => {
   // Esta funcion muestra la imagen, descripcion de un solo productos para comprarlo
   let url =
-    `https://backend-dev-qfap.4.us-1.fl0.io/api/Product/` + obtenerIdProducto;
+    `https://prueba-dev-rfsk.1.us-1.fl0.io/api/Product/` + obtenerIdProducto;
 
   const api = await fetch(url)
     .then((response) => {

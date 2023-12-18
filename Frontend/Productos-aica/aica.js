@@ -10,15 +10,13 @@ let arrayIdBotonesProductos = [];
 
 const api = async () => {
   // Esta funcion obtiene datos sobre productos hombres
-  let url = `https://backend-dev-qfap.4.us-1.fl0.io/api/Product/all`;
+  let url = `https://prueba-dev-rfsk.1.us-1.fl0.io/api/Product/all`;
 
   const response = await fetch(url)
     .then((response) => {
       return response.json();
     })
     .then((data) => {
-      // TODO:
-
       data.value
         .filter((x) => x.subCategoryId === 2)
         .map((item) => {

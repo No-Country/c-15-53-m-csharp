@@ -10,7 +10,7 @@ let arrayIdBotonesProductos = [];
 
 const api = async () => {
   // Esta funcion obtiene datos sobre productos hombres
-  let url = `https://backend-dev-qfap.4.us-1.fl0.io/api/Product/Category/2`;
+  let url = `https://prueba-dev-rfsk.1.us-1.fl0.io/api/Product/Category/2`;
 
   const response = await fetch(url)
     .then((response) => {
@@ -79,7 +79,7 @@ let subcategoria;
 
 const filtrar = async (categoria, subcategoria) => {
   // Esta funcion obtiene datos sobre productos hombres
-  let url = `https://backend-dev-qfap.4.us-1.fl0.io/api/Product/Category/${categoria}/SubCategory/${subcategoria}`;
+  let url = `https://prueba-dev-rfsk.1.us-1.fl0.io/api/Product/Category/${categoria}/SubCategory/${subcategoria}`;
 
   const api = await fetch(url)
     .then((response) => {

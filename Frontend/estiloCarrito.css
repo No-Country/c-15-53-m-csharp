@@ -34,6 +34,8 @@
     margin: 0 auto;
     margin-bottom: 5%;
 }
+
+
 /* inicio de pasos envio */
 .pasosEnvio{
     display: flex;
@@ -71,11 +73,19 @@
 /* fin Seccion de item de pasos del envio */
 
 /* inicio de formulario de carrito */
+#form{
+    width: 90%;
+    margin: auto;
+}
 .form-carrito h2,.msgxCompra{
     color: #274a38;
 }
 .msgxCompra{
-    border: none;
+    padding: 5%;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5), 0 0 0 0 transparent;
+    margin: 0 5%;
+    border-radius: 15px;
+
 }
 .form-carrito label{
     color: #979797;
@@ -100,16 +110,25 @@
     box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5), 0 0 0 0 transparent;
 }
 .msg-compraExitosa{
-    margin: 10px;
-    margin-bottom: 30px;
     padding: 10px 15px;
     font-size: 14px;
-    border: #000000 solid 1px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
-    color: #274a38;
+    color: #274A38;
+    background-color: rgb(252, 252, 252);
+    max-height: 400px;
+    overflow: auto;
 }
-
-
+.msg-compraExitosa p{
+    padding: 0 25px;
+}
+#btnSacarCartel{
+    border: none;
+    background-color: transparent;
+    margin-left: 92%;
+    margin-top: 8px;
+    font-size: 20px;
+}
 /*  fin de formulario de carrito */
 
 .quitar{
@@ -118,12 +137,12 @@
 
 .posicionarMensaje{
     position: absolute;
-    top: 25%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 85%;
-    left: 5%;
-    z-index: 9999;
-    background-color: white;
-    color: #274A38;
+    z-index: 100;
+    
 }
 
 #contenedorDesabilitado{
@@ -138,10 +157,16 @@
     text-decoration: underline;
     background-color: white;
 }
-.alturaTotal{
-    height: 100%;
+#btn-continuarCarrito{
+    margin: 10px 0;
 }
-
+#btn-volver{
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
 /* estilo tarjeta */
 
 /* contenedor de toda la seccion de tarjeta */
@@ -223,9 +248,16 @@
 .precioxUnidad p,.precioTotal p,.navComprasText p{
     margin: 0;
 }
+.btn-seguiroFinalizar{
+    margin-bottom: 10%;
+}
+
 @media screen and (min-width: 500px){
     .imgTarjeta{
         width: 30%;
+    }
+    #form{
+        width: 80%;
     }
 
 }
@@ -256,5 +288,43 @@
 }
 /* fin de pasos envio */
 
+#form{
+    width: 70%;
+}
+
+.posicionarMensaje{
+    width: 70%;
+}
+}
+@media screen and (min-width: 700px){
+    /* menu numerico */
+.deco{
+    width: 100%;
+    align-self: center;
+}
+.menuNumerico{
+    align-items: center;
+    margin: 0 auto;
+    width: 95%;
+
+}
+
+.navComprasText{
+    margin-left: 1.5%;
+    margin-right: 3%;
+}
+.navComprasText p:nth-child(2){
+    margin-right: 2.5%;
+}
+
+}
+@media screen and (min-width: 1300px){
+    .posicionarMensaje{
+        top: 30%;
+        width: 40%;
+    }
+    .navComprasText p:nth-child(2){
+        margin-right: 0.6%;
+    }
 }
 

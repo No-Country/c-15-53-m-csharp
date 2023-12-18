@@ -66,7 +66,7 @@
     top: 1vh;
 }
 
- 
+
 
 .custom-tooltip .tooltip-inner {
     background-color: #ffffff;
@@ -137,7 +137,7 @@
     background-position: center;
     flex: 1 1 150px;
     /*Mínimo de 150px, pero puede ocupar más espacio si está disponible */
-     margin: 8px;
+    margin: 8px;
     min-height: 180px;
     padding: 16px;
     display: inherit;
@@ -160,9 +160,16 @@
     text-decoration: none;
     
 }
- 
- 
 
+.item-subCateg:first-child{
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+
+}
+.item-subCateg:last-child{
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
 
 .item-subCateg:hover {
     background-color: white;
@@ -252,7 +259,7 @@ footer p{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 90vh;
+    height: 92vh;
     padding: 20px 10px;
 
 }
@@ -366,6 +373,23 @@ Frontend/Productos/productosEstilos.css
 
 
 }
+@media screen and (min-width: 576px){
+
+    .item-subCateg:first-child{
+        border-top-right-radius: 30px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 30px;
+    
+    }
+    .item-subCateg:last-child{
+        border-bottom-left-radius: 30px;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 30px;
+    }
+    
+
+    
+}
     
 @media screen and (max-width: 991px) {
 
@@ -378,7 +402,7 @@ Frontend/Productos/productosEstilos.css
 
 }
 @media screen and (min-width: 991px) {
-     #logoParaCentrar {
+    #logoParaCentrar {
         /* margin-right: 145px; */
         margin-left: -257px;
     }

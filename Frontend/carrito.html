@@ -118,9 +118,9 @@
                 <div class="menuNumerico">
                     <p>1</p>
                     <div class="deco"></div>
-                        <p>2</p>
+                    <p>2</p>
                     <div class="deco"></div>
-                        <p>3</p>
+                    <p>3</p>
                 </div>
                 <div class="navComprasText text-uppercase">
                     <p>Carrito</p>
@@ -129,8 +129,9 @@
                 </div>
             </header>
         </section>
+        <!-- pantalla 1, tarjetas y pasos de envio -->
         <div class="paso1Compra" id="paso1Compra">
-            <section class="contenedor-listadoCompras">
+            <section class="contenedor-listadoCompras ">
                 <ul class="listadoCompras " id="listadoCompras">
                     <li class="contenedorTarjeta my-2">
                         <div class="imgTarjeta">
@@ -147,14 +148,14 @@
                                 </div>
                                 <button class="btnEliminar" id="btnEliminar">X</button>
                             </div>
-                                <div class="precioxUnidad">
-                                    <p>Precio x Unidad</p>
-                                    <p>$115.000,00</p>
-                                </div>
-                                <div class="precioTotal fw-semibold">
-                                    <p>Total (x1)</p>
-                                    <p>$115.000,00</p>
-                                </div>
+                            <div class="precioxUnidad">
+                                <p>Precio x Unidad</p>
+                                <p>$115.000,00</p>
+                            </div>
+                            <div class="precioTotal fw-semibold">
+                                <p>Total (x1)</p>
+                                <p>$115.000,00</p>
+                            </div>
                         </div>
                     </li>
                     <li class="contenedorTarjeta">
@@ -172,14 +173,14 @@
                                 </div>
                                 <button class="btnEliminar" id="btnEliminar">X</button>
                             </div>
-                                <div class="precioxUnidad">
-                                    <p>Precio x Unidad</p>
-                                    <p>$115.000,00</p>
-                                </div>
-                                <div class="precioTotal">
-                                    <p>Total (x1)</p>
-                                    <p>$115.000,00</p>
-                                </div>
+                            <div class="precioxUnidad">
+                                <p>Precio x Unidad</p>
+                                <p>$115.000,00</p>
+                            </div>
+                            <div class="precioTotal">
+                                <p>Total (x1)</p>
+                                <p>$115.000,00</p>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -197,14 +198,13 @@
                         <p>$115.000,00</p>
                     </div>
                 </div>
-                <div class="btn-seguiroFinalizar my-5 deLado text-nowrap">
-                    <button id="btn-volverATienda" class="border-0 fw-semibold">Seguir comprando</button>
-                    <button id="btn-finalizarCompra" class="btn-verde fw-semibold">Finalizar compra</button>
+                <div class="btn-seguiroFinalizar deLado text-nowrap" id="btnsPaso1">
+                    <button id="btn-volverATienda" class="border-0 fw-semibold btnsDoble">Seguir comprando</button>
+                    <button id="btn-finalizarCompra" class="btn-verde fw-semibold btnsDoble">Finalizar compra</button>
                 </div>
             </section>
-            <!-- seccion de pasos del envio -->
-            </section>
-            <section class="pasosEnvio mb-0">
+
+            <section class="pasosEnvio mb-0" id="pasosEnvio">
                 <div class="itemEnvio d-flex flex-column align-items-center">
                     <div class="imgEnvio">
                         <img src="images/transporte.svg" alt="">
@@ -215,7 +215,7 @@
                     <div class="imgEnvio">
                         <img src="images/tarjeta.svg" alt="">
                     </div>
-                        <p>Cuotas sin interés</p>
+                    <p>Cuotas sin interés</p>
                 </div>
                 <div class="itemEnvio d-flex flex-column align-items-center  mt-2">
                     <div class="imgEnvio">
@@ -283,24 +283,18 @@
                             placeholder="Escribe tu dirección">
                     </div>
                 </div>
+                <p id="msgAdvertencia"></p>
             </form>
-            <section class="mx-2">
-                <div id="listaCompraFinal" class="quitar">
-                    <ul>
-                        <li>abrigo</li>
-                        <li>ropa</li>
-                        <li>campera</li>
-                        <li>remera</li>
-                    </ul>
-                </div>
-                <div class="msgxCompra text-center fw-semibold quitar" id="msgAgradecimiento">
-                    <p class="mb-0">¡Gracias por visitarnos!</p>
-                    <p class="">Por ahora, solo estamos aceptando pagos en efectivo</p>
-                    <p class="mb-0">Estamos trabajando para agregar más opciones pronto. </p>
-                </div>
+            <section class=" msgxCompra text-center fw-semibold quitar" id="msgAgradecimiento">
+                <p class="mb-0">¡Gracias por visitarnos!</p>
+                <p class="">Por ahora, solo estamos aceptando pagos en efectivo</p>
+                <p class="mb-0">Estamos trabajando para agregar más opciones pronto. </p>
             </section>
             <div class="msg-compraExitosa text-center fw-semibold quitar " id="ultimoMensaje">
-                <p>¡Gracias por tu compra en Basic Point!</p>
+                <button class="border-0" id="btnSacarCartel">
+                    <img src="images/xEsc.svg" alt="btnSalir">
+                </button>
+                <p class="fw-bold">¡Gracias por tu compra en Basic Point!</p>
                 <p> Estamos emocionados de confirmar que tu pedido ha sido procesado con éxito. ¡Pronto recibirás tus
                     productos en la puerta de tu hogar!</p>
                 <p>El tiempo estimado de entrega es de 10 días. Si tienes alguna pregunta o necesitas asistencia, no
@@ -308,8 +302,9 @@
                 <p>Agradecemos tu confianza en nosotros y esperamos que disfrutes de tus nuevos productos.</p>
                 <p>¡Gracias por ser parte de nuestra comunidad de compradores!</p>
             </div>
-            <div class="text-center">
-                <button id="btn-continuarCarrito" type="button" class="my-3 btn-verde quitar">Continuar</button>
+            <div class="text-center d-flex flex-column align-items-center">
+                <button id="btn-continuarCarrito" type="button" class="btn-verde quitar">Continuar</button>
+                <button id="btn-volver" class="quitar">volver</button>
             </div>
         </div>
     </div>

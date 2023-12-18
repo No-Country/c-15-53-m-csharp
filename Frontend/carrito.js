@@ -1,35 +1,80 @@
 "use stricts"
 
+// paso 1 del carrito = card de compras, factura, 2 btns y seccion pasos envio
 let paso1 = document.querySelector("#paso1Compra");
-let btn_finalizar = document.querySelector("#btn-finalizarCompra").addEventListener('click', mostrarForm);
+//btn de finalizar compra, que genera que se despliegue el formulario
+    //solo muestra el form si hay al menos un elemento li con clase contenedor tarjeta en la pagina
+let btn_finalizar = document.querySelector("#btn-finalizarCompra").addEventListener('click', function(){
+        let listaCompras = document.querySelectorAll(".contenedorTarjeta");  
+        if(listaCompras.length > 0)
+        mostrarForm();
+});
+//primera seccion del form = radios de formas de envio
 let paso2_opciones = document.querySelector("#opcionesEnvio");
+// segunda seccion del form con los datos del cliente = inputs
 let paso2_2_form = document.querySelector("#datosFormCarrito");
+//btn continuar para pasar a otras pantallas
 let btnContinuar = document.querySelector("#btn-continuarCarrito");
+//btn volver para voler a la primera pantalla del carrito
+let btnVolver = document.querySelector("#btn-volver");
+// div con el mensaje de agradecimiento
 let msgAgradecimiento = document.querySelector("#msgAgradecimiento");
-let listado = document.querySelector("#listaCompraFinal");
+//formulario del carrito
 let form = document.querySelector('#form');
+//p para colocar el mensaje de advertencia
+let msgAdvertencia = document.querySelector('#msgAdvertencia');
+//contenedor para poner de fondo en la ultima pantalla del carrito
 let contenedor = document.querySelector("#contenedorDesabilitado");
+
+let contenedorBtns = document.querySelector("#btnsPaso1");
+
+
+//elementos que debo sacar en la anteultima pantalla del carrito, para poder mostrar solo las tarjetas
+let listaTarjetasCompra = document.querySelector("#contenedor-listadoCompras");
+let btnEliminarCard = document.querySelectorAll("[id='btnEliminar']");
+let btnsPaso1 = document.querySelectorAll(".btnsDoble");
+let pasosEnvio = document.querySelector("#pasosEnvio");
+//para que muestre el mensaje de error en el form una sola vez
+
 
 let btnVolverTienda = document.querySelector("#btn-volverATienda").addEventListener('click', function () {
     // rederijo a la pagina de productos en la vista general cuando este
     location.replace("productos.html");
 })
+let menuNumerico = document.querySelectorAll(".menuNumerico > p");
+let menuComprasText = document.querySelectorAll(".menuComprasText > p");
 
+
+let contadorMenu = 0;
+let funcionActual = 0;
 
 //titulo 1 2 y 3 de carrito
-let item1 = document.querySelector("item1");
-let item2 = document.querySelector("item2");
-let item3 = document.querySelector("item3");
+function cambiarItemNav() {
+    let menuNumerico = document.querySelectorAll(".menuNumerico > p");
+    let menuComprasText = document.querySelectorAll(".navComprasText > p");
 
+    contadorMenu++; // Incrementa antes de aplicar cambios
 
+    cambiarFondo(menuNumerico[contadorMenu - 1]);
+    cambiarColor(menuComprasText[contadorMenu - 1]);
+}
 
-let funcionActual = 0;
+function cambiarColor(elem) {
+    elem.style.color = "#93A49B";
+}
+function cambiarFondo(elem) {
+    elem.style.backgroundColor = "#93A49B";
+
+}
+
+cambiarItemNav();
 
 function mostrarForm() {
     //quito la pantalla 1
     paso1.classList.add("quitar");
     //muestro la primera parte del form -> los radio
     form.classList.remove("quitar");
+    cambiarItemNav();
     paso2_opciones.classList.remove("quitar");
     //  me cercioro que algun boton radio este seleccionado para poder mostrar la segunda parte del form
     btnRadios = document.querySelectorAll("input[type='radio']");
@@ -38,31 +83,34 @@ function mostrarForm() {
             paso2_2_form.classList.remove("quitar");
             //luego de que se pueda mostrar la segunda parte del form se activa el boton continuar
             btnContinuar.disabled = false;
-
         })
     });
+
     //muestro en pantalla el boton continuar
     btnContinuar.classList.remove("quitar");
     //lo desactivo
     btnContinuar.disabled = true;
 
+
+    btnVolver.classList.remove("quitar");
+    btnVolver.addEventListener("click", function(){
+        location.replace("carrito.html");
+    })
+
     btnContinuar.addEventListener("click", function () {
         //Ejecuta la función correspondiente al índice actual
         funciones[funcionActual]();
-        //Incrementa el índice de la función
-        console.log("funcion actual: " + funcionActual);
-        funcionActual++;
     });
 
     let funciones = [
         completarForm,
-        // ultimoMensaje
+        ultimoMensaje
     ];
 }
 
 //primera funcion
+// se envian los datos del form a localStorage
 function completarForm() {
-    console.log("1");
     //guardarme la info del form y hacer una funcion para mandarla a una tabla de ventas
     let contenidoForm = new FormData(form);
 
@@ -81,57 +129,64 @@ function completarForm() {
         direccion: direccion,
         codigoPostal: codigoPostal
     };
-    //detener el envio del form si no se completaron todos los datos, evitar que el boton se active
-    //cuando todos los campos esten completos guardamos los valores en local storage
-    //  se activa el boton para que se quite el form de pantalla 
-    //  
-    console.log(comprobarDatos());
-    if(comprobarDatos()){
-        console.log("comprobando que los datos del form esten completados");
 
+    localStorage.setItem("compra", JSON.stringify(compra));
+    // let datosForm = JSON.parse(localStorage.getItem("compra"));
+    //llamo a una funcion que recorre todos los input del form y me dice si estan completos
+    //si estan completos muestro la 3ra pantalla
+    if (comprobarDatos()) {
+        enviarForm();
+    } else {
+        //si no estan completos le muestro un mensaje para que complete los input
+        msgAdvertencia.innerHTML = '<p class ="text-danger fw-semibold" id "msgErrorForm">Completar datos</p>'
     }
 
-        
-    
-    window.localStorage.setItem("compra", JSON.stringify(compra));
-    //aca deberia de devolver el json de la compra a alguna api
-    console.log(localStorage.compra);
-    // btnContinuar.disabled = false; 
-   // enviarForm();
 
 }
-
+//funcion para comprobar que todos los input esten completados
 function comprobarDatos() {
     let campos = form.querySelectorAll("input");
 
     for (let campo of campos) {
         if (campo.value === "") {
-            // El campo no está completado
             return false;
         }
     }
-
-    // Todos los campos están completados
-    
     return true;
 }
 //segunda funcion
+//qutiar el form y mostrar la lista de compra con mensaje de agradecimiento
 function enviarForm() {
-    console.log("2");
 
+    btnVolver.classList.add("quitar");
     form.classList.add("quitar");
+    //paso1 le quito la clase que lo esconde
 
-    listado.classList.remove("quitar");
+    paso1.classList.remove("quitar");
+    //quito tolos los elementos que no aparecen en esta pantalla
+    for (let boton of btnEliminarCard) {
+        boton.classList.add("quitar");
+    }
+    for (let boton of btnsPaso1) {
+        boton.classList.add("quitar");
+    }
+    pasosEnvio.classList.add("quitar");
+    contenedorBtns.style.setProperty("margin-bottom", "0");
+
+
+
     btnContinuar.innerHTML = "Comprar";
-    console.log(listado);
     msgAgradecimiento.classList.remove("quitar");
+    funcionActual = 1;
 }
 
-function ultimoMensaje() {
-    console.log("3");
 
+//arreglar la funcion para que se pueda sacar el cartel con una x y que no tape la pantalla del todo
+function ultimoMensaje() {
+    cambiarItemNav();
     //agarrar el elemento del mensaje
     let ultimoMenjaje = document.querySelector("#ultimoMensaje");
+    let btnEsc = document.querySelector("#btnSacarCartel");
     contenedor.classList.add("desabilitar");
     //agregar la clase que lo posiciona
     ultimoMenjaje.classList.add("posicionarMensaje");
@@ -140,5 +195,10 @@ function ultimoMensaje() {
 
     //quitarle la clase que lo esconde
     ultimoMenjaje.classList.remove("quitar");
+
+    btnEsc.addEventListener('click', function () {
+        // rederijo a la pagina de productos en la vista general cuando este
+        location.replace("index.html");
+    })
     let body = document.querySelector("#contenedorDesabilitado");
 }

@@ -13,7 +13,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
     <!-- tarjeta-precio CSS -->
-    <link rel="stylesheet" href="tarjeta-precio.css" />
+    <link rel="stylesheet" href="tarjeta-precio.css"/>
     <link rel="stylesheet" href="estiloCarrito.css">
 </head>
 
@@ -67,9 +67,9 @@
                                 Productos
                             </a>
                             <ul class="dropdown-menu border-0">
-                                <li><a class="dropdown-item" href="/productos.html">Mujer</a></li>
-                                <li><a class="dropdown-item" href="/productos.html">Hombre</a></li>
-                                <li><a class="dropdown-item" href="/productos.html">Niño/a</a></li>
+                                <li><a class="dropdown-item" href="./Productos/mujer.html">Mujer</a></li>
+                                <li><a class="dropdown-item" href="./Productos/hombre.html">Hombre</a></li>
+                                <li><a class="dropdown-item" href="./Productos/nino.html">Niño/a</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -99,7 +99,6 @@
                 </form>
 
             </div>
-            <div></div>
         </div>
     </header>
     <!-- COMIENZA SECCION DE PASOS DE LA COMPRA -->
@@ -125,7 +124,7 @@
         <div class="paso1Compra" id="paso1Compra">
             <section class="contenedor-listadoCompras ">
                 <ul class="listadoCompras " id="listadoCompras">
-                    <li class="contenedorTarjeta my-2">
+                    <li class="contenedorTarjeta">
                         <div class="imgTarjeta">
                             <img src="images/imgPrueba.png" alt="foto de producto">
                         </div>
@@ -138,21 +137,13 @@
                                         <p>Talle: L</p>
                                     </div>
                                 </div>
-                                <button class="btnEliminar" id="">X</button>
+                                <button class="btnEliminar" id="btnEliminar">X</button>
                             </div>
                             <div class="precioxUnidad">
                                 <p>Precio x Unidad</p>
                                 <p>$115.000,00</p>
                             </div>
-                            <div class="precioTotal fw-semibold">
-                                <p>Total (x1)</p>
-                                <p>$115.000,00</p>
-                            </div>
-                            <div class="precioxUnidad">
-                                <p>Precio x Unidad</p>
-                                <p>$115.000,00</p>
-                            </div>
-                            <div class="precioTotal fw-semibold">
+                            <div class="precioTotal">
                                 <p>Total (x1)</p>
                                 <p>$115.000,00</p>
                             </div>
@@ -235,19 +226,33 @@
             <form action="" class="form-carrito p-4 quitar" id="form">
                 <div id="opcionesEnvio" class="quitar">
                     <div class="form-check">
-                        <input class="" type="radio" name="formRadio" id="formRadio">
+                        <input class="" type="radio" name="formRadio" id="opcEnvio1">
                         <label class="form-check-label text-uppercase" for="flexRadioDefault1">
                             retiro en tienda
                         </label>
+                        <!-- opciones de sucursal -->
+                        <div id="opcionesSucursal" class="quitar">
+                            <div class="form-check">
+                                <input class="" type="radio" name="formRadio" id="opcSucursal1">
+                                <label class="form-check-label text-uppercase" for="flexRadioDefault1">
+                                    Sucursal Buenos Aires
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="" type="radio" name="formRadio" id="opcSucursal2">
+                                <label class="form-check-label text-uppercase" for="flexRadioDefault2">
+                                    Sucursal Córdoba
+                                </label>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-check">
-                        <input class="" type="radio" name="formRadio" id="formRadio">
+                        <input class="" type="radio" name="formRadio" id="opcEnvio2">
                         <label class="form-check-label text-uppercase" for="flexRadioDefault2">
                             envio
                         </label>
                     </div>
                 </div>
-
                 <div class="datos-formCarrito quitar" id="datosFormCarrito">
                     <h2 class="text-uppercase fs-6 my-4">porfavor completa los siguientes datos para continuar con tu
                         compra

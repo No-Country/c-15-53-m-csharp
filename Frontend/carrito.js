@@ -3,10 +3,10 @@
 // paso 1 del carrito = card de compras, factura, 2 btns y seccion pasos envio
 let paso1 = document.querySelector("#paso1Compra");
 //btn de finalizar compra, que genera que se despliegue el formulario
-    //solo muestra el form si hay al menos un elemento li con clase contenedor tarjeta en la pagina
-let btn_finalizar = document.querySelector("#btn-finalizarCompra").addEventListener('click', function(){
-        let listaCompras = document.querySelectorAll(".contenedorTarjeta");  
-        if(listaCompras.length > 0)
+//solo muestra el form si hay al menos un elemento li con clase contenedor tarjeta en la pagina
+let btn_finalizar = document.querySelector("#btn-finalizarCompra").addEventListener('click', function () {
+    let listaCompras = document.querySelectorAll(".contenedorTarjeta");
+    if (listaCompras.length > 0)
         mostrarForm();
 });
 //primera seccion del form = radios de formas de envio
@@ -74,17 +74,23 @@ function mostrarForm() {
     paso1.classList.add("quitar");
     //muestro la primera parte del form -> los radio
     form.classList.remove("quitar");
-    cambiarItemNav();
     paso2_opciones.classList.remove("quitar");
     //  me cercioro que algun boton radio este seleccionado para poder mostrar la segunda parte del form
-    btnRadios = document.querySelectorAll("input[type='radio']");
-    btnRadios.forEach(btnRadio => {
-        btnRadio.addEventListener('change', function () {
-            paso2_2_form.classList.remove("quitar");
-            //luego de que se pueda mostrar la segunda parte del form se activa el boton continuar
-            btnContinuar.disabled = false;
-        })
+    //btnRadios = paso2_opciones.querySelectorAll("input[type='radio']");
+    const radiosOpcionEnvio = document.querySelectorAll("#opcionesEnvio input[type='radio']");
+    radiosOpcionEnvio.forEach(btnRadio => {
+        btnRadio.addEventListener('change', (event)=>{
+            let radioSeleccionado = event.target;
+            //si el radio seleccionado es el que tiene id opcEnvio1, se despliegan las opciones de sucursal
+            if(radioSeleccionado.id === "opcEnvio1"){
+                let opcionesSuc = document.querySelector("#opcionesSucursal");
+                opcionesSuc.classList.remove("quitar");
+            }else{
+                mostrarInputsForm();
+            }
+        });
     });
+
 
     //muestro en pantalla el boton continuar
     btnContinuar.classList.remove("quitar");
@@ -93,7 +99,7 @@ function mostrarForm() {
 
 
     btnVolver.classList.remove("quitar");
-    btnVolver.addEventListener("click", function(){
+    btnVolver.addEventListener("click", function () {
         location.replace("carrito.html");
     })
 
@@ -106,6 +112,10 @@ function mostrarForm() {
         completarForm,
         ultimoMensaje
     ];
+}
+function mostrarInputsForm(){
+    paso2_2_form.classList.remove("quitar");
+    btnContinuar.disabled = false; 
 }
 
 //primera funcion
@@ -136,9 +146,10 @@ function completarForm() {
     //si estan completos muestro la 3ra pantalla
     if (comprobarDatos()) {
         enviarForm();
+        cambiarItemNav();
     } else {
         //si no estan completos le muestro un mensaje para que complete los input
-        msgAdvertencia.innerHTML = '<p class ="text-danger fw-semibold" id "msgErrorForm">Completar datos</p>'
+        msgAdvertencia.innerHTML = '<p class ="text-danger fw-semibold" id "msgErrorForm">Completar datos del form</p>'
     }
 
 

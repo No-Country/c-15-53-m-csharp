@@ -38,7 +38,7 @@ function elcarrito() {
             <p>Total (x${data.cantidad})</p>
             <p>$ ${total}</p>
         </div>
-        </div>
+      </div>
 
         `;
     listadoCompras.appendChild(liItem);

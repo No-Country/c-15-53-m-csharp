@@ -261,9 +261,9 @@ footer p{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 92vh;
-    padding: 20px 10px;
-
+    height: 95vh;
+    padding: 20% 5%;
+    align-items: center;
 }
 
 .fondo-contacto form button {
@@ -294,7 +294,9 @@ footer p{
     font-size: 20px;
     margin-top: 20px;
 }
-
+.boxContacto input::placeholder,.boxContacto textarea::placeholder{
+    font-style: italic;
+}
 /* --------------------- FIN CONTACTO */
 
 /* --------------------- SECCION 4: TENDENCIAS */
@@ -328,6 +330,8 @@ footer p{
     padding: 10px;
     height: 100vh;
     color: #274A38;
+    display: flex;
+    align-items: center;
 }
 
 /* --------------------- FIN: PAG NOSOTROS */
@@ -372,7 +376,9 @@ Frontend/Productos/productosEstilos.css
         height: 200px;
 
     }
-
+    .tendencias img {
+        height: 40vh;
+    }
 
 }
 @media screen and (min-width: 576px){
@@ -407,6 +413,9 @@ Frontend/Productos/productosEstilos.css
     #logoParaCentrar {
         /* margin-right: 145px; */
         margin-left: -257px;
+    }
+    .tendencias img {
+        height: 45vh;
     }
 
 }

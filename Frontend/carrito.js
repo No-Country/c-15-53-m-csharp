@@ -149,7 +149,7 @@ function completarForm() {
         cambiarItemNav();
     } else {
         //si no estan completos le muestro un mensaje para que complete los input
-        msgAdvertencia.innerHTML = '<p class ="text-danger fw-semibold" id "msgErrorForm">Completar datos</p>'
+        msgAdvertencia.innerHTML = '<p class ="text-danger fw-semibold" id "msgErrorForm">Completar datos del form</p>'
     }
 
 

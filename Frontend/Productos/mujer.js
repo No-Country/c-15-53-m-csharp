@@ -1,7 +1,6 @@
 // ID
 // Category ==>> Hombre = 1; Mujer = 2; Niño = 3;
 // Subcategory ==>> Indumentaria = 1; campera = 2; Zapatilla = 3; Accesorios = 4;
-
 let cuadroProductos = document.getElementById("cuadroProductos");
 // `div`
 let infoOfproduct;
@@ -9,7 +8,7 @@ let infoOfproduct;
 let arrayIdBotonesProductos = [];
 
 const api = async () => {
-  // Esta funcion obtiene datos sobre productos hombres
+  // Esta funcion obtiene datos sobre productos niño
   let url = `https://prueba-dev-rfsk.1.us-1.fl0.io/api/Product/Category/2`;
 
   const response = await fetch(url)
@@ -78,6 +77,7 @@ let categoria;
 let subcategoria;
 
 const filtrar = async (categoria, subcategoria) => {
+
   // Esta funcion obtiene datos sobre productos hombres
   let url = `https://prueba-dev-rfsk.1.us-1.fl0.io/api/Product/Category/${categoria}/SubCategory/${subcategoria}`;
 
@@ -139,9 +139,30 @@ const filtrar = async (categoria, subcategoria) => {
           }
         });
       });
-    });
+    })
+    .catch(() => {
+      let No_disponible = true;
+      console.log(No_disponible);
+      
+      divItem = document.createElement(`div`);
+      divItem.className = `col text-error-product`;
+      divItem.innerHTML = `Ups! 😊 En este momento, nuestra sección está en reposo, pero pronto llegará con novedades emocionantes.`;
+      cuadroProductos.appendChild(divItem);
+      return false;
+     });
 };
-
+ 
+function cambiarBotonGris(id) {
+  console.log("antes No_disponible", No_disponible);
+  if (No_disponible) {
+    console.log("No_disponible != true", No_disponible )
+    // cambiar color del boton
+    id.style.border = "1px solid #979797";
+    id.style.backgroundColor = "#979797";
+    id.style.color = "white";          
+    
+  }
+}
 // En esta parte se filtran los elementos de los productos
 let btnFiltros = document.querySelectorAll(".filtroRopa");
 
@@ -157,24 +178,33 @@ btnFiltros.forEach((b) => {
     if (listaIdFiltros.filter((x) => x === b.id).toString()) {
       if (b.id === "indumentaria_1") {
         categoria = 2; // mujer
-        subcategoria = 2; // Indumentaria
+        subcategoria = 1; // Indumentaria
         filtrar(categoria, subcategoria);
+        // cambiarBotonGris(b);
+
       }
       if (b.id === "campera_2") {
         categoria = 2; // mujer
         subcategoria = 2; // campera
         filtrar(categoria, subcategoria);
+        cambiarBotonGris(b);
+
       }
       if (b.id === "zapatilla_3") {
         categoria = 2; // mujer
         subcategoria = 3; // Zapatilla
         filtrar(categoria, subcategoria);
+        cambiarBotonGris(b);
+
       }
       if (b.id === "accesorios_4") {
         categoria = 2; // mujer
         subcategoria = 4; // Accesorios
         filtrar(categoria, subcategoria);
+        cambiarBotonGris(b.id);
       }
     }
   });
 });
+
+

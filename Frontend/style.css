@@ -4,6 +4,7 @@
     --color-naranja: #FF9800;
     --color-negro: #000000;
     --color-gris: #979797;
+    --color-fondo: #E9EDEB;
 
     /*primary*/
     --color-verde: #274A38;
@@ -17,7 +18,9 @@
 }
 
 /* ------------------------------  Barra de navegación (NAVBAR) */
-
+body{
+    background: var(--color-fondo);
+}
 .navbar-collapse.collapse {
     flex-grow: 0;
     order: 0;
@@ -156,7 +159,7 @@
     color: white;
     font-size: 26px;
     border: 2px solid var(--color-verde);
-    height: 100px;
+    height: 108px;
     text-decoration: none;
     
 }
@@ -365,11 +368,7 @@ Frontend/Productos/productosEstilos.css
         display: none;
     }
 
-    .item-subCateg {
 
-        height: 200px;
-
-    }
 
 
 }
@@ -407,8 +406,29 @@ Frontend/Productos/productosEstilos.css
         margin-left: -257px;
     }
 
+    /* sub categoria home */
+    .item-categoria {
+        width: 268.235px;
+        height: 285px;
+        margin-left: 21px;
+        margin-right: 21px;
+    }
+
+    .container-categorias {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 14px 34px;
+    }
+
+    .fistCateg {}
+
+    .item-subCateg {
+
+        height: 300px;
+        margin: auto;
+
+    }
+
 }
-
-
 
 

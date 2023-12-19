@@ -3,6 +3,7 @@
     --color-naranja: #FF9C5A;
     --color-negro: #000000;
     --color-gris: #979797;
+    --color-fondo: #E9EDEB;
 
     /*primary*/
     --color-verde: #274A38;
@@ -128,6 +129,7 @@
     /* overflow : auto;
     margin-bottom: 12px; */
     height: 100%;
+    background: var(--color-fondo);
 }
 
 #tres{
@@ -144,4 +146,19 @@
 .estiloHMJ {
     text-decoration: none;
     color: var(--color-verde);
+}
+
+.text-error-product{
+    color: #274A38;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: inline-flex;
+    gap: 10px;
+    /* margin-left: 9px; */
+    /* margin-right: 230px; */
+    margin-top: 53px;
+    width: 253px;
 }

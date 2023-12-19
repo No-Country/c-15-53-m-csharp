@@ -1,7 +1,6 @@
 // ID
 // Category ==>> Hombre = 1; Mujer = 2; Niño = 3;
 // Subcategory ==>> Indumentaria = 1; campera = 2; Zapatilla = 3; Accesorios = 4;
-
 let cuadroProductos = document.getElementById("cuadroProductos");
 // `div`
 let infoOfproduct;
@@ -139,8 +138,18 @@ const filtrar = async (categoria, subcategoria) => {
           }
         });
       });
+    })
+    .catch(() => {
+      let NoDisponible = true;
+      sessionStorage.setItem("NoDisponible", JSON.stringify(NoDisponible));
+
+      divItem = document.createElement(`div`);
+      divItem.className = `col text-error-product`;
+      divItem.innerHTML = `Ups! 😊 En este momento, nuestra sección está en reposo, pero pronto llegará con novedades emocionantes.`;
+      cuadroProductos.appendChild(divItem);
     });
 };
+
 
 // En esta parte se filtran los elementos de los productos
 let btnFiltros = document.querySelectorAll(".filtroRopa");
@@ -156,25 +165,43 @@ btnFiltros.forEach((b) => {
   b.addEventListener("click", () => {
     if (listaIdFiltros.filter((x) => x === b.id).toString()) {
       if (b.id === "indumentaria_1") {
-        categoria = 1; // niño
+        categoria = 3; // niño
         subcategoria = 1; // Indumentaria
         filtrar(categoria, subcategoria);
+        // cambiarBotonGris(b);
+
       }
       if (b.id === "campera_2") {
         categoria = 3; // niño
         subcategoria = 2; // campera
         filtrar(categoria, subcategoria);
+        // cambiarBotonGris(b);
+
       }
       if (b.id === "zapatilla_3") {
         categoria = 3; // niño
         subcategoria = 3; // Zapatilla
         filtrar(categoria, subcategoria);
+        // cambiarBotonGris(b);
+
       }
       if (b.id === "accesorios_4") {
         categoria = 3; // niño
         subcategoria = 4; // Accesorios
         filtrar(categoria, subcategoria);
+
+        // Cambiar color de boton
+        let NoDisponible = JSON.parse(sessionStorage.getItem('NoDisponible'));
+
+        b.style.border = "1px solid #979797";
+        b.style.backgroundColor = "#979797";
+        b.style.color = "white";
+
+        if (NoDisponible) sessionStorage.removeItem("NoDisponible");
+
       }
     }
   });
 });
+
+ 

@@ -2,25 +2,24 @@
 :root{
     background-color: #E9EDEB;
 }
- 
+
 .contenedor-productos {
     width: 100%;
     height: 96vh;
-
-     display: flex;
+    display: flex;
     align-items: center;
     overflow: auto;
     flex-direction: column;
     align-content: center;
-    justify-content: center;
-     color: #274A38;
+    justify-content: flex-start;
+    color: #274A38;
+    padding-top: 20%;
 }
 
 
 #main-producto {
     background-color: #E9EDEB;
     height: 100vh;
-
 }
 
 #uno {
@@ -60,9 +59,8 @@
 
 #foto {
     grid-area: 2 / 3 / 3 / 4;
-    padding: 16px;
-     
- }
+    padding: 16px;  
+}
 #precioArt{
     margin-bottom: 0;
 }
@@ -104,7 +102,7 @@
     z-index: 1;
 
     border-radius: 16px;
- }
+}
 
 
 #circulo {
@@ -379,3 +377,15 @@ text-transform: uppercase;
     height: inherit;
 
 }
+@media screen and (min-width: 600px){
+
+.contenedor-productos {
+    padding-top: 10%;
+}
+}
+@media screen and (min-width: 1000px){
+    .contenedor-productos {
+        padding-top: 5%;
+    }
+}
+

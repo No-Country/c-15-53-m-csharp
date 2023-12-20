@@ -225,7 +225,7 @@ function pantallaDeCompra() {
 
     btnContinuar.innerHTML = "Comprar";
     msgAgradecimiento.classList.remove("quitar");
-    funcionActual = 2;
+    funcionActual = 2; //<<--cambio para que al apretar el btn comprar/continuar llame a la ultima funcion que es mostrar el msg
 }
 
 //Funcion que muestra y posiciona un mensaje de confirmacion de compra con btn de salida

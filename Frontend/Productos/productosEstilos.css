@@ -21,6 +21,8 @@
     display: flex;
     font-size: 1rem;
     justify-content: space-between;
+    margin: auto;
+    padding: 0 2%;
 } 
 
 .menu-productos .nav-productos button
@@ -50,7 +52,6 @@
     flex-direction: row;
     justify-content: center;
     align-items:stretch;
-    background-color: #ECAE03;
     /* overflow: auto;
     margin-bottom: 76px; */
     overflow: auto;
@@ -67,7 +68,6 @@
 	box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
 	background: #fff;
     border: #fff;
-    background-color: #E74C3C;
 }
 
 .card a{
@@ -144,4 +144,15 @@
 .estiloHMJ {
     text-decoration: none;
     color: var(--color-verde);
+}
+
+@media screen and (min-width: 700px){
+.nav-productos{
+    width: 80%;
+} 
+}
+@media screen and (min-width: 1000px){
+    .nav-productos{
+        width: 60%;
+    } 
 }

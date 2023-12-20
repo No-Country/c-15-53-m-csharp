@@ -47,7 +47,7 @@ let btn_finalizar = document.querySelector("#btn-finalizarCompra").addEventListe
 });
 // btn de finalizar seguirComprando, redirige a la pag productos
 let btnVolverTienda = document.querySelector("#btn-volverATienda").addEventListener('click', function () {
-    location.replace("productos.html");
+    location.replace("/Productos/productos.html");
 })
 
 
@@ -82,7 +82,6 @@ btnVolver.addEventListener("click", function () {
 
 //elementos que debo sacar en la anteultima pantalla del carrito, para poder mostrar solo las tarjetas
 let listaTarjetasCompra = document.querySelector("#contenedor-listadoCompras");
-let btnEliminarCard = document.querySelectorAll("[id='btnEliminar']");
 let btnsPaso1 = document.querySelectorAll(".btnsDoble");
 let pasosEnvio = document.querySelector("#pasosEnvio");
 let contenedorBtns = document.querySelector("#btnsPaso1");
@@ -96,7 +95,8 @@ let msgAgradecimiento = document.querySelector("#msgAgradecimiento");
 
 //contenedor para poner de fondo en la ultima pantalla del carrito
 let contenedor = document.querySelector("#contenedorDesabilitado");
-
+    //agarrar el elemento del mensaje
+    let ultimoMensaje = document.querySelector("#ultimoMensaje");
 //----------------------------------------------------------------------------------------------------------------
 
 // BLOQUES DE FUNCIONES PARA MOSTRAR Y SACAR DISTINTOS ELEMENTOS DEL DOM
@@ -145,9 +145,15 @@ function desplegarOpcSucursales() {
         btnRadio.addEventListener('change', (event) => {
             //cambiar el numero de la funcionActual para que el btn continuar siga a la 3 pantalla
             funcionActual = 1;
+            cambiarMensaje();
             btnContinuar.disabled = false;
         })
     });
+}
+function cambiarMensaje(){
+    let text = ultimoMensaje.querySelectorAll("p");
+    text[1].innerHTML = "Estamos emocionados de confirmar que tu pedido ha sido procesado con éxito.";
+    text[2].innerHTML = "El tiempo estimado para el retiro por sucursal es de 2 días. Si tienes alguna pregunta o necesitas asistencia, no dudes en ponerte en contacto con nuestro equipo de atención al cliente.";
 }
 
 //funcion para mostrar la segunda parte del form con los input para completar y cambiando funcion actual a 0
@@ -207,6 +213,7 @@ function comprobarDatos() {
 //Function que qutia el form y muestra la lista de compra con mensaje de agradecimiento
 function pantallaDeCompra() {
     cambiarItemNav();
+    let btnEliminarCard = document.querySelectorAll(".btnEliminar");
 
     btnVolver.classList.add("quitar");
     form.classList.add("quitar");
@@ -231,17 +238,16 @@ function pantallaDeCompra() {
 //Funcion que muestra y posiciona un mensaje de confirmacion de compra con btn de salida
 function confirmarCompra() {
     cambiarItemNav();
-    //agarrar el elemento del mensaje
-    let ultimoMenjaje = document.querySelector("#ultimoMensaje");
+
     let btnEsc = document.querySelector("#btnSacarCartel");
     contenedor.classList.add("desabilitar");
     //agregar la clase que lo posiciona
-    ultimoMenjaje.classList.add("posicionarMensaje");
+    ultimoMensaje.classList.add("posicionarMensaje");
     //desabilitar el boton
     btnContinuar.setAttribute('disabled', '');
 
     //quitarle la clase que lo esconde
-    ultimoMenjaje.classList.remove("quitar");
+    ultimoMensaje.classList.remove("quitar");
 
 
     btnEsc.addEventListener('click', function () {

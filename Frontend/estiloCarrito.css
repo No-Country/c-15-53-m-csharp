@@ -6,6 +6,10 @@ body{
 .nav-compras{
     text-transform: uppercase;
 }
+.navCompras{
+    width: 90%;
+    margin: auto;
+}
 /* menu numerico */
 .deco{
     width: 100%;
@@ -31,11 +35,6 @@ body{
 }
 .navComprasText p:nth-child(2){
     margin-right: 10px;
-}
-.navcompras{
-    width: 85%;
-    margin: 0 auto;
-    margin-bottom: 5%;
 }
 
 

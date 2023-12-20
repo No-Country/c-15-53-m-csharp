@@ -11,7 +11,7 @@ let funciones = [
 cambiarItemNav();
 
 
-                                // SELECCION DE ELEMENTOS DE LA PAGINA CARRITO PARA EL USO EN FUNCIONES
+// SELECCION DE ELEMENTOS DE LA PAGINA CARRITO PARA EL USO EN FUNCIONES
 
 //-------------------------------------------------------- Paso 0 --------------------------------------------------------
 //cambia el color del menu cuando el contadorMenu incrementa uno
@@ -99,7 +99,7 @@ let contenedor = document.querySelector("#contenedorDesabilitado");
 
 //----------------------------------------------------------------------------------------------------------------
 
-                            // BLOQUES DE FUNCIONES PARA MOSTRAR Y SACAR DISTINTOS ELEMENTOS DEL DOM
+// BLOQUES DE FUNCIONES PARA MOSTRAR Y SACAR DISTINTOS ELEMENTOS DEL DOM
 
 //funcion para mostrar el form, se comporta diferente en cada parte, y se muestra el btn continuar y volver
 function mostrarForm() {
@@ -243,8 +243,70 @@ function confirmarCompra() {
     //quitarle la clase que lo esconde
     ultimoMenjaje.classList.remove("quitar");
 
+
     btnEsc.addEventListener('click', function () {
+
         // rederijo a la pagina de productos en la vista general cuando este
-        location.replace("index.html");
+        postApi(); // enviar aal api
+        setTimeout(function() {
+            location.replace("index.html"); // Redirección a la página de productos
+        }, 3000);
+
     })
 }
+
+const postApi = async () => {
+
+    if (!localStorage.compra || !localStorage.carritoElementos) {
+        console.error('Los datos no están disponibles en el almacenamiento local');
+        return;
+    }
+
+    try {
+        let clienteInfo = JSON.parse(localStorage.compra); // Formulario del cliente
+        let articulos = JSON.parse(localStorage.carritoElementos); // Información del carrito de compras
+
+        let total = articulos.map(x => x.price * x.cantidad).reduce((a, b) => a + b, 0);
+
+        let purchasesDetails = articulos.map(item => ({
+            productQuantity: item.cantidad,
+            productTotal: item.cantidad * item.price,
+            productsVariants: [{
+                size: item.talle,
+                color: item.color,
+                productId: item.id
+            }]
+        }));
+
+        const formData = {
+            fullName: clienteInfo.nombreYapellido || '',
+            dni: clienteInfo.dni || '',
+            phone: clienteInfo.telefono || '',
+            email: clienteInfo.email || '',
+            address: clienteInfo.direccion || '',
+            postalCode: clienteInfo.codigoPostal || '',
+            total: total,
+            purchasesDetails: purchasesDetails
+        };
+
+        const response = await fetch('https://prueba-dev-rfsk.1.us-1.fl0.io/api/Purchase/add', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            // console.log(data);
+            // reiniciar valores en local storage
+            localStorage.setItem("compra", "{}");
+            localStorage.setItem("carritoElementos", "[]");
+        } else {
+            console.error('Error en la solicitud:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Error en la solicitud:', error);
+    }
+};

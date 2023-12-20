@@ -12,6 +12,11 @@ const api = async () => {
   // Esta funcion obtiene datos sobre productos hombres
   let url = `https://prueba-dev-rfsk.1.us-1.fl0.io/api/Product/all`;
 
+  const filterByName = (searchTerm) => {
+    return data.value.filter((item) => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  };
+
+  
   const response = await fetch(url)
     .then((response) => {
       return response.json();

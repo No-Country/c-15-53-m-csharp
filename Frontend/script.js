@@ -1,14 +1,17 @@
 const searchInput = document.getElementById('buscadorProductos');
 
-// searchInput.addEventListener('keypress', function(e) {
-//     if (e.key === 'Enter') {
-//         window.location.href = "./productos.html";
+searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault(); // Evitar el comportamiento por defecto del Enter (enviar formulario)
 
-//      }
-//   });
+      window.location.href = './Productos/productos.html';
+     }
+  });
 
 
+  
   // contar articulos en el carrito
+  
   const carritoCount = () => {
     let text = document.querySelector(".carritoLength");
     if (localStorage.getItem("carritoElementos")){

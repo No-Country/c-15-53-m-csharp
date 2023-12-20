@@ -9,20 +9,29 @@ const searchInput = document.getElementById('buscadorProductos');
 
 
   // contar articulos en el carrito
-  const carrtoCount = () => {
+  const carritoCount = () => {
     let text = document.querySelector(".carritoLength");
-    
-    let Length = JSON.parse(localStorage.carritoElementos).length;
+    if (localStorage.getItem("carritoElementos")){
+      let Length = JSON.parse(localStorage.carritoElementos).length;
+  
+      if (Length <= 0 || typeof Length === "undefined"){
+        text.style.display = "none"
+      } 
+      else {
+        text.innerHTML = Length;
+        text.style.display = "block";
+        
+      }
 
-    if (Length <= 0) text.style.display = "none"
-    else {
-      text.innerHTML = Length;
-      text.style.display = "block";
+    }else {
+      // si no existe creo el carritoElementos en localStorage y bloqueo el spam
+      text.style.display = "none"
+      localStorage.setItem("carritoElementos", "[]")
 
     }
   }
   
-  carrtoCount() ;
+  carritoCount() ;
 
 
 // document.getElementById("searchInput").addEventListener("keydown", function(event) {

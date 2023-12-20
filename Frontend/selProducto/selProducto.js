@@ -83,7 +83,7 @@ let cantidadList = ["btnUno", "btnDos", "btnTres"];
 let parrafoTalle = document.getElementById("parrafoTalle");
 let parrafoCantidad = document.getElementById("parrafoCantidad");
 let parrafoColor = document.getElementById("parrafoColor");
-
+let cumple= 0;
 btnDerecha.forEach((b) => {
   b.addEventListener("click", () => {
     if (listaBotonesDerecha.filter((x) => x === b.id).toString()) {
@@ -91,6 +91,9 @@ btnDerecha.forEach((b) => {
         parrafoTalle.textContent = "TALLE " + b.value + " /  "; // Mostrar en pantalla
         valoresParaCarrito["talle"] = b.value; //Para agrgar al carrito
         talleInfo.style.display = "inline-flex"; // Mostrar en pantalla
+        
+        habilitarBoton()
+     
       }
 
       if (cantidadList.includes(b.id)) {
@@ -98,6 +101,9 @@ btnDerecha.forEach((b) => {
         valoresParaCarrito["cantidad"] = parseInt(b.value); //Para agrgar al carrito
         cantidadInfo.style.display = "inline-flex"; // Mostrar en pantalla
         console.log(valoresParaCarrito["cantidad"]);
+        
+        habilitarBoton()
+
       }
 
       if (colorList.includes(b.id)) {
@@ -115,9 +121,14 @@ btnDerecha.forEach((b) => {
         valoresParaCarrito["color"] = b.value;
         console.log(valoresParaCarrito["color"]);
         colorInfo.style.display = "inline-flex";
+        habilitarBoton()
+        
       }
     }
   });
+
+
+
 });
 
 let talleInfo = document.getElementById("talleInfo");
@@ -125,39 +136,54 @@ let colorInfo = document.getElementById("colorInfo");
 let cantidadInfo = document.getElementById("cantidadInfo");
 
 let valoresParaCarrito = {};
-
 let btn_Comprar = document.getElementById("btnComprar");
+btn_Comprar.style.pointerEvents = 'none';
+
+function habilitarBoton() {
+  let parrafoTalle = document.getElementById("parrafoTalle");
+  let parrafoColor = document.getElementById("parrafoColor");
+  let parrafoCantidad = document.getElementById("parrafoCantidad");
+
+  if (parrafoTalle.innerHTML.trim() != ""
+    && parrafoColor.innerHTML.trim() != ""
+    && parrafoCantidad.innerHTML.trim() != "") {
+
+    let btn_Comprar = document.getElementById("btnComprar");
+
+    btn_Comprar.style.pointerEvents = 'auto';
+  }
+
+}
+
 
 btn_Comprar.addEventListener("click", (button) => {
-  if (button.target.id === "btnComprar") {
+
+  if (button.target.id === "btnComprar" ) {
+
     // Enviar los valores a los carritos
 
     // 1. Al presionar el botón convierto el valor objInfoCard que esta en localStorage en un objeto
-    let articulo = JSON.parse(localStorage.getItem("objInfoCard"));
-
-    // 2. agregar color, talle, cantidad al articulo.
+    let articulo = JSON.parse(localStorage.getItem ("objInfoCard") );
+     // 2. agregar color, talle, cantidad al articulo.
     articulo.color = valoresParaCarrito["color"];
     articulo.cantidad = valoresParaCarrito["cantidad"];
     articulo.talle = valoresParaCarrito["talle"];
 
     // Luego tengo que gurdar ese objeto en un array de objetos que tengo en localStorage (carritoElementos)
 
-    // 3. Convierto arrayArticulos que esta en localStorage con JSON.parse() porque el localStorage almacena la información como string
-    let arrayArticulos = localStorage.getItem("carritoElementos");
-
-    if (arrayArticulos === null) {
-      arrayArticulos = localStorage.setItem("carritoElementos", "");
+     let consulta = localStorage.getItem("carritoElementos");
+     
+    if (consulta === null || consulta === "") {
+      let x = [];
+      localStorage.setItem("carritoElementos", JSON.stringify(x));
+      
     }
+    
+    let a = JSON.parse(consulta)
+    a.push(articulo);
+     
+    localStorage.setItem("carritoElementos", JSON.stringify(a))
 
-    // 4. Agrego el objeto en el array y lo envio al localStorage
-
-    arrayArticulos = articulo;
-    localStorage.setItem("carritoElementos", JSON.stringify(arrayArticulos));
-
-    // Reiciniar los valores que van para el carrito luego de enviar los datos: valoresParaCarrito  = { };
-    // talleInfo.style.display = "none";
-    // cantidadInfo.style.display = "none";
-    // colorInfo.style.display = "none";
   }
 });
 

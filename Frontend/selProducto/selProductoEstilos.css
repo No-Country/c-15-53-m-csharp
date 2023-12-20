@@ -2,7 +2,7 @@
 :root{
     background-color: #E9EDEB;
 }
- 
+
 .contenedor-productos {
     width: 100%;
     height: 96vh;
@@ -41,6 +41,19 @@
     margin-top: 72px;
 }
 
+.info-footer{
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 10px;
+}
+
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
 
 
 /* ================================ */
@@ -317,15 +330,16 @@ a#btnComprar {
 }
  
 
-.info {
+.info-producto {
     display: flex;
+    flex-direction: row;
 }
-.info p{
+.info-producto p{
     margin-bottom: 12px;
 }
-.info #talleInfo,
-.info #cantidadInfo,
-.info #colorInfo {
+.info-producto #talleInfo,
+.info-producto #cantidadInfo,
+.info-producto #colorInfo {
 
     /* height: 23px;
     padding: 4px 10px;

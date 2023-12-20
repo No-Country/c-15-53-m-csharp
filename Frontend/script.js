@@ -1,12 +1,28 @@
 const searchInput = document.getElementById('buscadorProductos');
 
-searchInput.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        window.location.href = "./productos.html";
+// searchInput.addEventListener('keypress', function(e) {
+//     if (e.key === 'Enter') {
+//         window.location.href = "./productos.html";
 
-     }
-  });
+//      }
+//   });
 
+
+  // contar articulos en el carrito
+  const carrtoCount = () => {
+    let text = document.querySelector(".carritoLength");
+    
+    let Length = JSON.parse(localStorage.carritoElementos).length;
+
+    if (Length <= 0) text.style.display = "none"
+    else {
+      text.innerHTML = Length;
+      text.style.display = "block";
+
+    }
+  }
+  
+  carrtoCount() ;
 
 
 // document.getElementById("searchInput").addEventListener("keydown", function(event) {

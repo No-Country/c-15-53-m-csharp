@@ -430,14 +430,9 @@ Frontend/Productos/productosEstilos.css
         flex-wrap: wrap;
         margin: 14px 34px;
     }
-
-    .fistCateg {}
-
     .item-subCateg {
-
         height: 300px;
         margin: auto;
-
     }
 
 }

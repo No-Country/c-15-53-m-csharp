@@ -172,6 +172,7 @@ body{
 /* contenedor de toda la seccion de tarjeta */
 .contenedor-listadoCompras{
     width: 90%;
+    height: 65vh;
     margin: auto;
     color: #274A38;
 }

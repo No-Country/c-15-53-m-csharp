@@ -247,7 +247,7 @@ footer {
     justify-content: space-between;
     padding: 10px 20px;
     font-size: 10px;
-    
+
 }
 footer p{
     margin-bottom: 0;
@@ -395,9 +395,8 @@ Frontend/Productos/productosEstilos.css
         border-bottom-left-radius: 0;
         border-top-right-radius: 30px;
     }
-    
-
-    
+    .info-footer{
+    justify-content: space-around;
 }
     
 @media screen and (max-width: 991px) {
@@ -442,3 +441,4 @@ Frontend/Productos/productosEstilos.css
 }
 
 
+}

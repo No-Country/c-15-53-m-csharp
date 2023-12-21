@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Basic Point" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap, ecomerce, C#, Basic Point" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="author" content=""> -->
+    <title>Basic Point</title>
+    <!-- Icono pestaña -->
+    <link rel="icon" type="image/x-icon" href="../images/logo.png" />
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../Productos/productosEstilos.css" />
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <header class="position-sticky top-0 start-0 bg-light z-index-3 sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light" role="navigation">
+            <div class="container-fluid d-flex">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler"
+                    aria-controls="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a id="logoParaCentrar" class="navbar-brand me-0" href="../index.html">
+                    <!-- CENTRO DEL NAV -->
+                    <!-- LOGO DE LA PÁGINA  -->
+                    <!-- width="60px" height="40px" -->
+                    <img src="../images/logoMarcaNav.svg" alt="logoBrand"
+                        class="d-inline-block align-text-top logoBrand img-fluid" />
+                </a>
+
+                <div class="lupa-icono-container d-flex gap-3 align-items-center">
+                    <!-- PARTE DERECHA DEL NAV -->
+                    <!-- ICONO DEL BUSCADOR (Para Colapsar la sección donde esta el formulario de busqueda )-->
+                    <a class="navbar-item hover-overlay" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#formulario-buscador" href="#" aria-controls="formulario-buscador">
+                        <img src="../images/buscador.png" alt="buscador" width="24" height="21" />
+                    </a>
+
+                    <a class="navbar-brand position-relative" href="../carrito.html">
+                        <span
+                            class="carritoLength position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
+                            <span class="visually-hidden">unread messages</span></span>
+                        <img src="../images/carrito-de-compras.png" alt="carrito-de-compras" width="24" height="22" />
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbar-toggler">
+                    <!-- PARTE IZQUIERDA DEL NAV -->
+                    <ul class="navbar-nav d-flex justify-content-center align-text-center">
+                        <!-- ENLACES DE LA PAGINA -->
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../nosotros.html">Nosotros</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-black" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Productos
+                            </a>
+                            <ul class="dropdown-menu border-0">
+                                <li>
+                                    <a class="dropdown-item" href="../Productos/mujer.html">Mujer</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="../Productos/hombre.html">Hombre</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="../Productos/nino.html">Niño/a</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../carrito.html">
+                                Carrito
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- BUSCADOOR (Al presionar la lupa es desplegado este div con el formulario)-->
+        <div class="collapse mt-0" id="formulario-buscador">
+            <div class="card card-body border-0">
+                <form class="container-fluid">
+                    <div class="input-group">
+                        <div class="input-group m-2" id="bucador-input">
+                            <input class="z-1 form-control position-relative input-nav-buscador ps-5 me-2" type="search"
+                                placeholder="Search" aria-label="Search" aria-describedby="buscador" />
+                            <i class="z-2 bi bi-search position-absolute top-50 start-0 translate-middle-y ps-3"></i>
+                        </div>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </header>
+
+    <main id="main-producto">
+        <div id="uno">
+            <!-- SECCION 1: FILTRO -->
+            <nav class="menu-productos container px-3">
+                <h2 class="titulo-productos text-center mt-3 text-uppercase">
+                    Abrigos
+                </h2>
+                <div class="navbar nav-productos">
+
+                    <button class="rounded-5" type="button"><a class="estiloHMJ"
+                            href="../Productos/hombre.html">Hombre</a></button>
+                    <button class="rounded-5" type="button"><a class="estiloHMJ"
+                            href="../Productos/mujer.html">Mujer</a></button>
+                    <button class="rounded-5" type="button"><a class="estiloHMJ"
+                            href="../Productos/nino.html">Niño/a</a></button>
+                </div>
+                <div class="btn-group mt-3">
+                    <button class="btn dropdown-toggle border-0 dropdown-menu-bottom px-0" type="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Ordenar por
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" type="button" id="filtroMenor">Menor precio</a></li>
+                        <li><a class="dropdown-item" type="button" id="filtroMayor">Mayor precio</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- SECCION 2: PRODUCTO -->
+            <section id="pAbrigos" class="contenedor-productos">
+                <div id="cuadroProductos" class="row row-cols-2 row-cols-sm-4 g-4 mx-auto">
+
+
+                    <!-- Force next columns to break to new line -->
+                    <!-- <div class="w-100"></div> -->
+                </div>
+            </section>
+        </div>
+
+        <footer id="dos">
+            <!-- FOOTER -->
+            <!-- <footer id="p-footer" class="container-fluid px-0 fixed-bottom"> -->
+            <div class="redesSociales">
+                <div class="deco-line-footer"></div>
+                <div class="itemsRedes">
+                    <a type="button" href="#">
+                        <img src="../images/iconoFacebook.svg" alt="" />
+                    </a>
+                    <a type="button" href="#">
+                        <img src="../images/itemInstagram.svg" alt="" />
+                    </a>
+                </div>
+                <div class="deco-line-footer"></div>
+            </div>
+
+            <div class="logoFooter text-center">
+                <img src="../images/logoMarca.svg" alt="Logo de la marca" />
+            </div>
+            <div class="info-footer">
+                <div class="info text-center">
+                    <p class="text-decoration-underline">Sucursal Buenos Aires</p>
+                    <p>Santa Fé 3982, Palermo</p>
+                    <p>Infopalermo@basicpoint.com</p>
+                </div>
+                <div class="info text-center">
+                    <p class="text-decoration-underline">Sucursal Córdoba</p>
+                    <p>Gral Paz 328, Centro</p>
+                    <p>Infocordoba@basicpoint.com</p>
+                </div>
+            </div>
+            <!-- </footer> -->
+        </footer>
+    </main>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script src="./aica.js"></script>
+    <script src="./header.js"></script>
+    
+</body>
+
+</html>

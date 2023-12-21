@@ -1,9 +1,10 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
 
 :root {
-    --color-naranja: #FF9C5A;
+    --color-naranja: #FF9800;
     --color-negro: #000000;
     --color-gris: #979797;
+    --color-fondo: #E9EDEB;
 
     /*primary*/
     --color-verde: #274A38;
@@ -13,10 +14,15 @@
     --color-rojo: #E74C3C;
     /* secundary */
     --color-amarall: #ECAE03;
+    font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',  Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
+body{
+    background-color: #E9EDEB;
+}
 /* ------------------------------  Barra de navegación (NAVBAR) */
-
+body{
+    background: var(--color-fondo);
+}
 .navbar-collapse.collapse {
     flex-grow: 0;
     order: 0;
@@ -65,7 +71,7 @@
     top: 1vh;
 }
 
- 
+
 
 .custom-tooltip .tooltip-inner {
     background-color: #ffffff;
@@ -108,16 +114,18 @@
 }
 
 #mycarousel .presentacion-2 h1 {
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 158px;
 }
+
 
 /* ---------------------FIN DE PRIMER CAROUSEL*/
 
 /* ------------------------------ ITEM CATEGORIAS Y SUB-CATEGORIAS */
-/* modificar las medidas para que no sean abosolutas */
+/* modificar las medidas para que no sean solutas */
+
 .titulos {
-    background-color: #FF9C5A;
+    background-color: var(--color-naranja);
     font-size: 20px;
     color: #274A38;
 }
@@ -143,6 +151,39 @@
     border-radius: 8px;
 }
 
+.item-categoria {
+    width: max-content;
+    padding: 10px;
+}
+
+.item-subCateg {
+    background-color: var(--color-verde);
+    color: white;
+    font-size: 26px;
+    border: 2px solid var(--color-verde);
+    height: 108px;
+    text-decoration: none;
+    
+}
+
+.item-subCateg:first-child{
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+
+}
+.item-subCateg:last-child{
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.item-subCateg:hover {
+    background-color: white;
+    color: var(--color-verde);
+}
+
+
+
+
 .categ-1 {
     background-image: url('https://images.unsplash.com/photo-1698244327424-c6710b88e664?q=80&w=1664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
 
@@ -163,59 +204,54 @@
 
 }
 
-.item-categoria {
-    width: max-content;
-    padding: 10px;
-}
-
-.item-subCateg {
-    background-color: #274A38;
-    color: white;
-    font-size: 26px;
-    font-weight: 500;
-    display: flex;
-    justify-content: center;
-    border: 2px solid #274A38;
-    width: 100%;
-    box-shadow: black;
-}
-
-.item-subCateg p {
-    margin: 0;
-}
-
-.item-subCateg:hover {
-    background-color: white;
-    color: black;
-}
 
 /* ---------------------FIN DE ITEMS CATEGORIA */
 
 /* --------------------- FOOTER */
 footer {
     background-color: #274A38;
-    height: 200px;
-}
+    height: max-content;
 
+}
+.redesSociales{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+
+}
 .deco-line-footer {
     border-top: white solid 1.5px;
     width: 100%;
     margin-top: 50px;
 }
-
-.info-footer {
+.logoFooter img{
+    width: 150px;
+    padding-bottom: 10px;
+}
+.itemsRedes {
+    display: inherit;
+    justify-content:space-evenly;
+    align-items: end;
     height: max-content;
-    width: max-content;
-    margin-top: 25px;
+    column-gap: 20px;
+    width: 350px;
     padding: 10px;
+    margin-top: 30px;
 }
-
-.info-footer p {
-    white-space: nowrap;
-    margin-bottom: 1px;
+.itemsRedes img{
+    width: 22px;
+}
+.info-footer{
+    display: flex;
     color: white;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 10px;
+    
 }
-
+footer p{
+    margin-bottom: 0;
+}
 /* --------------------- FIN ESTILOS FOOTER */
 
 /* CONTACTO */
@@ -228,49 +264,48 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 90vh;
+    height: 95vh;
+    padding: 20% 5%;
+    align-items: center;
 }
 
 .fondo-contacto form button {
     background-color: var(--color-blanco);
     color: var(--color-verde);
     display: flex;
-    width: 114px;
-    padding: 9px 37px 9px 38px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 16px;
-    border: var(--color-blanco)
-}
-
-/* .fondo-contacto form button:hover {
-    background-color: var(--color-verde);
-    color: var(--color-blanco);
-
-} */
-.fondo-contacto form button:active {
-    /* background-color: #ffffff63; */
-    background-color: var(--color-verde);
-    color: var(--color-blanco);
- }
-
-
-#label-contacto{
-    border-radius: 8px;
-    background: #CFAA90;
-    display: inline-flex;
+    width: max-content;
     padding: 10px;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    border-radius: 20px;
+    border: var(--color-blanco);
 }
 
+.fondo-contacto form button:active {
+    background-color: var(--color-verde);
+    color: var(--color-blanco);
+}
+.boxContacto{
+    background-color: hsl(0, 0%, 100%,30%);
+    border-radius: 30px;
+    height: max-content;
+}
+
+.titleContacto{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.boxContacto input::placeholder,.boxContacto textarea::placeholder{
+    font-style: italic;
+}
 /* --------------------- FIN CONTACTO */
 
 /* --------------------- SECCION 4: TENDENCIAS */
 .tendencias img {
     background-position: 50% 50%;
-    filter: brightness(0.7);
+    filter: brightness(1);
     height: 30vh;
 }
 
@@ -278,14 +313,16 @@ footer {
 
 /* --------------------- INICIO: PAG NOSOTROS */
 .text-presentacion {
-    padding: 20px;
+
+    padding: 24px 24px 38px 25px;
     justify-content: center;
     background-color: #ffffffbd;
-    border-radius: 30px 30px 0 0;
-    height: 100%;
+    border-radius: 24px;
+
     overflow: auto;
-    /* espaciado vertical de los parrafos */
     line-height: 23px;
+    max-height: 85vh;
+
 }
 
 .fondo-nosotros {
@@ -296,61 +333,73 @@ footer {
     padding: 10px;
     height: 100vh;
     color: #274A38;
+    display: flex;
+    align-items: center;
 }
 
 /* --------------------- FIN: PAG NOSOTROS */
 /* ----------------------Inicio pagina productos */
 /* iNICIO DE NAV DE PRODUCTOS */
-.nav-productos{
-    width: 100%;
-    display: flex;
-    font-size: 14px;
-    justify-content: space-between;
-} 
-.menu-productos .nav-productos button{
-    border: 1px solid #274A38;
-    color: #274A38;
-    background-color: white;
-}
-.menu-productos .nav-productos button:focus{
-    background-color: #274A38;
-    color: white;
-}
-.dropdown-menu .dropdown-item:hover{
-    text-decoration:underline;
-    background-color: white;
-}
-/* FIN DE NAV DE PRODUCTOS */
-/* iNICIO DE MUESTRA DE PRODUCTOS */
-.contenedor-productos{
-    background-color: rgb(255, 255, 255);
-    padding: 20px;
 
-}
-.contenedor-productos button, .menu-productos h2{
-    color: #274A38;
-}
-.contenedor-productos .card{
-    width: 200px;
-    border-radius: 50px;
-    line-height: 10px;
-    box-shadow: 5px 1px 8px rgba(0, 0, 0, 0.2), 0 0 0 0 transparent;
+/* 
 
-}
-.contenedor-productos .card img{
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+OJO: ESTA CODIGO AHORA ESTA EM LA CARPETA :
+Frontend/Productos/productosEstilos.css
 
-}
-.contenedor-productos .card-img-overlay {
-    margin-bottom: 50px;
-}
+*/
+
 /* FIN DE MUESTRA DE PRODUCTOS */
 /* ----------------------Fin pagina productos */
+
+
 /* MEDIA QUERY RESPONSIVO */
 
 /* NAVBAR */
+@media screen and (min-width: 500px) {
+    .tendencias img {
+        background-position: 50% 50%;
+        filter: brightness(1);
+        height: 75vh;
+    }
+
+    .buzo-img-1,
+    .zapatillas-img-1,
+    .buzo-img-1,
+    .gorra,
+    .ramera-m-img2,
+    .pantalon-1,
+    .gorra-img2,
+    .ramera-c-img2 {
+        z-index: -1;
+        display: none;
+    }
+
+
+    .tendencias img {
+        height: 40vh;
+    }
+
+
+}
+@media screen and (min-width: 576px){
+
+
+    .item-subCateg:first-child{
+        border-top-right-radius: 30px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 30px;
+    
+    }
+    .item-subCateg:last-child{
+        border-bottom-left-radius: 30px;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 30px;
+    }
+    
+
+    
+}
+    
 @media screen and (max-width: 991px) {
 
     .collapse.navbar-collapse,
@@ -361,33 +410,35 @@ footer {
     }
 
 }
+@media screen and (min-width: 991px) {
 
 
+    #logoParaCentrar {
+        /* margin-right: 145px; */
+        margin-left: -257px;
+    }
+    .tendencias img {
+        height: 45vh;
+    }
 
+    /* sub categoria home */
+    .item-categoria {
+        width: 268.235px;
+        height: 285px;
+        margin-left: 21px;
+        margin-right: 21px;
+    }
 
-
-
-.fondo-nosotros {
-    background-image: url(./images/fondo-nosotros.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    padding: 10px;
-    height: 100vh;
-}
-
-/* --------------------- FIN: PAG NOSOTROS */
-
-/* MEDIA QUERY RESPONSIVO */
-
-/* NAVBAR */
-@media screen and (max-width: 991px) {
-
-    .collapse.navbar-collapse,
-    .lupa-icono-container,
-    .navbar-brand {
-        /*  Aquí asigno 0 a las clases del navbar para que no colapse los elementos*/
-        order: 0;
+    .container-categorias {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 14px 34px;
+    }
+    .item-subCateg {
+        height: 300px;
+        margin: auto;
     }
 
 }
+
+

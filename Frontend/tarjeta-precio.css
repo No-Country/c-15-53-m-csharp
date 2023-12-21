@@ -107,8 +107,8 @@ span p{
   /* Esto es para los telefonos con resolucion entre 300px de ancho y 380px */
   .gorra {
     position: absolute;
-    top: 0vh;
-    right: 22vh;
+    top: 7vh;
+    right: 15vh;
     z-index: 1;
   }
   .buzo-img-1 {

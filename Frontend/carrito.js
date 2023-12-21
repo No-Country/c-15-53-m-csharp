@@ -250,7 +250,7 @@ function confirmarCompra() {
     btnContinuar.setAttribute('disabled', '');
 
     postApi(); // enviar al api
-    s
+     
     //quitarle la clase que lo esconde
     ultimoMensaje.classList.remove("quitar");
 

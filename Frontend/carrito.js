@@ -47,7 +47,7 @@ let btn_finalizar = document.querySelector("#btn-finalizarCompra").addEventListe
 });
 // btn de finalizar seguirComprando, redirige a la pag productos
 let btnVolverTienda = document.querySelector("#btn-volverATienda").addEventListener('click', function () {
-    location.replace("./Productos/productos.html");
+    location.replace("./Productos/hombre.html");
 })
 
 

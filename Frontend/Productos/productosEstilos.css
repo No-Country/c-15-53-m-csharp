@@ -68,7 +68,8 @@
 	box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
 	background: #fff;
     border: #fff;
-    background-color: #fff;
+    background-color: #ffffff;
+    height: 100%;
 }
 
 .card a{
@@ -91,11 +92,13 @@
 } 
 .card-body{
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .card-img-overlay{
     z-index: 0;
-    
-  }
+}
 
 .text-center-name{
     font-size: 17px;
@@ -117,8 +120,8 @@
  
 #cuadroProductos{
     overflow: auto;
-    
     padding-bottom: 70px;
+    height: 100%;
 }
 #main-producto{
     background-color: rgb(255, 255, 255);

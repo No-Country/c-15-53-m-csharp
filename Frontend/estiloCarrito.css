@@ -143,7 +143,6 @@ body{
     transform: translate(-50%, -50%);
     width: 85%;
     z-index: 100;
-    
 }
 
 #contenedorDesabilitado{
@@ -173,6 +172,7 @@ body{
 /* contenedor de toda la seccion de tarjeta */
 .contenedor-listadoCompras{
     width: 90%;
+    height: 65vh;
     margin: auto;
     color: #274A38;
 }
@@ -317,11 +317,13 @@ body{
 .navComprasText p:nth-child(2){
     margin-right: 2.5%;
 }
-
+.posicionarMensaje{
+    top: 60%;
+}
 }
 @media screen and (min-width: 1300px){
     .posicionarMensaje{
-        top: 30%;
+        top: 70%;
         width: 40%;
     }
     .navComprasText p:nth-child(2){

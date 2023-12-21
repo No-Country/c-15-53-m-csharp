@@ -1,3 +1,8 @@
+let separarMilesComa = (num) => {
+  return num.toLocaleString("es-ES", { minimumFractionDigits: 2 });
+
+}
+
 let img = document.getElementById("miImagen");
 let nombreArt = document.getElementById("nombreArt");
 let precioArt = document.getElementById("precioArt");
@@ -24,7 +29,7 @@ const api = async () => {
 
       miImagen.src = data.value.img;
       nombreArt.innerHTML = data.value.name;
-      precioArt.innerHTML = "$ " + data.value.price;
+      precioArt.innerHTML = "$ " + separarMilesComa(data.value.price);
       description.innerHTML = data.value.description;
 
       let objInfoCard = {

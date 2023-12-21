@@ -1,8 +1,9 @@
 //  ===== EN ESTA PARTE SE AGRGAN LOS PRODUCTOS AL CARRITO
-  let TotalCompra = 0;
-  let posicionArrayCarrito = [];
-  let count = 0;
-  let separarMilesComa = (num) => {
+let TotalCompra = 0;
+let posicionArrayCarrito = [];
+let count = 0;
+
+let separarMilesComa = (num) => {
   return num.toLocaleString("es-ES", { minimumFractionDigits: 2 });
 
 }
@@ -16,8 +17,8 @@ function elcarrito() {
   // let total = data.cantidad * data.price;
   // TotalCompra += total;
 
-  
-  getItems.map((data) =>{
+
+  getItems.map((data) => {
     let padre = document.querySelector(".contArticulo")
     let contenedor = document.createElement('div');
     contenedor.className = 'lista';
@@ -61,8 +62,8 @@ function elcarrito() {
     // Agregar el div contenedor al body
     padre.appendChild(contenedor);
   });
- 
-  
+
+
 }
 
 let setTotalPrice = () => {
@@ -138,13 +139,15 @@ function eliminarDelCarrito(event) {
         <p>$ ${separarMilesComa(TotalCompra)}</p>
       </div>
     `;
+    location.reload();
+
   }
 }
 
 
 // Escuchar eventos de clic para eliminar productos del carrito
 document.querySelector('.contArticulo').addEventListener('click', eliminarDelCarrito);
- 
+
 
 // ==============================
 

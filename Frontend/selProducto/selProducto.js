@@ -84,6 +84,7 @@ let parrafoTalle = document.getElementById("parrafoTalle");
 let parrafoCantidad = document.getElementById("parrafoCantidad");
 let parrafoColor = document.getElementById("parrafoColor");
 let cumple= 0;
+
 btnDerecha.forEach((b) => {
   b.addEventListener("click", () => {
     if (listaBotonesDerecha.filter((x) => x === b.id).toString()) {

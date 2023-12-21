@@ -206,3 +206,30 @@ let svgAmarillo = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="17
 let svgAzul = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 30 30" fill="none">
   <circle cx="15" cy="15" r="15" fill="#2D0CFB"/>
 </svg>`;
+
+function buscador () {
+  const searchInput = document.querySelector('.buscadorProductos-p');
+ 
+  const removeAccents = (str) => {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+  
+  searchInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      e.preventDefault(); // Evitar el comportamiento por defecto del Enter (enviar formulario)
+  
+      let valor = removeAccents(searchInput.value);
+  
+      console.log(sessionStorage.setItem("inputValue", valor));
+  
+      sessionStorage.setItem("inputValue", valor);
+  
+      window.location.href = '../Productos/productos.html';
+  
+      
+    }
+  });
+
+}
+
+buscador ();

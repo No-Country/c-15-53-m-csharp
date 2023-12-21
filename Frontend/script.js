@@ -1,14 +1,26 @@
-const searchInput = document.getElementById('buscadorProductos');
+const searchInput = document.querySelector('.buscadorProductos');
+ 
+const removeAccents = (str) => {
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
 
-searchInput.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') {
-      e.preventDefault(); // Evitar el comportamiento por defecto del Enter (enviar formulario)
+searchInput.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') {
+    e.preventDefault(); // Evitar el comportamiento por defecto del Enter (enviar formulario)
 
-      window.location.href = './Productos/productos.html';
-     }
-  });
+    let valor = removeAccents(searchInput.value);
 
+    console.log(sessionStorage.setItem("inputValue", valor));
 
+    sessionStorage.setItem("inputValue", valor);
+
+    window.location.href = './Productos/productos.html';
+
+    
+  }
+});
+
+ 
   
   // contar articulos en el carrito
   

@@ -178,3 +178,32 @@ btnFiltros.forEach((b) => {
     }
   });
 });
+
+
+
+function buscador () {
+  const searchInput = document.querySelector('.buscadorProductos-p');
+ 
+  const removeAccents = (str) => {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+  
+  searchInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      e.preventDefault(); // Evitar el comportamiento por defecto del Enter (enviar formulario)
+  
+      let valor = removeAccents(searchInput.value);
+  
+      console.log(sessionStorage.setItem("inputValue", valor));
+  
+      sessionStorage.setItem("inputValue", valor);
+  
+      window.location.href = './productos.html';
+  
+      
+    }
+  });
+
+}
+
+buscador();

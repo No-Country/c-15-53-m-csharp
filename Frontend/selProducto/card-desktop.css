@@ -1,0 +1,241 @@
+ 
+@media screen and (min-width: 600px){
+.des-producto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 59vh;
+}
+#description{
+	width: 50vw;
+}
+
+.contDescripcion{
+	display: flex;
+	justify-content: start;
+}
+#container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 4fr 1fr 1fr;
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin-bottom: 40px;
+}
+ #foto{
+    color: #274A38;
+    box-sizing: border-box;
+    grid-area: 2 / 3 / 3 / 4;
+    padding: 5px;
+    position: absolute;
+    bottom: -8px;
+
+ 
+ }
+ 
+ #foto img  {
+    max-inline-size: 100%;
+    block-size: auto;
+    border-radius: 40px;
+    box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+ #comprar {
+    grid-area: 3 / 3 / 4 / 4;
+    justify-content: center;
+    display: flex;
+    z-index: 1;
+    bottom: -9px;
+    position: absolute;
+    right: 60px;
+}
+
+#nombre-precio {
+    grid-area: 1 / 3 / 2 / 4;
+    font-size: calc(2rem - 12px);
+    width: 241px;
+    display: flex;
+    flex-direction: column;
+    left: -24px;
+    position: absolute;
+    bottom: 21px;
+    grid-column: 3/4;
+    grid-row: 1/2;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.80);
+    z-index: 1;
+    border-radius: 16px;
+}
+#grupoBotonesColor button {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    display: inline-flex;
+    border-radius: 50%;
+}
+
+#circulo {
+    grid-area: 1 / 2 / 4 / 5;
+    z-index: 0;
+    width: 317px;
+    height: 317px;
+    border-radius: 289px;
+    border: 3px solid rgba(0, 0, 0, 0.50);
+}
+ #izquierda {
+    display: grid;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-area: 2 / 1 / 3 / 3;
+    z-index: 1;
+}
+
+button#btnTalle {
+    left: -9px;
+    position: absolute;
+    top: 44px;
+}
+
+#izquierda button, #comprar a {
+    display: inline-flex;
+    height: 23px;
+    padding: 4px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    border: 1px solid #FFF;
+    background: rgb(255, 255, 255);
+    color: var(--color-verde);
+    /* left: -20px; */
+}
+
+#btnColor {
+    grid-column: 1/2;
+    grid-row: 5;
+    position: absolute;
+    left: -42px;
+    top: 151px;
+}
+#btnCantidad {
+    grid-row: 9;
+    position: absolute;
+    bottom: 21px;
+    left: -29px;
+    /* bottom: 1px; */
+}
+
+#grupoTalles button, #grupoCantidad button {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: inline-flex;
+    height: 23px;
+    padding: 4px 10px;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.80);
+    border: 1px solid #FFF;
+    color: var(--color-verde);
+}
+
+#btnXs {
+    position: absolute;
+    top: 0px;
+    right: 18px;
+}
+
+#btnS {
+    position: absolute;
+    top: 49px;
+    left: 33px;
+}
+
+#btnM {
+    position: absolute;
+    top: 100px;
+    left: 39px;
+}
+
+#btnL {
+    position: absolute;
+    left: 27px;
+    bottom: 34px;
+}
+
+#btnXL {
+    position: absolute;
+    bottom: -11px;
+    left: 3px;
+}
+#btnDos {
+    position: absolute;
+    top: 100px;
+    left: 41px;
+}
+#btnTres {
+    position: absolute;
+    top: 183px;
+    left: 13px;
+}
+
+#btnNegro {
+    position: absolute;
+    top: 43px;
+     left: 30px;
+}
+
+#btnRojo {
+ 
+    position: absolute;
+    top: -6px;
+    right: 19px;
+}
+
+#btnMorado {
+    top: 97px;
+    left: 35px;
+}
+
+#btnAmarillo {
+ 
+    position: absolute;
+    left: 25px;
+    top: 149px;
+}
+#btnUno {
+    position: absolute;
+    top: 32px;
+    left: 29px;
+}
+
+#btnDos {
+    position: absolute;
+    top: 98px;
+    left: 38px;
+}
+
+#btnTres {
+    position: absolute;
+    top: 158px;
+    left: 26px;
+}
+#btnAzul {
+
+    position: absolute;
+    bottom: -7px;
+    left: 5px;
+}
+
+}
+/* @media screen and (min-width: 1000px){ */
+    /* .contenedor-productos { */
+        /* padding-top: 5%; */
+    /* } */
+/* } */
+

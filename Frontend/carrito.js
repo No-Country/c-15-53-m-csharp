@@ -260,6 +260,8 @@ function confirmarCompra() {
         // rederijo a la pagina de productos en la vista general cuando este
         //postApi(); // enviar al api
         setTimeout(function() {
+            localStorage.setItem("compra", "{}");
+            localStorage.setItem("carritoElementos", "[]");
             location.replace("index.html"); // Redirección a la página de productos
         }, 3000);
 

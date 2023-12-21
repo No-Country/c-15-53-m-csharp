@@ -6,6 +6,7 @@ let cuadroProductos = document.getElementById("cuadroProductos");
 let infoOfproduct;
 
 let arrayIdBotonesProductos = [];
+let arrayProductos = [];
 
 const api = async () => {
   // Esta funcion obtiene datos sobre productos niño
@@ -16,7 +17,12 @@ const api = async () => {
       return response.json();
     })
     .then((data) => {
+
+      arrayProductos = [];
+      data.value.map((item) => { arrayProductos.push(item) });
+
       data.value.map((item) => {
+
         let seguirIdBoton = "Product-Category-" + item.id; // asignarle id a los botones para enviar informacion
         arrayIdBotonesProductos.push("#" + seguirIdBoton);
 
@@ -206,6 +212,95 @@ btnFiltros.forEach((b) => {
     }
   });
 });
+
+
+
+
+// filtrar por precio
+let menor = document.getElementById("filtroMenor");
+let mayor = document.getElementById("filtroMayor");
+
+mayor.addEventListener("click", () => {
+
+  let cuadroProductos = document.getElementById("cuadroProductos");
+  let max = arrayProductos.length 
+  let contador = 0;
+
+  while (cuadroProductos.firstChild && contador < max) {
+    cuadroProductos.removeChild(cuadroProductos.firstChild)
+     contador += 1;
+  }
+
+
+  arrayProductos.sort((a, b) => b.price - a.price)  // MAYOR
+    .map((item) => {
+      let seguirIdBoton = "Product-Category-" + item.id; // asignarle id a los botones para enviar informacion
+      arrayIdBotonesProductos.push("#" + seguirIdBoton);
+
+      divItem = document.createElement(`div`);
+      divItem.className = "col";
+      divItem.innerHTML = "";
+      divItem.innerHTML = `
+   <div class="card">
+   <img src=${item.img} class="card-img-top img-fluid" alt="pantalones" />
+     <div class="card-img-overlay d-flex align-items-center justify-content-center">
+       <button value="${item.id}"  id="${seguirIdBoton}" type="button" class="btn btn-light rounded-4 fw-semibold shadow comprarItem">
+         <a type="button" href="../selProducto/ComprarProductos.html">
+            Comprar
+         </a>
+       </button>
+     </div>
+     <div class="card-body text-center">
+     <p class="text-center-name card-text fw-bold">${item.name}</p>
+     <p class="text-center-card-description card-text fw-bold">${item.cardDescription}</p>
+     <p class="text-center-price card-text fw-semibold">$ ${item.price}</p>
+     </div>
+   </div>
+`;
+      cuadroProductos.appendChild(divItem);
+    });
+
+});
+menor.addEventListener("click", () => {
+
+  let cuadroProductos = document.getElementById("cuadroProductos");
+  while (cuadroProductos.firstChild) {
+    cuadroProductos.removeChild(cuadroProductos.firstChild)
+  }
+  cuadroProductos.innerHTML = ""
+  arrayProductos
+    .sort((a, b) => a.price - b.price)  // MENOR
+    .map((item) => {
+      let seguirIdBoton = "Product-Category-" + item.id; // asignarle id a los botones para enviar informacion
+      arrayIdBotonesProductos.push("#" + seguirIdBoton);
+
+      divItem = document.createElement(`div`);
+      divItem.className = "col";
+      divItem.innerHTML = `
+   <div class="card">
+   <img src=${item.img} class="card-img-top img-fluid" alt="pantalones" />
+     <div class="card-img-overlay d-flex align-items-center justify-content-center">
+       <button value="${item.id}"  id="${seguirIdBoton}" type="button" class="btn btn-light rounded-4 fw-semibold shadow comprarItem">
+         <a type="button" href="../selProducto/ComprarProductos.html">
+            Comprar
+         </a>
+       </button>
+     </div>
+     <div class="card-body text-center">
+     <p class="text-center-name card-text fw-bold">${item.name}</p>
+     <p class="text-center-card-description card-text fw-bold">${item.cardDescription}</p>
+     <p class="text-center-price card-text fw-semibold">$ ${item.price}</p>
+     </div>
+   </div>
+`;
+      cuadroProductos.appendChild(divItem);
+    });
+
+});
+
+
+
+
 
 
 function buscador () {

@@ -176,3 +176,4 @@ menor.addEventListener("click", () => {
 });
 
 
+// buscdor

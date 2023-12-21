@@ -47,7 +47,7 @@ let btn_finalizar = document.querySelector("#btn-finalizarCompra").addEventListe
 });
 // btn de finalizar seguirComprando, redirige a la pag productos
 let btnVolverTienda = document.querySelector("#btn-volverATienda").addEventListener('click', function () {
-    location.replace("/Productos/productos.html");
+    location.replace("./Productos/productos.html");
 })
 
 
@@ -244,8 +244,13 @@ function confirmarCompra() {
     //agregar la clase que lo posiciona
     ultimoMensaje.classList.add("posicionarMensaje");
     //desabilitar el boton
+
+    
+
     btnContinuar.setAttribute('disabled', '');
 
+    postApi(); // enviar al api
+    s
     //quitarle la clase que lo esconde
     ultimoMensaje.classList.remove("quitar");
 
@@ -253,7 +258,7 @@ function confirmarCompra() {
     btnEsc.addEventListener('click', function () {
 
         // rederijo a la pagina de productos en la vista general cuando este
-        postApi(); // enviar aal api
+        //postApi(); // enviar al api
         setTimeout(function() {
             location.replace("index.html"); // Redirección a la página de productos
         }, 3000);

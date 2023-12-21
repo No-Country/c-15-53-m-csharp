@@ -70,6 +70,7 @@
     border: #fff;
     background-color: #ffffff;
     height: 100%;
+    /* height: max(413px, 500px); */
 }
 
 .card a{
@@ -165,3 +166,17 @@
     margin-top: 53px;
     width: 253px;
 }
+@media screen and (min-width: 576px){
+
+
+    .nav-productos {
+        width: 100%;
+        display: flex;
+        font-size: 1rem;
+        justify-content: center;
+        gap: 53px;
+        flex-direction: row;
+    }
+    
+}
+    

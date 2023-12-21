@@ -253,6 +253,12 @@ body{
     margin-bottom: 10%;
 }
 
+.contArticulo{
+    overflow: auto;
+    height: 85%;
+    margin-bottom: 10px;
+}
+
 @media screen and (min-width: 500px){
     .imgTarjeta{
         width: 30%;

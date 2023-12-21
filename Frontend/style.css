@@ -379,8 +379,10 @@ Frontend/Productos/productosEstilos.css
         height: 40vh;
     }
 
+
 }
 @media screen and (min-width: 576px){
+
 
     .item-subCateg:first-child{
         border-top-right-radius: 30px;
@@ -409,6 +411,8 @@ Frontend/Productos/productosEstilos.css
 
 }
 @media screen and (min-width: 991px) {
+
+
     #logoParaCentrar {
         /* margin-right: 145px; */
         margin-left: -257px;

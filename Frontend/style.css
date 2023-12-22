@@ -247,7 +247,7 @@ footer {
     justify-content: space-between;
     padding: 10px 20px;
     font-size: 10px;
-    
+
 }
 footer p{
     margin-bottom: 0;
@@ -383,7 +383,6 @@ Frontend/Productos/productosEstilos.css
 }
 @media screen and (min-width: 576px){
 
-
     .item-subCateg:first-child{
         border-top-right-radius: 30px;
         border-top-right-radius: 0;
@@ -395,11 +394,41 @@ Frontend/Productos/productosEstilos.css
         border-bottom-left-radius: 0;
         border-top-right-radius: 30px;
     }
-    
 
-    
+
 }
-    
+
+.desktop-info-footer{
+    /* estado inicial */
+    display: none;
+}
+@media screen and (min-width: 630px) {
+    /* /DESAPARECER LA PARTE MOBILE DEL FOOTER*/
+    .logoFooter,
+   .info-footer 
+    {
+        display: none;
+    }
+   
+   .desktop-info-footer{
+       display: flex;
+       font-size: 1rem;
+       color: white;
+       flex-direction: row;
+       justify-content: center;
+       gap: 31px;
+       padding-bottom: 24px;
+   }	
+   
+   .desktop-info-footer  img {
+       width: 137px; 
+       height: auto;
+   
+   }
+   
+   
+
+
 @media screen and (max-width: 991px) {
 
     .collapse.navbar-collapse,
@@ -418,7 +447,7 @@ Frontend/Productos/productosEstilos.css
         margin-left: -257px;
     }
     .tendencias img {
-        height: 45vh;
+        height: 75vh;
     }
 
     /* sub categoria home */
@@ -442,3 +471,4 @@ Frontend/Productos/productosEstilos.css
 }
 
 
+}

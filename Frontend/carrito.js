@@ -10,8 +10,11 @@ let funciones = [
 //comienzo con el item 1 del nav opaco
 cambiarItemNav();
 
+																 
+															   
 
 // SELECCION DE ELEMENTOS DE LA PAGINA CARRITO PARA EL USO EN FUNCIONES
+							  
 
 //-------------------------------------------------------- Paso 0 --------------------------------------------------------
 //cambia el color del menu cuando el contadorMenu incrementa uno
@@ -21,6 +24,9 @@ function cambiarItemNav() {
     let menuComprasText = document.querySelectorAll(".navComprasText > p");
 
     contadorMenu++; // Incrementa antes de aplicar cambios
+																								 
+													   
+											  
 
     cambiarFondo(menuNumerico[contadorMenu - 1]);
     cambiarColor(menuComprasText[contadorMenu - 1]);
@@ -50,7 +56,12 @@ let btnVolverTienda = document.querySelector("#btn-volverATienda").addEventListe
     location.replace("./Productos/hombre.html");
 })
 
+													
+						   
+				  
+												
 
+																						
 
 //--------------------------------------------------------- Paso 2 ---------------------------------------------------------
 //formulario del carrito
@@ -70,6 +81,7 @@ btnContinuar.addEventListener("click", function () {
     funciones[funcionActual]();
 });
 
+																													  
 
 //btn volver para voler a la primera pantalla del carrito
 let btnVolver = document.querySelector("#btn-volver");

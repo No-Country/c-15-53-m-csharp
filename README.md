@@ -18,7 +18,7 @@ https://basic-point-ecommerce.netlify.app/index.html
 - Netlify
 - FL0
  
-### **ROLES DE EQUIPO**
+## **ROLES DE EQUIPO**
 - Front End:
     - Julieta Simos
     - José Crespo
